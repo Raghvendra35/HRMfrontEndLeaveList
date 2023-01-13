@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms'
+import { Employee } from './employee';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angular-frontend';
+  title = 'anular-frontend';
+  registrationReq:Employee = new Employee();
+
+  employeedata:any={};
+
+  getSubmit(){
+    console.log(this.registrationReq);
+    
+  }
 }
+
+

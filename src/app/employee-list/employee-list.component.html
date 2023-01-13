@@ -1,0 +1,94 @@
+<nav class="navbar navbar-light bg-primary">
+    <div class="container-fluid">
+      <h3 style="color: aliceblue;">HR Managements</h3>
+      <div class="d.flex">
+    <button type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn bth-success" >Add Employee </button>
+      </div>  
+    </div>
+</nav>
+
+<h2>Employee List</h2>
+<table class="table mt-3">
+<thead>
+    <tr>
+        <th scope="col">ID</th>
+        <th scope="col">FirstName</th>
+        <th scope="col">LastName</th>
+        <th scope="col">Contact</th>
+        <th scope="col">EmailId</th>
+        <th scope="col">AadharCard</th>
+        <th scope="col">Pancard</th>
+        <th scope="col">BankName</th>
+        <th scope="col">AccountNumber</th>
+        <th scope="col">CIF</th>
+        <th scope="col">Experience</th>
+        <th scope="col">PreviousCompanyName</th>
+        <th scope="col">Designation</th>
+        <th scope="col">Password</th>
+        <th scope="col">Gender</th>
+        <th scope="col">DateOFBirth</th>
+        <th scope="col">Action</th>
+        <th scope="col">Action</th>
+    </tr>
+    
+</thead>
+ <tbody>
+    <tr *ngFor="let employee of employees">
+        
+        <td>{{employee.employeeId}}</td>
+        <td>{{employee.firstName}}</td>
+        <td>{{employee.lastName}}</td>
+        <td>{{employee.contact}}</td>
+        <td>{{employee.emailId}}</td>
+        <td>{{employee.aadharCard}}</td>
+        <td>{{employee.panCard}}</td>
+        <td>{{employee.cisfNumber}}</td>
+        <td>{{employee.bankName}}</td>
+        <td>{{employee.accountNumber}}</td>
+        <td>{{employee.experience}}</td>
+        <td>{{employee.previousCompanyName}}</td>
+        <td>{{employee.designation}}</td>
+        <td>{{employee.password}}</td>        
+        <td>{{employee.gender}}</td>
+        <td>{{employee.dateOfBirth}}</td>
+        <button class="btn btn-info"   (click) = "updateEmployee(employee.employeeId)"><a routerLink="/updateemployee/{employee.employeeId}">Edit</a></button>
+        <button class="btn btn-danger" (click)="deleteEmployee(employee.employeeId)" style="color:black">Delete</button>
+    </tr>
+ </tbody>
+
+</table>
+
+<!-- <nav class="navbar navbar-light bg-primary">
+    <div class="container-fluid">
+      <h3 style="color: aliceblue;">HR Managements</h3>
+      <div class="d.flex">
+    <button type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn bth-success" >Add Employee </button>
+      </div>  
+    </div>
+</nav> -->
+
+<!-- <table class="table mt-3">
+    <thead>
+        <tr>
+            <th scope="col">EmployeeId</th>
+            <th scope="col">EmployeeName</th>
+            <th scope="col">Email Id</th>
+            <th scope="col">Mobile Number</th>
+            <th scope="col">Action</th>
+          </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>Raghav</td>
+            <td>raghav@gmail.com</td>
+            <td>45676654</td>
+            <td>
+                <button class="btn btn-info">Edit</button>
+                <button class="btn btn-danger">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table> -->
+
