@@ -182,54 +182,177 @@
           <input type="radio"  name="gender" value="Female">
           -->    
       </div>
-
+      
+      <div>
+        <label  for="inputname" class="mt-5" style="color: blue;">Permanent Address</label>
+      </div>
       <div class="col-md-6 mt-4">
-        <label  for="inputname">Permanent Address</label>
-        <input type="text" [(ngModel)]="address.permanentAddress"  name="permanentAddress" class="form-control" placeholder="Permanent-Address">
+        <label  for="inputname">House Number </label>
+        <input type="text"  [(ngModel)]="address.houseNumber" name="permanentAddress" class="form-control" placeholder="Permanent-Address">
         </div> 
 
-       
-      <div class="col-md-6 mt-4">
-        <label  for="inputname">Current Address</label>
-        <input type="text" [(ngModel)]="address.currentAddress"  name="currentAddress" class="form-control" placeholder="Current-Address">
-        </div>
-    
-        <!--
+        <div class="col-md-6 mt-4">
+          <label  for="inputname">City</label>
+          <input type="text"  [(ngModel)]="address.city" name="permanentAddress" class="form-control" placeholder="Permanent-Address">
+          </div> 
+
+          <div class="col-md-6 mt-4">
+            <label  for="inputname">PinCode</label>
+            <input type="text" [(ngModel)]="address.pinCode"  name="permanentAddress" class="form-control" placeholder="Permanent-Address">
+            </div> 
+  
+
+          <div class="col-md-6 mt-4">
+            <label  for="inputname">State</label>
+            <input type="text"  [(ngModel)]="address.state" name="permanentAddress" class="form-control" placeholder="Permanent-Address">
+            </div> 
+
+  
+
+            <div>
+              <label  for="inputname" class="mt-5"   style="color: blue;">Current Address</label>
+            </div>
+            <div class="col-md-6 mt-4">
+              <label  for="inputname">House Number </label>
+              <input type="text"  [(ngModel)]="address.houseNumber"  name="permanentAddress" class="form-control" placeholder="Permanent-Address">
+              </div> 
+      
+              <div class="col-md-6 mt-4">
+                <label  for="inputname">City</label>
+                <input type="text"  [(ngModel)]="address.city"  name="permanentAddress" class="form-control" placeholder="Permanent-Address">
+                </div> 
+      
+                <div class="col-md-6 mt-4">
+                  <label  for="inputname">PinCode</label>
+                  <input type="text"  [(ngModel)]="address.pinCode"  name="permanentAddress" class="form-control" placeholder="Permanent-Address">
+                  </div> 
+        
+      
+                <div class="col-md-6 mt-4">
+                  <label  for="inputname">State</label>
+                  <input type="text"  [(ngModel)]="address.state"  name="permanentAddress" class="form-control" placeholder="Permanent-Address">
+                  </div> 
+      
+
+          
+                  <div>
+                    <label  for="inputname" class="mt-5"  style="color: blue;">Qualification</label>
+                  </div>
 
         <div class="col-md-6 mt-4">
-          <label  for="inputname">Course</label>
-          <input type="text" [(ngModel)]="employee.course"  name="course" class="form-control" placeholder="course">
+          <label  for="inputname">class 10<sup>th</sup></label>
+          <input type="text" [(ngModel)]="qualification.course"  name="course" class="form-control" placeholder="course">
           </div>
           
         <div class="col-md-6 mt-4">
           <label  for="inputname">Board/ University</label>
-          <input type="text" [(ngModel)]="employee.board"  name="board" class="form-control" placeholder="course">
+          <input type="text" [(ngModel)]="qualification.board"  name="board" class="form-control" placeholder="course">
           </div>
-
-           
-          <div class="col-md-6 mt-4">
-            <label  for="inputname">Board/ University</label>
-            <input type="text" [(ngModel)]="employee.board"  name="board" class="form-control" placeholder="course">
-            </div>
-           
+                         
                
         <div class="col-md-6 mt-4">
           <label  for="inputname">Passingyear</label>
-          <input type="text" [(ngModel)]="employee.passingyear"  name="board" class="form-control" placeholder="Passingyear">
+          <input type="text" [(ngModel)]="qualification.passingyear"  name="board" class="form-control" placeholder="Passingyear">
           </div>
     
              
         <div class="col-md-6 mt-4">
         <label  for="inputname">Percantage</label>
-         <input type="text" [(ngModel)]="employee.percentage"  name="percentage" class="form-control" placeholder="percentage">
+         <input type="text" [(ngModel)]="qualification.percentage"  name="percentage" class="form-control" placeholder="percentage">
          </div>
     
          <div class="col-md-6 mt-4">
           <label  for="inputname">Status</label>
-           <input type="text" [(ngModel)]="employee.status"  name="status" class="form-control" placeholder="status">
+           <input type="text" [(ngModel)]="qualification.status"  name="status" class="form-control" placeholder="status">
            </div>
 
-          -->
+         
+
+           
+        <div class="col-md-6 mt-4">
+          <label  for="inputname">class 12<sup>th</sup></label>
+          <input type="text" [(ngModel)]="qualification.course"  name="course" class="form-control" placeholder="course">
+          </div>
+          
+        <div class="col-md-6 mt-4">
+          <label  for="inputname">Board/ University</label>
+          <input type="text" [(ngModel)]="qualification.board"  name="board" class="form-control" placeholder="course">
+          </div>
+
+                        
+        <div class="col-md-6 mt-4">
+          <label  for="inputname">Passingyear</label>
+          <input type="text" [(ngModel)]="qualification.passingyear"  name="board" class="form-control" placeholder="Passingyear">
+          </div>
+    
+             
+        <div class="col-md-6 mt-4">
+        <label  for="inputname">Percantage</label>
+         <input type="text" [(ngModel)]="qualification.percentage"  name="percentage" class="form-control" placeholder="percentage">
+         </div>
+    
+         <div class="col-md-6 mt-4">
+          <label  for="inputname">Status</label>
+           <input type="text" [(ngModel)]="qualification.status"  name="status" class="form-control" placeholder="status">
+           </div>
+
+           
+        <div class="col-md-6 mt-4">
+          <label  for="inputname">Bachelor's degree</label>
+          <input type="text" [(ngModel)]="qualification.course"  name="course" class="form-control" placeholder="course">
+          </div>
+          
+                  
+          <div class="col-md-6 mt-4">
+            <label  for="inputname">Board/ University</label>
+            <input type="text" [(ngModel)]="qualification.board"  name="board" class="form-control" placeholder="course">
+            </div>
+           
+               
+        <div class="col-md-6 mt-4">
+          <label  for="inputname">Passingyear</label>
+          <input type="text" [(ngModel)]="qualification.passingyear"  name="board" class="form-control" placeholder="Passingyear">
+          </div>
+    
+             
+        <div class="col-md-6 mt-4">
+        <label  for="inputname">Percantage</label>
+         <input type="text" [(ngModel)]="qualification.percentage"  name="percentage" class="form-control" placeholder="percentage">
+         </div>
+    
+         <div class="col-md-6 mt-4">
+          <label  for="inputname">Status</label>
+           <input type="text" [(ngModel)]="qualification.status"  name="status" class="form-control" placeholder="status">
+           </div>
+
+           
+        <div class="col-md-6 mt-4">
+          <label  for="inputname">Master's degree</label>
+          <input type="text" [(ngModel)]="qualification.course"  name="course" class="form-control" placeholder="course">
+          </div>
+          
+        <div class="col-md-6 mt-4">
+          <label  for="inputname">Board/ University</label>
+          <input type="text" [(ngModel)]="qualification.board"  name="board" class="form-control" placeholder="course">
+          </div>
+
+                                
+        <div class="col-md-6 mt-4">
+          <label  for="inputname">Passingyear</label>
+          <input type="text" [(ngModel)]="qualification.passingyear"  name="board" class="form-control" placeholder="Passingyear">
+          </div>
+    
+             
+        <div class="col-md-6 mt-4">
+        <label  for="inputname">Percantage</label>
+         <input type="text" [(ngModel)]="qualification.percentage"  name="percentage" class="form-control" placeholder="percentage">
+         </div>
+    
+         <div class="col-md-6 mt-4">
+          <label  for="inputname">Status</label>
+           <input type="text" [(ngModel)]="qualification.status"  name="status" class="form-control" placeholder="status">
+           </div>
+
         <div class="col-md-12 mt-3" style="text-align: center;">
           <button type="Submit" class="btn btn-primary"  (click)="formSubmit()">Sing Up</button>
         </div>

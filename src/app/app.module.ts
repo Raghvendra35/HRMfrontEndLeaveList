@@ -10,6 +10,10 @@ import { LoginComponent } from './login/login.component';
 import { RegistrationEmployeeComponent } from './registration-employee/registration-employee.component';
 import { FormsModule } from '@angular/forms';
 import { UpdateEmployeeComponent } from './update-employee/update-employee.component';
+import { LeaveReportEmployeeComponent } from './leave-report-employee/leave-report-employee.component';
+import { AddProjectComponent } from './add-project/add-project.component';
+import { AddSalaryComponent } from './add-salary/add-salary.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +23,10 @@ import { UpdateEmployeeComponent } from './update-employee/update-employee.compo
     LoginComponent,
     RegistrationEmployeeComponent,
     UpdateEmployeeComponent,
+    LeaveReportEmployeeComponent,
+    AddProjectComponent,
+    AddSalaryComponent,
+    SidebarComponent,
     
   ],
   imports: [

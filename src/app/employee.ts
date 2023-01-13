@@ -19,24 +19,28 @@ export class Employee
     gender:string;
     dateOfBirth:string;
     address:Array<Address> = [];
+    qualification:Array<Qualification>=[];
 
   }
 
 export class  Address 
       {
         addressId: number;
-        permanentAddress: String;
-        currentAddress: string;
+        pinCode: number;
+       houseNumber: string;
+       city: string;
+      state: string;
+      typeOfAddress: string;
       }
 
-  // export class  qualification: [
-    //  {
-         //   course:  string,
-          //  board:  string,
-           // passingyear: string,
-           // percentage: string,
-           // status: string
-        //}]
+   export class  Qualification 
+      {
+            course:  string;
+            board:  string;
+            passingyear: string;
+            percentage: string;
+            status: string;
+        }
   
 
   
