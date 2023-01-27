@@ -14,6 +14,14 @@ import { LeaveReportEmployeeComponent } from './leave-report-employee/leave-repo
 import { AddProjectComponent } from './add-project/add-project.component';
 import { AddSalaryComponent } from './add-salary/add-salary.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { ProjectsListComponent } from './projects-list/projects-list.component';
+import { UpdateProjectsComponent } from './update-projects/update-projects.component';
+import { DetailsPageComponent } from './details-page/details-page.component';
+import { SalaryListComponent } from './salary-list/salary-list.component';
+import { LeaveemployeeListComponent } from './leaveemployee-list/leaveemployee-list.component';
+import { CommonModule } from '@angular/common';
+import { UpdateSalaryComponent } from './update-salary/update-salary.component';
+import { UpdateLeaveComponent } from './update-leave/update-leave.component';
 
 @NgModule({
   declarations: [
@@ -27,13 +35,22 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     AddProjectComponent,
     AddSalaryComponent,
     SidebarComponent,
+    ProjectsListComponent,
+    UpdateProjectsComponent,
+    DetailsPageComponent,
+    SalaryListComponent,
+    LeaveemployeeListComponent,
+    UpdateSalaryComponent,
+    UpdateLeaveComponent,
+  
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

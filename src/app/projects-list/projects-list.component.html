@@ -1,0 +1,74 @@
+
+<nav class="navbar navbar-light bg-primary">
+    <div class="container-fluid">
+      <h3 style="color: aliceblue;">HR Managements</h3>
+      <div class="d.flex">
+    <button type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn bth-success" ><a routerLink="addproject" class="nav-link">Add Projects</a> </button>
+      </div>  
+    </div>
+</nav>
+
+
+<table class="table mt-3">
+<thead>
+    <tr>
+        <th scope="col">index</th>
+        <th scope="col">ProjectName</th>
+        <th scope="col">ClientName</th>
+        <th scope="col">Technology</th>
+        <th scope="col">Database</th>
+        <th scope="col">TeamLeader</th>
+        <th scope="col">FromDate</th>
+        <th scope="col">ToDate</th>
+        <th scope="col">Action</th>
+        
+    </tr>
+    
+</thead>
+ <tbody>
+    <tr *ngFor="let projects of addProjects; let i=index">
+        
+        <td>{{i+1}}</td>
+        <td>{{projects.projectName}}</td>
+        <td>{{projects.clientName}}</td>
+        <td>{{projects.developingTechnology}}</td>
+        <td>{{projects.databaseTechnology}}</td>
+        <td>{{projects.teamLeader}}</td>
+        <td>{{projects.fromDate}}</td>
+        <td>{{projects.toDate}}</td>
+      
+       
+        <button class="btn btn-info"   (click) = "updateProject(projects.projectId)">
+          <a routerLink="/updateproject/{/projects.projectId}">Edit</a></button>
+       
+        <button class="btn btn-danger" (click)="deleteProject(projects.projectId)" style="color:black">Delete</button>
+        
+      </tr>
+ </tbody>
+<!--
+ <nav aria-label="...">
+  <ul class="pagination">
+    <li class="page-item disabled">
+      <a class="page-link">Previous</a>
+    </li>
+    <li class="page-item"><a class="page-link" href="">1</a></li>
+    <li class="page-item active" aria-current="page">
+      <a class="page-link" href="#">2</a>
+    </li>
+    <li class="page-item"><a class="page-link" href="">3</a></li>
+    <li class="page-item">
+      <a class="page-link" href="*">Next</a>
+    </li>
+  </ul>
+</nav>
+-->
+
+<a href="#"  class="previous round">&#8249;</a>
+<a href="#"  class="next round">&#8250;</a>
+
+<!--
+<a href="#" class="previous">&laquo; Previous</a>
+<a href="#" class="next">Next &raquo;</a>
+-->
+</table>
+<button type="button" (click)= "myFuction($event)" (click)="myPagination()" >Next</button>

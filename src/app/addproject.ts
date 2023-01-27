@@ -1,14 +1,24 @@
+import { Employee } from "./employee";
+
 export class AddProject
 {
      projectId: number;
 	 projectName: string;
 	 clientName: string;
-	 projectManager: string;
-	 projectTeamLeader: string;
-	 developingPlateform: string;
+	 teamLeader: string;
+	 developingTechnology: string;
 	 databaseTechnology: string;
-     startingDate: string;
+     fromDate: string;
      toDate: string;
-	
+	 
+	 employeeId:number;
+	 employee: Employees;
+    
+}
 
+export class Employees
+{
+	firstName:any;
+	emailId:any;
+	employeeId:any;
 }

@@ -1,0 +1,49 @@
+<nav class="navbar navbar-light bg-primary">
+    <div class="container-fluid">
+      <h3 style="color: aliceblue;">HR Managements</h3>
+      <div class="d.flex">
+    
+        <button type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn bth-success" >
+          <a routerLink="addsalary" style="color: black;">Add Salary</a></button>
+      </div>  
+    </div>
+</nav>
+
+
+<table class="table mt-3">
+<thead>
+    <tr>
+        <th scope="col">index</th>
+        <th scope="col">EmployeeName</th>
+        <th scope="col">Email_Id</th>
+        <th scope="col">Months</th>
+        <th scope="col">Amount</th>
+        <th scope="col">Action</th>
+        
+    </tr>
+    
+</thead>
+ <tbody>
+    <tr *ngFor="let empSalary of salary; let i=index">
+        <td>{{i+1}}</td>
+        <td>{{empSalary.employee.firstName}}</td>
+        <td>{{empSalary.employee.emailId}}</td>
+        <td>{{empSalary.months}}</td>
+        <td>{{empSalary.amount}}</td>
+    
+       
+
+        <button class="btn btn-info" (click) = "updateSalary(empSalary.salaryId)">
+        <a routerLink="/updatesalary/{/empSalary.salaryId}">Edit</a></button>
+          
+        <button class="btn btn-danger" (click)="deleteSalary(empSalary.salaryId)" style="color:black">Delete</button>
+         
+
+        
+        <!-- <button class="btn btn-info"   (click) = "updateProject(projects.projectId)">
+          <a routerLink="/updateproject/{/projects.projectId}">Edit</a></button>
+       
+        <button class="btn btn-danger" (click)="deleteProject(projects.projectId)" style="color:black">Delete</button>
+         -->
+      </tr>
+ </tbody>

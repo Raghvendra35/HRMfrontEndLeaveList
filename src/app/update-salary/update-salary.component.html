@@ -1,5 +1,5 @@
 <div class="container">
-    <h2 style="text-align: center;" class="mt-5"> Add Salary Here !!!</h2>
+    <h2 style="text-align: center;" class="mt-5"> Update Salary Here !!!</h2>
     <form name="myform" class="form-group" >
         <div class="row jumbotron">
   
@@ -16,13 +16,13 @@
             </div> 
             </div>
 
-               <div class="col-md-6 mt-4">
+            <div class="col-md-6 mt-4">
                   <label for="validationDefault04" class="form-label">Employee Name</label>
-                  <select  [(ngModel)]="addSalary.employeeId" name="employeeId"  class="form-select" id="validationDefault04" required>
+                 
+                  <select (click)="getEmployeeId(addSalary.employee.employeeId)" [(ngModel)]="addSalary.employeeId"  
+                                                                       name="employeeId"  class="form-select" id="validationDefault04" required>
                     <option>Select One</option>
-                  <option  *ngFor="let data of employeeData" [value]="data.employeeId">
-                    {{data.firstName}} ({{data.emailId}})
-                  </option>
+                  <option>{{addSalary.employee.firstName}}({{addSalary.employee.emailId}})</option>
                  </select>
             </div>
 
@@ -30,7 +30,7 @@
 
         <div class="row">
         <div class="col-md-6 mt-3" style="text-align: center;">
-            <button type="Submit" class="btn btn-primary" (click)="formSubmit()"  >Submit</button>
+            <button type="Submit" class="btn btn-primary" (click)="formSubmit()" >Update</button>
           </div>
         <div class="col-md-6 mt-3" style="text-align: center;">
             <button type="reset" class="btn btn-danger"  >Cancel</button>
@@ -45,4 +45,5 @@
 
 
   
+
 

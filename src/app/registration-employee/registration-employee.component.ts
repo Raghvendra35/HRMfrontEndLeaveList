@@ -33,6 +33,8 @@ export class RegistrationEmployeeComponent implements OnInit {
     // console.log(this.employee);
    // console.log(this.address.aaddress='current');
     
+   this.perAddress.typeOfAddress='PermanentAddress';
+   this.curAddress.typeOfAddress='CurrentAddress';
    
     this.employee.address.push(this.perAddress);
     this.employee.address.push(this.curAddress);
@@ -61,7 +63,7 @@ export class RegistrationEmployeeComponent implements OnInit {
 
     }, (error) => {
       console.log(error);
-      alert("Wrong")
+      alert("Failed");
     }
 
 

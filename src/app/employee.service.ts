@@ -15,28 +15,36 @@ export class EmployeeService {
 
   
   addEmployee(employee:Employee){
-    return this.httpClient.post(`${baseURL}/employee/save`,employee);
+    return this.httpClient.post(`${baseURL}/api/employee/save`,employee);
   }
 
     
    getEmployee()
    {
-     return this.httpClient.get(`${baseURL}/employee`);
+     return this.httpClient.get(`${baseURL}/api/employee`);
    
     }
 
    deleteEmployee(id:number)
     {
-      return this.httpClient.delete(`${baseURL}/employee/${id}`);
+      return this.httpClient.delete(`${baseURL}/api/employee/${id}`);
     }
 
-   getEmployeeById(employeeId: number): Observable<Employee>
-    {
-        return this.httpClient.get<Employee>(`${baseURL}/employee/${employeeId}`);
-    }
-
+  
     updateEmployee(employeeId:any, employee:Employee)
     {
-      return this.httpClient.put(`${baseURL}/employee/${employeeId}`,employee);
+      return this.httpClient.put(`${baseURL}/api/employee/${employeeId}`,employee);
+    }
+
+    
+    getEmployeeById(employeeId: number): Observable<Employee>
+    {
+        return this.httpClient.get<Employee>(`${baseURL}/api/employee/${employeeId}`);
+    }
+
+
+    getDropdown()
+    {
+      return this.httpClient.get<Employee>(`${baseURL}/api/employee/dropdown`);
     }
 }

@@ -9,6 +9,7 @@ import { EmployeeService } from '../employee.service';
   templateUrl: './employee-list.component.html',
   styleUrls: ['./employee-list.component.css']
 })
+
 export class EmployeeListComponent implements OnInit
  {
     // employees: Employee[];
@@ -17,39 +18,52 @@ export class EmployeeListComponent implements OnInit
 
   employees:any;
 
-
-  public deleteEmployee(id: number)
-  {
-    console.log('delete id',id);
-    
-   let res= this.employeeService.deleteEmployee(id);
-  
-     res.subscribe((data)=> this.employees=data);  
-  }
-
-  
     constructor(private employeeService: EmployeeService, private router: Router){}
   
-  
-  
+    
     ngOnInit(): void 
     {
-       
       let resp=this.employeeService.getEmployee();
-       
-        resp.subscribe((data)=>
+       resp.subscribe((data)=>
         {
+       //   console.log(data);
+          
           this.employees=data;
         });
     
     }
+
+
+
+    public deleteEmployee(id: number)
+    {
+      console.log('delete id',id);
+      
+     let res= this.employeeService.deleteEmployee(id);
+    
+       res.subscribe((data)=> this.employees=data);  
+    }
+  
    
+    
     updateEmployee(employeeId:number)
     {
      this.router.navigate(['updateemployee',employeeId]);
      
     }
 
+  
+
+    getEmployeeById(id:any){
+
+    }
+
+
+    getDetails(employeeId:number)
+    {
+     this.router.navigate(['employeelist/detailspage/',employeeId]);
+     
+    }
     
   }
 

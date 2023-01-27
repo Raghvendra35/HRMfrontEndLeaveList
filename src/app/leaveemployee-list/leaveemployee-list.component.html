@@ -1,0 +1,50 @@
+<nav class="navbar navbar-light bg-primary">
+    <div class="container-fluid">
+      <h3 style="color: aliceblue;">HR Managements</h3>
+      <div class="d.flex">
+    <button type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn bth-success" ><a routerLink="addproject" class="nav-link">Leave-List</a> </button>
+      </div>  
+    </div>
+</nav>
+
+
+<table class="table mt-3">
+<thead>
+    <tr>
+        <th scope="col">index</th>
+        <th scope="col">Employee Name</th>
+        <th scope="col">Email_Id</th>
+        <th scope="col">FromDate</th>
+        <th scope="col">ToDate</th>
+        <th scope="col">Reason To Leave</th>
+        <th scope="col">Action</th>
+        
+    </tr>
+    
+</thead>
+ <tbody>
+
+    <tr *ngFor="let leave of leaveEmployees; let i=index">
+        <td>{{i+1}}</td>
+        <td>{{leave.employee.firstName}}</td> 
+        <td>{{leave.employee.emailId}}</td>
+        <td>{{leave.fromDate}}</td>
+        <td>{{leave.toDate}}</td>
+        <td>{{leave.reasonToLeave}}</td>
+             
+
+        <button class="btn btn-info"   (click) = "updateLeave(leave.leaveId)">
+          <a routerLink="/updateleave/{/leave.leaveId}">Edit</a></button>
+
+        <button class="btn btn-danger" (click)="deleteLeave(leave.leaveId)" style="color:black">Delete</button>
+         
+
+        
+        <!-- <button class="btn btn-info"   (click) = "updateProject(projects.projectId)">
+          <a routerLink="/updateproject/{/projects.projectId}">Edit</a></button>
+       
+        <button class="btn btn-danger" (click)="deleteProject(projects.projectId)" style="color:black">Delete</button>
+         -->
+      </tr>
+ </tbody>
+

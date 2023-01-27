@@ -11,9 +11,9 @@ export class Employee
     panCard:string;
     bankName:string;
     accountNumber:string;
-    cisfNumber:string;
+    cifNumber:string;
     experience:string;
-    previousCompanyname:string;
+    previousCompanyName:string;
     designation:string;
     password:string;
     gender:string;
@@ -35,6 +35,7 @@ export class  Address
 
    export class  Qualification 
       {
+            qaulificationId: number;
             course:  string;
             board:  string;
             passingyear: string;

@@ -1,7 +1,7 @@
 
 
 <div class="container">
-    <h2 style="text-align: center;" class="mt-5">Leave Report !!!</h2>
+    <h2 style="text-align: center;" class="mt-5">Update Leave !!!</h2>
     <form name="myform" class="form-group" >
         <div class="row jumbotron">
   
@@ -21,25 +21,26 @@
             </div>     -->
             <div class="col-md-6 mt-3">
               <label for="exampleFormControlTextarea1" [(ngModel)]="leaveEmployee.reasonToLeave" name="reasonToLeave" class="form-label">Reason for Leave</label>
-              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+              <textarea class="form-control" [(ngModel)]="leaveEmployee.reasonToLeave" name="reasonToLeave" id="exampleFormControlTextarea1" rows="3"></textarea>
             </div>
             </div>
            
             
             <div class="col-md-6 mt-4">
               <label for="validationDefault04" class="form-label">Employee Name</label>
-              <select    [(ngModel)]="leaveEmployee.employeeId" name="employeeId" class="form-select" id="validationDefault04" required>
+              <select    (click)=" getEmployeeById(leaveEmployee.employee.employeeId)" [(ngModel)]="leaveEmployee.employeeId"
+                                                                         name="employeeId" class="form-select" id="validationDefault04" required>
                 <option>Select One</option>
-              <option  *ngFor="let data of employeeData" [value]="data.employeeId">
-                {{data.firstName}} ({{data.emailId}})
+                <option>
+                {{leaveEmployee.employee.firstName}} ({{leaveEmployee.employee.emailId}})
               </option>
              </select>
-        </div>
+            </div>
 
 
             <div class="row">
             <div class="col-md-6 mt-5" style="text-align: center;">
-                <button type="Submit" class="btn btn-primary" (click)="formSubmit()">Submit</button>
+                <button type="Submit" class="btn btn-primary" (click)="formSubmit()">Update</button>
               </div>
     
               <div class="col-md-4 mt-5" style="text-align: center;">
