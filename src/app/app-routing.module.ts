@@ -26,6 +26,7 @@ const routes: Routes = [
   {path: 'updateemployee/:id', component: UpdateEmployeeComponent},
   {path: 'leavereport', component: LeaveReportEmployeeComponent},
   {path: 'leavelist', component: LeaveemployeeListComponent},
+  {path: 'leavelist/leavereport', component: LeaveReportEmployeeComponent},
   {path: 'leavelist/updateleave/:id', component: UpdateLeaveComponent},
   {path: 'updateleave/:id', component: UpdateLeaveComponent},
   {path: 'addreport', component: AddProjectComponent},

@@ -15,6 +15,14 @@ export class LeaveemployeeListComponent implements OnInit
     leaveList: Array<any>=[];
     leaveEmployees:any;
 
+
+    pageObject  = {
+                   page: 0,
+                   size: 2,
+                   totalPage:0,
+                   totalElements:1
+                }
+
     employee: Employee=new Employee();
 
   constructor(private leaveService: LeaveService,
@@ -24,15 +32,68 @@ export class LeaveemployeeListComponent implements OnInit
   
   ngOnInit(): void 
   {
-   let res=this.leaveService.getLeave();
+  /* let res=this.leaveService.getLeave();
  
     res.subscribe((data)=>
       {
         console.log(data);
         this.leaveEmployees=data;
-        
-      })
+       })*/
+
+       this.getPagination();
   }
+
+
+
+     getPagination()
+     {
+         this.leaveService.getLeavePagination(this.pageObject.page, this.pageObject.size).subscribe((data: any)=>
+            {
+              console.log(data);
+              this.leaveEmployees=data.content;
+              console.log(data.content.totalPages);
+              console.log("number");
+              this.pageObject.page=data.content.number;
+              this.pageObject.totalPage=data.content.totalPages
+                  
+            })
+     }    
+
+
+     myFuction(event:any,value: any)
+     {
+
+      if(event == 'prev')
+                {
+                  this.pageObject.page = value- 1;
+                  if(this.pageObject.page >-1 && event =='prev' && this.pageObject.totalPage >this.pageObject.page)
+                  {
+                    this.getPagination();
+                    console.log("prev B");
+                    
+                  }
+                 
+
+               if(event == 'next')
+                {
+                this.pageObject.page = value+1;
+                 
+                if(event =='next' && this.pageObject.totalPage >this.pageObject.page)
+                {
+          
+                  this.getPagination();
+                  console.log("Next b");
+                  
+                }else
+                {
+                 alert("This is last Page !!!");
+                }
+      
+                }
+              }
+            }
+
+   
 
   updateLeave(leaveId: number)
   {

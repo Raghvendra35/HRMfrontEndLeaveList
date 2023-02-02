@@ -15,23 +15,94 @@ export class EmployeeListComponent implements OnInit
     // employees: Employee[];
 
   employeeList :Array<any>=[];
-
   employees:any;
 
+  pageObject ={
+
+    page: 0,
+    size: 5,
+    totalPage:0
+  }
+  
+
+  
     constructor(private employeeService: EmployeeService, private router: Router){}
   
     
     ngOnInit(): void 
     {
-      let resp=this.employeeService.getEmployee();
-       resp.subscribe((data)=>
-        {
-       //   console.log(data);
+      // let resp=this.employeeService.getEmployee();
+      //  resp.subscribe((data)=>
+      //   {
+      //  //   console.log(data);
           
-          this.employees=data;
-        });
+      //     this.employees=data;
+      //   });
     
+      this.getPagination();
     }
+
+
+      getPagination()
+      {
+        this.employeeService.getEmployeePagination(this.pageObject.page, this.pageObject.size).subscribe((data:any)=>
+        {
+          console.log(data);
+            this.employees=data.content;
+            this.pageObject.page=data.response.content;
+            this.pageObject.totalPage=data.response.totalPages
+        })
+      }
+  
+
+      myFuction(event:any,value: any)
+      {
+          //console.log(event);
+           if(event == 'prev')
+           {
+             this.pageObject.page = value- 1;
+             if(this.pageObject.page >-1 && event =='prev' && this.pageObject.totalPage >this.pageObject.page)
+             {
+               this.getPagination();
+               console.log("prev B");
+               
+             }
+            }
+
+          if(event == 'next')
+           {
+           this.pageObject.page = value+1;
+            
+           if(event =='next' && this.pageObject.totalPage >this.pageObject.page)
+           {
+             this.getPagination();
+             console.log("Next b");
+             
+           }else
+           {
+            alert("This is last Page !!!");
+           }
+ 
+           }
+         
+    }
+        
+                 
+                      
+                 
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -45,6 +116,7 @@ export class EmployeeListComponent implements OnInit
     }
   
    
+
     
     updateEmployee(employeeId:number)
     {
@@ -53,6 +125,8 @@ export class EmployeeListComponent implements OnInit
     }
 
   
+
+
 
     getEmployeeById(id:any){
 

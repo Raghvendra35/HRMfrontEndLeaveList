@@ -15,8 +15,17 @@ export class SalaryListComponent implements OnInit
   salaryList :Array<any>=[];
   salary:any;
 
-  emplpoyee: Employee=new Employee();
   
+   pageObject  = {
+                  page : 0,
+                  size: 5,
+                  totalPage:0
+                  }
+
+
+  emplpoyee: Employee=new Employee();
+  addSalary: AddSalary=new AddSalary();
+
   constructor(private salaryService: SalaryService,
               private router: Router){}
   
@@ -25,14 +34,68 @@ export class SalaryListComponent implements OnInit
   ngOnInit(): void 
   {
    
-    let resp=this.salaryService.getSalary();
+    // let resp=this.salaryService.getSalary();
        
-    resp.subscribe((data)=>
-    {
-       console.log(data);
-       this.salary=data;
-    });
+    // resp.subscribe((data)=>
+    // {
+    //    console.log(data);
+    //    this.salary=data;
+    // });
+
+   this.getPagination();
   }
+
+   
+     getPagination()
+     {
+      this.salaryService.getSalaryPagination(this.pageObject.page, this.pageObject.size).subscribe((data: any)=>
+      {
+        console.log(data);
+        this.salary=data.content;
+        this.pageObject.page=data.response.number;
+        this.pageObject.totalPage=data.response.totalPages
+      })
+     }
+
+
+
+       myFuction(event: any,value: any)
+       {
+          
+          if(event =='prev')
+          {
+            this.pageObject.page = value- 1;
+            if(this.pageObject.page >-1 && event =='prev' && this.pageObject.totalPage >this.pageObject.page)
+            {
+              this.getPagination();
+              console.log("prev B");
+              
+            }
+          }
+          if(event == 'next')
+          {
+          this.pageObject.page = value+1;
+           
+          if(event =='next' && this.pageObject.totalPage >this.pageObject.page)
+          {
+    
+            this.getPagination();
+            console.log("Next b");
+            
+          }else
+          {
+           alert("This is last Page !!!");
+          }
+
+          }
+
+       }
+
+
+
+
+
+
 
 
   

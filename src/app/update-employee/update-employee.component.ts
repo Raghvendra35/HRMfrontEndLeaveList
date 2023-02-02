@@ -11,13 +11,20 @@ import { EmployeeService } from '../employee.service';
 export class UpdateEmployeeComponent implements OnInit
  {
 
+ // address:Array<Address> = [];
+  //curAddressList :Array<any>=[];
+
+
+
+
+  
   employeeId: number;
   id: number;
 
+  
   employee: Employee = new Employee();
  
   address: Address=new Address();
-  
   perAddress: Address = new Address();
   curAddress: Address=new Address();
 
@@ -46,9 +53,18 @@ export class UpdateEmployeeComponent implements OnInit
 
     this.employeeService.getEmployeeById(this.employeeId).subscribe(data =>
       {
-        this.employee =data;
-        console.log(this.employee);
         
+        this.employee =data;
+        this.perAddress = data.address[0];
+        this.curAddress = data.address[1];
+        this.qualification10 = data.qualification[0];
+        this.qualification12 = data.qualification[1];
+        this.qualificationBachelor = data.qualification[2];
+        this.qualificationMaster = data.qualification[3];
+        
+
+
+      
       }, error => console.log(error));
   }
    
@@ -73,13 +89,7 @@ export class UpdateEmployeeComponent implements OnInit
 
     console.log( this.employee);
     
-    // if (this.employee.firstName == '' || this.employee.firstName == null) {
-    //   alert("Employee name is required");
-    //   return;
-    // }
-
-
-    this.employeeService.updateEmployee(this.employeeId, this.employee).subscribe((data) => {
+     this.employeeService.updateEmployee(this.employeeId, this.employee).subscribe((data) => {
       console.log(data);
 
       alert('Updated !!!');

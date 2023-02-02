@@ -29,13 +29,7 @@ export class AddprojectService {
   }
   
 
-  
-  getProjectPagination(pageNumber:number, pageSize:number)
-  {
-    return this.httpClient.get(`${baseURL}/api/addproject/pagination?${pageNumber}?${pageSize}`);
-  }
-  
-  
+ 
   
   deleteProject(id:number)
   {
@@ -56,4 +50,13 @@ export class AddprojectService {
     return this.httpClient.get<AddProject>(`${baseURL}/api/addproject/getby/${projectId}`);
   }
 
+
+  
+   
+  getProjectPagination(pageNumber=0, pageSize=5)
+  {
+    return this.httpClient.get(`${baseURL}/api/addproject/pagination?page=${pageNumber}&size=${pageSize}`);
+  }
+  
+  
 }

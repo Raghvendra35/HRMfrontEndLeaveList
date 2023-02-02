@@ -9,7 +9,7 @@
 </nav>
 
 
-<table class="table mt-3">
+<table class="table mt- table-bordered">
 <thead>
     <tr>
         <th scope="col">index</th>
@@ -26,9 +26,9 @@
     
 </thead>
  <tbody>
-    <tr *ngFor="let projects of addProjects; let i=index">
+    <tr *ngFor="let projects of addProjects ">
         
-        <td>{{i+1}}</td>
+        <td>{{1}}</td>
         <td>{{projects.projectName}}</td>
         <td>{{projects.clientName}}</td>
         <td>{{projects.developingTechnology}}</td>
@@ -63,12 +63,13 @@
 </nav>
 -->
 
-<a href="#"  class="previous round">&#8249;</a>
-<a href="#"  class="next round">&#8250;</a>
+<!-- <a href="#"  class="previous round">&#8249;</a>
+<a href="#"  class="next round">&#8250;</a> -->
 
 <!--
 <a href="#" class="previous">&laquo; Previous</a>
 <a href="#" class="next">Next &raquo;</a>
 -->
 </table>
-<button type="button" (click)= "myFuction($event)" (click)="myPagination()" >Next</button>
+<button type="button" (click)= "myFuction('prev',pageObject.page)"  >Previous</button>
+<button type="button" (click)= "myFuction('next',pageObject.page)"  >Next</button>

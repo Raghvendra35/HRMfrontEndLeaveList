@@ -5,10 +5,30 @@
   
                       
   
-            <div class="col-md-6 mt-3">
+            <!-- <div class="col-md-6 mt-3">
             <label  for="inputname">Months</label>
             <input type="text" [(ngModel)]="addSalary.months"  name="months" class="form-control" placeholder="Months">
-            </div>        
+            </div>         -->
+
+            <div class="col-md-6 mt-4">
+              <label for="validationDefault04" class="form-label">Months</label>
+              <select  [(ngModel)]="addSalary.months"  name="months"  class="form-select" id="validationDefault04" required>
+                <option selected disabled value="">Choose State...</option>
+                <option value="-1">Choose...</option>
+                <option>January </option>
+                <option>February </option>
+                <option>March</option>
+                <option>April</option>
+                <option>May</option>
+                <option>June</option>
+                <option>July</option>
+                <option>August</option>
+                <option>September</option>
+                <option>October</option>
+                <option>November</option>
+                <option>December</option>
+              </select>
+            </div>
   
             <div class="col-md-6 mt-3">
             <label  for="inputname">Amount</label>

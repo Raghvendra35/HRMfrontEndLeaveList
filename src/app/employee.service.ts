@@ -47,4 +47,11 @@ export class EmployeeService {
     {
       return this.httpClient.get<Employee>(`${baseURL}/api/employee/dropdown`);
     }
-}
+
+    
+    getEmployeePagination(pageNumber=0,pageSize=5)
+    {
+       return this.httpClient.get(`${baseURL}/api/employee/pagination?page=${pageNumber}&size=${pageSize}`);
+    }
+
+  }

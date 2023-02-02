@@ -1,14 +1,14 @@
 <nav class="navbar navbar-light bg-primary">
     <div class="container-fluid">
-      <h3 style="color: aliceblue;">HR Managements</h3>
+      <h6 style="color: aliceblue;">HR Managements</h6>
       <div class="d.flex">
-    <button type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn bth-success" ><a routerLink="addproject" class="nav-link">Leave-List</a> </button>
+    <button type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn bth-success" ><a routerLink="/leavereport" class="nav-link">Leave_Report</a> </button>
       </div>  
     </div>
 </nav>
 
 
-<table class="table mt-3">
+<table class="table mt table-bordered">
 <thead>
     <tr>
         <th scope="col">index</th>
@@ -48,3 +48,12 @@
       </tr>
  </tbody>
 
+ <button type="button" class="previous" (click)= "myFuction('prev',pageObject.page)">Previous</button>
+<button type="button" class="next" (click)= "myFuction('next',pageObject.page)">Next</button> 
+
+
+<!-- 
+<div>
+<button href="#" class="back" style="margin-top: 30px;margin-left: 530px;">‹</button>
+<button href="#" class="nexts" style="margin-left: 40px;">›</button>
+</div> -->

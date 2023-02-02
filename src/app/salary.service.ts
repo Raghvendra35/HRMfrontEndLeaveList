@@ -56,4 +56,11 @@ export class SalaryService
    return this.httpClient.delete(`${baseURL}/api/addsalary/${id}`);
   }
 
+
+  
+  getSalaryPagination(pageNumber=0, pageSize=5)
+  {
+    return this.httpClient.get(`${baseURL}/api/addsalary/paginations?page=${pageNumber}&size=${pageSize}`);
+  }
+
 }

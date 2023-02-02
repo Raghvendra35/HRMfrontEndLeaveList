@@ -17,6 +17,8 @@ export class LeaveReportEmployeeComponent implements OnInit
 
   constructor(private leaveService: LeaveService,
               private employeeService: EmployeeService) {}
+
+
  
   ngOnInit(): void
    {
@@ -28,6 +30,8 @@ export class LeaveReportEmployeeComponent implements OnInit
      this.employeeData=data;
     })
    }
+
+
 
 
    formSubmit()
@@ -43,4 +47,5 @@ export class LeaveReportEmployeeComponent implements OnInit
     })
    }
 
+   
 }

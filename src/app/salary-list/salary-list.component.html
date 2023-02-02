@@ -10,7 +10,7 @@
 </nav>
 
 
-<table class="table mt-3">
+<table class="table mt- table-bordered">
 <thead>
     <tr>
         <th scope="col">index</th>
@@ -19,8 +19,7 @@
         <th scope="col">Months</th>
         <th scope="col">Amount</th>
         <th scope="col">Action</th>
-        
-    </tr>
+      </tr>
     
 </thead>
  <tbody>
@@ -47,3 +46,5 @@
          -->
       </tr>
  </tbody>
+ <button type="button" (click)= "myFuction('prev',pageObject.page)"  >Previous</button>
+ <button type="button" (click)= "myFuction('next',pageObject.page)"  >Next</button>

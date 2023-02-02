@@ -39,4 +39,13 @@ export class LeaveService
   {
     return this.httpClient.delete(`${baseURL}/api/leaveemployee/${id}`);
   }
+
+
+
+
+  getLeavePagination(pageNumber=0, pageSize=5)
+  {
+    return this.httpClient.get(`${baseURL}/api/leaveemployee/pagination?page=${pageNumber}&size=${pageSize}`);
+  }
+  
 }

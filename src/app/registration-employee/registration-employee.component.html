@@ -113,7 +113,7 @@
 
 
 <div class="container">
-  <h2 style="text-align: center;" class="mt-5">Create Employee !!!</h2>
+  <h2 style="text-align: center;" class="mt-5">Create Employee </h2>
   <form name="myform" class="form-group" >
       <div class="row jumbotron">
 
@@ -220,10 +220,46 @@
             </div> 
   
 
-          <div class="col-md-6 mt-4">
+          <!-- <div class="col-md-6 mt-4">
             <label  for="inputname">State</label>
             <input type="text"  [(ngModel)]="perAddress.state" name="permanentAddress" class="form-control" placeholder="Permanent-Address">
-            </div> 
+            </div>  -->
+               
+<div class="col-md-6 mt-4">
+  <label for="validationDefault04" class="form-label">State</label>
+  <select  [(ngModel)]="perAddress.state"  class="form-select" id="validationDefault04" required>
+    <option selected disabled value="">Choose State...</option>
+    <option value="-1">Choose...</option>
+    <option>Andhra Pradesh </option>
+    <option>Arunachal Pradesh </option>
+    <option>Assam</option>
+    <option>Bihar</option>
+    <option>Chhattisgarh</option>
+    <option>Goa</option>
+    <option>Gujarat</option>
+    <option>Haryana</option>
+    <option>Himachal Pradesh</option>
+    <option>Jharkhand</option>
+    <option>Karnataka</option>
+    <option>Kerala</option>
+    <option>Madhya Pradesh</option>
+    <option>Maharashtra</option>
+    <option>Meghalaya</option>
+    <option>Mizoram</option>
+    <option>Nagaland</option>
+    <option>Odisha</option>
+    <option>Punjab</option>
+    <option>Rajasthan</option>
+    <option>Sikkim</option>
+    <option>Tamil Nadu</option>
+    <option>Telangana</option>
+    <option>Tripura</option>
+    <option>Uttar Pradesh</option>
+    <option>Uttarakhand</option>
+    <option>West Bengal</option>
+
+  </select>
+</div>
 
   
 
@@ -246,11 +282,48 @@
                   </div> 
         
       
-                <div class="col-md-6 mt-4">
+                <!-- <div class="col-md-6 mt-4">
                   <label  for="inputname">State</label>
                   <input type="text"  [(ngModel)]="curAddress.state"  name="permanentAddress" class="form-control" placeholder="Permanent-Address">
                   </div> 
-      
+       -->
+                
+<div class="col-md-6 mt-4">
+  <label for="validationDefault04" class="form-label">State</label>
+  <select  [(ngModel)]="curAddress.state"  class="form-select" id="validationDefault04" required>
+    <option selected disabled value="">Choose State...</option>
+    <option value="-1">Choose...</option>
+    <option>Andhra Pradesh </option>
+    <option>Arunachal Pradesh </option>
+    <option>Assam</option>
+    <option>Bihar</option>
+    <option>Chhattisgarh</option>
+    <option>Goa</option>
+    <option>Gujarat</option>
+    <option>Haryana</option>
+    <option>Himachal Pradesh</option>
+    <option>Jharkhand</option>
+    <option>Karnataka</option>
+    <option>Kerala</option>
+    <option>Madhya Pradesh</option>
+    <option>Maharashtra</option>
+    <option>Meghalaya</option>
+    <option>Mizoram</option>
+    <option>Nagaland</option>
+    <option>Odisha</option>
+    <option>Punjab</option>
+    <option>Rajasthan</option>
+    <option>Sikkim</option>
+    <option>Tamil Nadu</option>
+    <option>Telangana</option>
+    <option>Tripura</option>
+    <option>Uttar Pradesh</option>
+    <option>Uttarakhand</option>
+    <option>West Bengal</option>
+
+  </select>
+</div>
+
 
           
                   <div>
@@ -384,5 +457,110 @@
 
  </div>
 
+
+ <div class="container box">
+  <div class="row">
+    <div class="col-2 bg-primary">
+     Course
+    </div>
+    <div class="col-4 bg-primary">
+      Board/University
+    </div>
+    <div class="col-2  bg-primary">
+      Passingyear
+    </div>
+    <div class="col-2 bg-primary">
+      Percantage
+    </div>
+    <div class="col-2 bg-primary">
+      Status
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+ <div class="container">
+  <div class="row">
+    <div class="col-2 bg-success">
+      HighSchool
+    </div>
+    <div class="col-4">
+      One of three columns
+    </div>
+    <div class="col-2">
+      One of three columns
+    </div>
+    <div class="col-2">
+      One of three columns
+    </div>
+    <div class="col-2">
+      One of three columns
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-2 bg-success">
+     Intermediate/Diploma
+    </div>
+    <div class="col-4">
+      One of three columns
+    </div>
+    <div class="col-2">
+      One of three columns
+    </div>
+    <div class="col-2">
+      One of three columns
+    </div>
+    <div class="col-2">
+      One of three columns
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-2 bg-success">
+      Bachelor degree's
+    </div>
+    <div class="col-4">
+      One of three columns
+    </div>
+    <div class="col-2">
+      One of three columns
+    </div>
+    <div class="col-2">
+      One of three columns
+    </div>
+    <div class="col-2">
+      One of three columns
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-2 bg-success">
+      Master degree's
+    </div>
+    <div class="col-4">
+      One of three columns
+    </div>
+    <div class="col-2">
+      One of three columns
+    </div>
+    <div class="col-2">
+      One of three columns
+    </div>
+    <div class="col-2">
+      One of three columns
+    </div>
+  </div>
+</div>
 
 
