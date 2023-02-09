@@ -1,0 +1,31 @@
+<p style="margin-top: 60px;">image-upload works!</p>
+
+
+
+
+
+<div class="container row">
+    <div class="col-md-3">
+        <!-- <input type="file" (change)="onFileChanged($event)"> -->
+        <input type="file" [(ngModel)]="imageAndFile.filePath" name="filePath" (change)="onFileSelected($event)">
+    </div>
+    <div class="col-md-3">
+        <!-- <input type="button" (click)="onUpload()" value="upload"> -->
+        <input type="button" (click)="uploadImage()" value="Upload">
+    </div>
+  </div>
+  
+
+  
+  <form (ngSubmit)="uploadImage()">
+    <input ng-model="file_upload" name="file" type="file" (change)="onFileSelected($event)" #fileInput>
+    <button type="submit">Submit</button>
+</form>
+
+
+
+
+
+
+
+

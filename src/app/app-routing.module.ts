@@ -5,6 +5,7 @@ import { AddSalaryComponent } from './add-salary/add-salary.component';
 import { DetailsPageComponent } from './details-page/details-page.component';
 import { EmployeeListComponent } from './employee-list/employee-list.component';
 import { HomeComponent } from './home/home.component';
+import { ImageUploadComponent } from './image-upload/image-upload.component';
 import { LeaveReportEmployeeComponent } from './leave-report-employee/leave-report-employee.component';
 import { LeaveemployeeListComponent } from './leaveemployee-list/leaveemployee-list.component';
 import { LoginComponent } from './login/login.component';
@@ -16,6 +17,8 @@ import { UpdateEmployeeComponent } from './update-employee/update-employee.compo
 import { UpdateLeaveComponent } from './update-leave/update-leave.component';
 import { UpdateProjectsComponent } from './update-projects/update-projects.component';
 import { UpdateSalaryComponent } from './update-salary/update-salary.component';
+import { UploadfileService } from './uploadfile.service';
+import { UploadfilesComponent } from './uploadfiles/uploadfiles.component';
 
 
 const routes: Routes = [
@@ -37,6 +40,7 @@ const routes: Routes = [
   {path: 'salarylist', component: SalaryListComponent},
   {path: 'updatesalary/:id', component: UpdateSalaryComponent},
   {path: 'employeelist/detailspage/:id', component: DetailsPageComponent},
+  {path: 'imagelist', component: UploadfilesComponent},
   {path: '', redirectTo: '', pathMatch: 'full'}
 ];
 

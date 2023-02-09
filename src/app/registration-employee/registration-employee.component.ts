@@ -57,7 +57,8 @@ export class RegistrationEmployeeComponent implements OnInit {
     }
 
 
-    this.employeeService.addEmployee(this.employee).subscribe((data) => {
+    this.employeeService.addEmployee(this.employee).subscribe((data) => 
+    {
       console.log(data);
 
       alert('Saved !!!');

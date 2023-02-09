@@ -20,6 +20,7 @@ export class Employee
     dateOfBirth:string;
     address:Array<Address> = [];
     qualification:Array<Qualification>=[];
+    employeeImage:Array<EmployeeImage>=[];
 
   }
 
@@ -33,6 +34,7 @@ export class  Address
       typeOfAddress: string;
       }
 
+      
    export class  Qualification 
       {
             qaulificationId: number;
@@ -44,4 +46,13 @@ export class  Address
         }
   
 
+     
+
+    export class EmployeeImage
+    {
+       imageId:number;
+       name: string;
+       imageType: string;
+       imageData:any;
+    }
   

@@ -22,6 +22,8 @@ import { LeaveemployeeListComponent } from './leaveemployee-list/leaveemployee-l
 import { CommonModule } from '@angular/common';
 import { UpdateSalaryComponent } from './update-salary/update-salary.component';
 import { UpdateLeaveComponent } from './update-leave/update-leave.component';
+import { ImageUploadComponent } from './image-upload/image-upload.component';
+import { UploadfilesComponent } from './uploadfiles/uploadfiles.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +44,8 @@ import { UpdateLeaveComponent } from './update-leave/update-leave.component';
     LeaveemployeeListComponent,
     UpdateSalaryComponent,
     UpdateLeaveComponent,
+    ImageUploadComponent,
+    UploadfilesComponent,
   
     
   ],

@@ -19,10 +19,16 @@ export class LeaveService
     return this.httpClient.get(`${baseURL}/api/leaveemployee`);
   }
 
+
+  
+
   saveLeave(leaveEmployee: LeaveEmployee)
   {
     return this.httpClient.post<LeaveEmployee>(`${baseURL}/api/leaveemployee`,leaveEmployee);
   }
+
+
+
 
 
   updateLeave(leaveId:any, leaveEmployee: LeaveEmployee)
