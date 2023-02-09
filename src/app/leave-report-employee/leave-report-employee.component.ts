@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { EmployeeService } from '../employee.service';
 import { LeaveService } from '../leave.service';
 import { LeaveEmployee } from '../leave';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-leave-report-employee',
@@ -16,7 +18,8 @@ export class LeaveReportEmployeeComponent implements OnInit
   leaveEmployee: LeaveEmployee=new LeaveEmployee();
 
   constructor(private leaveService: LeaveService,
-              private employeeService: EmployeeService) {}
+              private employeeService: EmployeeService,
+              private router: Router) {}
 
 
  
@@ -41,6 +44,7 @@ export class LeaveReportEmployeeComponent implements OnInit
     this.leaveService.saveLeave(this.leaveEmployee).subscribe((data)=>
     {
        alert("Saved Leave !!!");
+       this.router.navigate(['leavelist']);
     }, (error)=>
     {
       alert("Failed !!!");

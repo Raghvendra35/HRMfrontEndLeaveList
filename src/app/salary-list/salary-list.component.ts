@@ -4,6 +4,7 @@ import { AddSalary } from '../salary';
 import { Employee } from '../employee';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-salary-list',
   templateUrl: './salary-list.component.html',
@@ -52,8 +53,12 @@ export class SalaryListComponent implements OnInit
       {
         console.log(data);
         this.salary=data.content;
-        this.pageObject.page=data.response.number;
-        this.pageObject.totalPage=data.response.totalPages
+        this.pageObject.page=data.number;
+        console.log(this.pageObject.page);
+     //   console.log("page");
+        
+        this.pageObject.totalPage=data.totalPages;
+       // console.log(this.pageObject.totalPage);
       })
      }
 
@@ -62,7 +67,7 @@ export class SalaryListComponent implements OnInit
        myFuction(event: any,value: any)
        {
           
-          if(event =='prev')
+         if(event =='prev')
           {
             this.pageObject.page = value- 1;
             if(this.pageObject.page >-1 && event =='prev' && this.pageObject.totalPage >this.pageObject.page)
@@ -72,13 +77,15 @@ export class SalaryListComponent implements OnInit
               
             }
           }
+
+          
           if(event == 'next')
           {
           this.pageObject.page = value+1;
            
-          if(event =='next' && this.pageObject.totalPage >this.pageObject.page)
+          if(event =='next' && this.pageObject.totalPage>this.pageObject.page)
           {
-    
+           console.log(this.pageObject.totalPage);
             this.getPagination();
             console.log("Next b");
             

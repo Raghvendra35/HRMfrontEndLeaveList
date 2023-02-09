@@ -1,4 +1,4 @@
-<nav class="navbar navbar-light bg-primary">
+<nav class="navbar navbar-light bg-primary" style="margin-top: 55px;">
     <div class="container-fluid">
       <h3 style="color: aliceblue;">HR Managements</h3>
       <div class="d.flex">
@@ -9,9 +9,10 @@
     </div>
 </nav>
 
-
+<diV  style="margin-left: 16px; margin-right: 16px; width: 1350px;">
 <table class="table mt- table-bordered">
-<thead>
+
+  <thead>
     <tr>
         <th scope="col">index</th>
         <th scope="col">EmployeeName</th>
@@ -22,6 +23,7 @@
       </tr>
     
 </thead>
+
  <tbody>
     <tr *ngFor="let empSalary of salary; let i=index">
         <td>{{i+1}}</td>
@@ -33,7 +35,7 @@
        
 
         <button class="btn btn-info" (click) = "updateSalary(empSalary.salaryId)">
-        <a routerLink="/updatesalary/{/empSalary.salaryId}">Edit</a></button>
+                              <a routerLink="/updatesalary/{/empSalary.salaryId}">Edit</a></button>
           
         <button class="btn btn-danger" (click)="deleteSalary(empSalary.salaryId)" style="color:black">Delete</button>
          
@@ -46,5 +48,9 @@
          -->
       </tr>
  </tbody>
- <button type="button" (click)= "myFuction('prev',pageObject.page)"  >Previous</button>
- <button type="button" (click)= "myFuction('next',pageObject.page)"  >Next</button>
+</table>
+ <button type="button" (click)= "myFuction('prev',pageObject.page)" style="background-color: rgb(189, 189, 228); border-radius: 15px; margin-left: 30px; margin-top: 15px;"><</button>
+ <button type="button" (click)= "myFuction('next',pageObject.page)" style="background-color: rgb(189, 189, 228); border-radius: 15px; margin-left: 10px;">></button>
+
+
+</diV>

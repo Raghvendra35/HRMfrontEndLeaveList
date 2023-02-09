@@ -52,14 +52,22 @@
     </form>
   
    </div> -->
-
+   <!-- <section class="vh-100 gradient-custom"  style="background-color:rgb(155, 154, 156); margin-top: 56px;">
+    <div class="container py-5 h-100">
+      <div class="row justify-content-center align-items-center h-100">
+        <div class="col-12 col-lg-9 col-xl-7">
+          <div class="card shadow-2-strong card-registration" style="border-radius: 15px; width: 900px; margin-left: -100px;" >
   
-<div class="container">
-  <h2 style="text-align: center;" class="mt-5"> Update Projets Here</h2>
+
+
+
+
+<div class="container" style="margin-top: 105px;">
+  <h2 style="text-align: center;" class="mt-1"> Update Projets Here</h2>
   <form name="myform" class="form-group">
       <div class="row jumbotron">
 
-          <div class="col-md-6 mt-4">
+          <div class="col-md-6 mt-1">
           <label  for="inputname">Project Name</label>
           <input type="text" [(ngModel)]="addProject.projectName"  name="projectName" class="form-control" placeholder="Project-Name">
           </div> 
@@ -116,3 +124,107 @@
   </form>
 
  </div>
+
+
+ 
+</div>
+</div>
+</div>
+</div>
+</section> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="vh-100 gradient-custom"  style="background-color:rgb(155, 154, 156); margin-top: 56px;">
+  <div class="container py-5 h-100">
+    <div class="row justify-content-center align-items-center h-100">
+      <div class="col-12 col-lg-9 col-xl-7">
+        <div class="card shadow-2-strong card-registration" style="border-radius: 15px; width: 850px; margin-left: -100px;" >
+
+
+
+<div class="container; container py-5 h-100;" style="width: 750px;">
+    <h2 style="text-align: center;" class="mt-2"> Update Projets </h2>
+    <form name="myform" class="form-group">
+        <div class="row jumbotron">
+  
+            <div class="col-md-6 mt-4">
+            <label  for="inputname">Project Name</label>
+            <input type="text" [(ngModel)]="addProject.projectName"  name="projectName" class="form-control" placeholder="Project-Name">
+            </div> 
+            
+            <div class="col-md-6 mt-4">
+            <label  for="inputname">Client Name</label>
+            <input type="text" [(ngModel)]="addProject.clientName" name="clientName" class="form-control" placeholder="Client-Name">
+            </div> 
+  
+            <div class="col-md-6 mt-3">
+            <label  for="inputname">Developing Technology</label>
+            <input type="text" [(ngModel)]="addProject.developingTechnology"  name="contact" class="form-control" placeholder="Developing-technology">
+            </div>        
+  
+            <div class="col-md-6 mt-3">
+            <label  for="inputname">Database</label>
+            <input type="text" [(ngModel)]="addProject.databaseTechnology" name="databaseTechnology" class="form-control" placeholder="Database">
+            </div> 
+           
+           
+            <div class="col-md-6 mt-3">
+            <label  for="inputname">From Date</label>
+            <input type="date" [(ngModel)]="addProject.fromDate"  name="fromDate"  class="form-control" placeholder="">
+            </div>     
+  
+            <div class="col-md-6 mt-3">
+            <label  for="inputname">To Date</label>
+            <input type="date" [(ngModel)]="addProject.toDate" name="toDate" class="form-control" placeholder="">
+            </div>
+            
+            <div class="col-md-6 mt-4">
+              <label  for="inputname">Team Leader</label>
+              <input type="text"  [(ngModel)]="addProject.teamLeader" name="teamLeader"  class="form-control" placeholder="Team-Leader">
+              </div>   
+              
+
+            <div class="col-md-6 mt-4">
+              <label for="validationDefault04" class="form-label">Employee Name</label>
+              <select (click)="getEmployeeId(addProject.employee.employeeId)" [(ngModel)]="addProject.employeeId"  name="employeeId"  class="form-select" id="validationDefault04" required>
+                <option>Select One</option>
+              <option>{{addProject.employee.firstName}}</option>
+             </select>
+        </div>
+            
+        
+        </div>
+           <div class="row">
+        <div class="col-md-6 mt-3" style="text-align: center;">
+            <button type="Submit" class="btn btn-primary" (click)="formSubmit()" >Submit</button>
+          </div>
+        <div class="col-md-6 mt-3" style="text-align: center;">
+            <button type="reset" class="btn btn-danger"  >Cancel</button>
+          </div>
+       </div>
+  
+    </form>
+  
+   </div>
+
+
+  </div>
+</div>
+</div>
+</div>
+</section>
+  

@@ -1,12 +1,21 @@
+  
+  
 
 
-<div class="container; container py-5 h-100;"  style="margin-left: 390px;">
+  
+
+<!-- 
+<div style="background-color: blanchedalmond;">
+
+  <div class="container; container py-5 h-100;" style=" margin-left: 250px;margin-right: 250px; background-color: rgb(150, 100, 36); text-align: center;" >
    
-    <form name="myform" class="form-group" >
-      <h2 style="margin-left: 150px;" class="mt-5">Leave Report </h2>
+    <div style="text-align: center;">
+      <h2  class="mt-5" style="margin-left: 90px;">Leave Report </h2>
+      <form name="myform" class="form-group" style="text-align:center; padding-left: 100px; padding-right: 100px;">
+        
       <div class="row jumbotron">
         
-            <div class="col-md-3 mt-4">
+            <div class="col-md-3 mt-4 center" >
             <label  for="inputname">From Date</label>
             <input type="date" [(ngModel)]="leaveEmployee.fromDate"  name="fromDate" class="form-control" placeholder="">
             </div> 
@@ -16,7 +25,7 @@
               <input type="date" [(ngModel)]="leaveEmployee.toDate" name="toDate" class="form-control" placeholder="">
             </div>
       </div>
-           <!-- <div class="row"> 
+          <div class="row"> 
             <div class="col-md-6 mt-4">
             <label  for="inputname">To Date</label>
             <input type="date" [(ngModel)]="leaveEmployee.toDate" name="toDate" class="form-control" placeholder="">
@@ -27,7 +36,7 @@
             <input type="message"  name="contact" class="form-control" placeholder="" style="height: 130px;">
             </div>     -->
             
-            <div class="row">
+            <!-- <div class="row">
               <div class="col-md-6 mt-4">
                 <label for="validationDefault04" class="form-label">Employee Name</label>
                 <select    [(ngModel)]="leaveEmployee.employeeId" name="employeeId" class="form-select" id="validationDefault04" required>
@@ -36,11 +45,11 @@
                   {{data.firstName}} ({{data.emailId}})
                 </option>
                </select>
-          </div>
-          </div>
+             </div>
+          </div> -->
           
              
-  
+<!--   
             <div class="row">
             <div class="col-md-6 mt-3">
               <label for="exampleFormControlTextarea1"  class="form-label">Reason for Leave</label>
@@ -58,6 +67,95 @@
               <div class="col-md-3 mt-5" style="text-align: center;">
                 <button type="reset" class="btn btn-danger">Cancel</button>
               </div>
+     </div> -->
+     <!-- </form>
      </div>
-     </form>
      </div>
+
+
+     </div> --> 
+
+   
+
+
+
+
+
+     <section class="vh-100 gradient-custom"  style="background-color:rgb(155, 154, 156); margin-top: 56px;">
+      <div class="container py-5 h-100">
+        <div class="row justify-content-center align-items-center h-100">
+          <div class="col-12 col-lg-9 col-xl-7">
+            <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+              <div class="card-body p-4 p-md-5">
+                <h3 class="mb-4 pb-2 pb-md-0 mb-md-5" style="padding-left: 180px;">Leave Report</h3>
+                <form name="myform" class="form-group">
+                  
+                  
+
+
+                  <div class="row">
+                    <div class="col-md-6 mt-3">
+                        <label  for="inputname">Employee</label>
+                        <select    [(ngModel)]="leaveEmployee.employeeId" name="employeeId" class="form-select" id="validationDefault04" required>
+                          <option>Select One</option>
+                            <option  *ngFor="let data of employeeData" [value]="data.employeeId">
+                              {{data.firstName}} ({{data.emailId}})
+                            </option>
+                         </select>
+                     </div>   
+                    </div>
+
+
+
+
+                  <div class="row jumbotron">
+            
+                  
+                        <div class="col-md-6 mt-4">
+                           <label  for="inputname">From Date</label>
+                            <input type="date" [(ngModel)]="leaveEmployee.fromDate"  name="fromDate" class="form-control" placeholder="">
+                         </div> 
+                      
+                          <div class="col-md-6 mt-4">
+                                <label  for="inputname">To Date</label>
+                                <input type="date" [(ngModel)]="leaveEmployee.toDate" name="toDate" class="form-control" placeholder="">
+                           </div>             
+               
+                      </div>
+
+
+
+            
+                                       
+                      <div class="row">
+                        <div class="col-md-12 mt-3">
+                         <label  for="inputname">Reason fro Leave</label>
+                          <textarea [(ngModel)]="leaveEmployee.reasonToLeave" name="reasonToLeave" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                      </div>    
+                     </div>
+
+
+                      <div class="row"> 
+                            <div class="col-md-4 mt-5" style="text-align: center;">
+                             <button type="Submit" class="btn btn-primary" (click)="formSubmit()">Submit</button>
+                            </div>       
+               
+
+                          <div class="col-md-4 mt-5" style="text-align: center;">
+                          <button type="reset" class="btn btn-danger">Cancel</button>
+                         </div>
+                           
+                     </div>
+               
+              
+              
+              
+              
+              
+              </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>

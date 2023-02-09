@@ -4,6 +4,8 @@ import { LeaveEmployee } from '../leave';
 import { Employee } from '../employee';
 import { Router } from '@angular/router';
 
+
+
 @Component({
   selector: 'app-leaveemployee-list',
   templateUrl: './leaveemployee-list.component.html',
@@ -11,6 +13,9 @@ import { Router } from '@angular/router';
 })
 export class LeaveemployeeListComponent implements OnInit
  {
+     
+
+
 
     leaveList: Array<any>=[];
     leaveEmployees:any;
@@ -18,15 +23,18 @@ export class LeaveemployeeListComponent implements OnInit
 
     pageObject  = {
                    page: 0,
-                   size: 2,
+                   size: 5,
                    totalPage:0,
-                   totalElements:1
+                   
                 }
 
     employee: Employee=new Employee();
+    leaveEmployee: LeaveEmployee=new LeaveEmployee();
 
   constructor(private leaveService: LeaveService,
-              private router: Router){}
+              private router: Router){
+                
+              }
 
   
   
@@ -41,9 +49,12 @@ export class LeaveemployeeListComponent implements OnInit
        })*/
 
        this.getPagination();
+
+      
+       
   }
 
-
+    
 
      getPagination()
      {
@@ -53,8 +64,10 @@ export class LeaveemployeeListComponent implements OnInit
               this.leaveEmployees=data.content;
               console.log(data.content.totalPages);
               console.log("number");
-              this.pageObject.page=data.content.number;
-              this.pageObject.totalPage=data.content.totalPages
+              this.pageObject.page=data.number;
+              console.log(this.pageObject.page);
+              
+              this.pageObject.totalPage=data.totalPages
                   
             })
      }    
@@ -63,7 +76,7 @@ export class LeaveemployeeListComponent implements OnInit
      myFuction(event:any,value: any)
      {
 
-      if(event == 'prev')
+         if(event == 'prev')
                 {
                   this.pageObject.page = value- 1;
                   if(this.pageObject.page >-1 && event =='prev' && this.pageObject.totalPage >this.pageObject.page)
@@ -72,8 +85,10 @@ export class LeaveemployeeListComponent implements OnInit
                     console.log("prev B");
                     
                   }
-                 
+                }    
 
+
+             
                if(event == 'next')
                 {
                 this.pageObject.page = value+1;
@@ -90,7 +105,7 @@ export class LeaveemployeeListComponent implements OnInit
                 }
       
                 }
-              }
+              
             }
 
    

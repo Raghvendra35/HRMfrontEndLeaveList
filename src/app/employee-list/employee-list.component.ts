@@ -49,8 +49,9 @@ export class EmployeeListComponent implements OnInit
         {
           console.log(data);
             this.employees=data.content;
-            this.pageObject.page=data.response.content;
-            this.pageObject.totalPage=data.response.totalPages
+            this.pageObject.page=data.number;
+            console.log(this.pageObject.page);
+             this.pageObject.totalPage=data.totalPages
         })
       }
   

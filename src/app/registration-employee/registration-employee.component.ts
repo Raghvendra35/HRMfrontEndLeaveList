@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Address, Employee, Qualification } from '../employee';
 import { EmployeeService } from '../employee.service';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-registration-employee',
@@ -20,7 +21,8 @@ export class RegistrationEmployeeComponent implements OnInit {
   qualificationBachelor: Qualification=new Qualification();
   qualificationMaster: Qualification=new Qualification();
 
-  constructor(private employeeService: EmployeeService) { }
+  constructor(private employeeService: EmployeeService,
+               private router: Router) { }
 
 
  ngOnInit() { }
@@ -58,9 +60,9 @@ export class RegistrationEmployeeComponent implements OnInit {
     this.employeeService.addEmployee(this.employee).subscribe((data) => {
       console.log(data);
 
-      alert('success');
+      alert('Saved !!!');
       console.log("SAVE----" + data);
-
+      this.router.navigate(["employeelist"]);
     }, (error) => {
       console.log(error);
       alert("Failed");

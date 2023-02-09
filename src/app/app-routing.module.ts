@@ -19,8 +19,8 @@ import { UpdateSalaryComponent } from './update-salary/update-salary.component';
 
 
 const routes: Routes = [
-  {path: 'employeelist', component: EmployeeListComponent},
   {path: '', component: HomeComponent},
+  {path: 'employeelist', component: EmployeeListComponent},
   {path: 'login', component: LoginComponent},
   {path: 'employeelist/registration', component: RegistrationEmployeeComponent},
   {path: 'updateemployee/:id', component: UpdateEmployeeComponent},

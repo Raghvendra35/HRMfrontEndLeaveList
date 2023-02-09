@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { AddProject } from '../addproject';
 import { AddprojectService } from '../addproject.service';
 import { EmployeeService } from '../employee.service';
+import { Router } from '@angular/router';
+
+
 
 @Component({
   selector: 'app-add-project',
@@ -12,11 +15,13 @@ export class AddProjectComponent implements OnInit
 {
 
     employeeData: any;
+    teamLeaders: any;
 
     addProject: AddProject=new AddProject();
 
     constructor(private addProjectService: AddprojectService,
-                private employeeService: EmployeeService){}
+                private employeeService: EmployeeService,
+                private router: Router){}
 
 
    ngOnInit(): void {
@@ -28,6 +33,12 @@ export class AddProjectComponent implements OnInit
      console.log(data);
      this.employeeData=data;
     })
+
+     this.addProjectService.getProjects().subscribe((data)=>
+     {
+      this.teamLeaders=data;
+     })
+
   }
 
   formSubmit()
@@ -36,7 +47,7 @@ export class AddProjectComponent implements OnInit
     this.addProjectService.saveProject(this.addProject).subscribe((data)=>
     {
       alert("Saved !!!");
-    
+      this.router.navigate(['projectlist']);
     },(error)=>
     {
       alert("Failed !!!");

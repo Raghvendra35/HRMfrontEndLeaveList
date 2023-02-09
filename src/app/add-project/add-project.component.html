@@ -1,6 +1,14 @@
 
+<section class="vh-100 gradient-custom"  style="background-color:#D5D8DC; margin-top: 56px;">
+  <div class="container py-5 h-100">
+    <div class="row justify-content-center align-items-center h-100">
+      <div class="col-12 col-lg-9 col-xl-7">
+        <div class="card shadow-2-strong card-registration" style="border-radius: 15px; width: 850px; margin-left: -100px;" >
+
+
+
 <div class="container; container py-5 h-100;" style="width: 750px;">
-    <h2 style="text-align: center;" class="mt-5"> Add Projets Here</h2>
+    <h2 style="text-align: center;" class="mt-2"> Add Projets Here</h2>
     <form name="myform" class="form-group">
         <div class="row jumbotron">
   
@@ -35,11 +43,21 @@
             <input type="date" [(ngModel)]="addProject.toDate" name="toDate" class="form-control" placeholder="">
             </div>
             
-            <div class="col-md-6 mt-3">
+            <!-- <div class="col-md-6 mt-3">
               <label  for="inputname">Team Leader</label>
               <input type="text"  [(ngModel)]="addProject.teamLeader" name="teamLeader"  class="form-control" placeholder="Team-Leader">
-              </div>   
+              </div>    -->
               
+              <div class="col-md-6 mt-4">
+                <label  for="inputname">Team Leader</label>
+                <select  [(ngModel)]="addProject.teamLeader" name="teamLeader"  class="form-control" placeholder="Team-Leader" required>
+                <option>Select One</option>
+                <option  *ngFor="let data of teamLeaders" [value]="data.teamLeader">
+                  {{data.teamLeader}} 
+                </select>
+                </div>   
+                
+
 
             <div class="col-md-6 mt-4">
               <label for="validationDefault04" class="form-label">Employee Name</label>
@@ -49,15 +67,15 @@
                 {{data.firstName}} ({{data.emailId}})
               </option>
              </select>
-        </div>
+          </div>
             
         
         </div>
            <div class="row">
-        <div class="col-md-6 mt-3" style="text-align: center;">
+        <div class="col-md-3 mt-3" style="text-align: center;">
             <button type="Submit" class="btn btn-primary" (click)="formSubmit()" >Submit</button>
           </div>
-        <div class="col-md-6 mt-3" style="text-align: center;">
+        <div class="col-md-3 mt-3" style="text-align: center;">
             <button type="reset" class="btn btn-danger"  >Cancel</button>
           </div>
        </div>
@@ -65,6 +83,13 @@
     </form>
   
    </div>
+
+
+  </div>
+</div>
+</div>
+</div>
+</section>
   
   
   

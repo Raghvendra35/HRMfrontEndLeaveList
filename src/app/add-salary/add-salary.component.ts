@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SalaryService } from '../salary.service';
 import { EmployeeService } from '../employee.service';
 import { AddSalary } from '../salary';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-salary',
@@ -16,7 +17,8 @@ export class AddSalaryComponent implements OnInit
   addSalary: AddSalary=new AddSalary()
 
   constructor(private salaryService: SalaryService,
-               private employeeService: EmployeeService){}
+               private employeeService: EmployeeService,
+               private router: Router){}
 
   ngOnInit(): void
    {
@@ -34,6 +36,7 @@ export class AddSalaryComponent implements OnInit
    this.salaryService.saveSalary(this.addSalary).subscribe((data)=>
    {
      alert("Saved !!!");
+     this.router.navigate(["salarylist"]);
    }, (error)=>
  {
      alert(" Failed !!!");

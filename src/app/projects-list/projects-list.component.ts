@@ -47,9 +47,16 @@ export class ProjectsListComponent implements OnInit
    
       res.subscribe((data: any)=>
       {
+       console.log(data);
+        
        this.addProjects=data.response.content;
        this.pageObject.page = data.response.number;
+       console.log("page");
+       console.log(this.pageObject.page);
+       
        this.pageObject.totalPage=data.response.totalPages;
+       console.log(this.pageObject.totalPage);
+       
        this.pageObject.totalElements=data.response.totalElements;
        this.pageObject.numberofElement=data.response.numberofElements;
        console.log(data.response.numberofElements);
