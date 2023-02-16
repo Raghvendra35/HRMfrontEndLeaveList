@@ -13,6 +13,10 @@ import { EmployeeService } from '../employee.service';
 export class DetailsPageComponent implements OnInit 
 {
 
+
+
+
+
   employeeList :Array<any>=[];
 
    employeeId:number;
@@ -31,6 +35,8 @@ export class DetailsPageComponent implements OnInit
         this.employeeId=parm['id'];
       })
   }
+
+
   
  // getEmployeeById()
   //{
@@ -44,6 +50,8 @@ export class DetailsPageComponent implements OnInit
    //}
   //}
 
+
+
   
 
   ngOnInit(): void 
@@ -56,14 +64,60 @@ export class DetailsPageComponent implements OnInit
     res.subscribe(data=>
     
     {
-        console.log(data);
+      
         this.employeedetails=data;
-    //   this.employee=data;
+        console.log(this.employeedetails);
+        
       }), (error)=>
       {
        console.log(error);
       }
   }
 
+
+
+
+
+
+
+
+
+
+  //Related to Uploads  Files Codes Here 
   
+   SelectFile: File;
+   currentFile: File;
+
+
+  selectFile(event,id)
+  {
+
+       console.log(event.target.files);
+       this.SelectFile=event.target.files[0];
+       this.uploadFile(id)
+    }
+
+
+
+  uploadFile(empId: any)
+  {
+    
+   const formData: FormData=new FormData();
+   console.log("Inside Form Data==========================");
+   console.log(empId);
+   console.log("+++++++++++++++++++++++++++++");
+   console.log(this.SelectFile)
+       
+   formData.append("files", this.SelectFile);
+
+   this.employeeService.uploadFiles(empId, formData).subscribe((data)=>
+   {
+    alert("Failed !!!");
+   },(error)=>
+   {
+     alert("Saved!!!");
+   });
+
+  }
+
 }

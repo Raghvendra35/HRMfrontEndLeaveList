@@ -21,8 +21,7 @@ export class UploadfilesComponent implements OnInit
 //  uploadImageData: File;
 
   constructor(private uploadService: UploadfileService) { }
- 
- 
+  
 
   ngOnInit(): void {
     this.fileInfos = this.uploadService.getFiles(this.imageName);
@@ -33,6 +32,7 @@ export class UploadfilesComponent implements OnInit
   selectFile(event) 
   {
     console.log(event);
+    console.log(event.target);
     this.selectedFile = event.target.files[0];
   }
 

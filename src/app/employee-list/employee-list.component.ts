@@ -90,21 +90,7 @@ export class EmployeeListComponent implements OnInit
         
                  
                       
-                 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+       
 
 
     public deleteEmployee(id: number)

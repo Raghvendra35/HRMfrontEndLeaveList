@@ -6,14 +6,14 @@ import baseURL from './help';
 @Injectable({
   providedIn: 'root'
 })
-export class UploadfileService 
-{
   
+  export class UploadfileService  
+  {
   constructor(private http: HttpClient) { }
 
+  
   uploadImage(file: any)
   {
-     
      return this.http.post<any>(`${baseURL}/api/fileSystem`,file)
   }
 

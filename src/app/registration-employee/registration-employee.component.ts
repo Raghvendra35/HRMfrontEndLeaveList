@@ -11,8 +11,13 @@ import { Route, Router } from '@angular/router';
 })
 export class RegistrationEmployeeComponent implements OnInit {
  
+
+
+
   employee: Employee = new Employee();
- 
+  employeeId: Employee=new Employee();
+  
+
    perAddress: Address = new Address();
    curAddress: Address = new Address();
 
@@ -59,19 +64,22 @@ export class RegistrationEmployeeComponent implements OnInit {
 
     this.employeeService.addEmployee(this.employee).subscribe((data) => 
     {
+      console.log("SAVE----");
       console.log(data);
 
+  
       alert('Saved !!!');
-      console.log("SAVE----" + data);
-      this.router.navigate(["employeelist"]);
+ 
+      
+     this.router.navigate(["employeelist"]);
     }, (error) => {
       console.log(error);
       alert("Failed");
-    }
+    } )
 
-
-
-    )
   }
+ 
+  
+
   
 }

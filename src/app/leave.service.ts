@@ -31,9 +31,25 @@ export class LeaveService
 
 
 
+
+  // saveLeaveAndImage(leaveEmployee: string, file: any)
+  // {
+  //   return this.httpClient.post<LeaveEmployee>(`${baseURL}/api/leaveemployee/leaveimage`,leaveEmployee, file);
+  // }
+
+ saveLeaveAndImage(formData: FormData)
+  {
+    return this.httpClient.post<LeaveEmployee>(`${baseURL}/api/leaveemployee/leaveimage`, formData);
+  }
+
+
+
+
+
+
   updateLeave(leaveId:any, leaveEmployee: LeaveEmployee)
   {
-   return this.httpClient.put(`${baseURL}/api/leaveemployee/${leaveId}`, leaveEmployee);
+   return this.httpClient.put(`${baseURL}/api/leaveemployee${leaveId}`, leaveEmployee);
   }
 
   getLeaveById(salaryId: number): Observable <LeaveEmployee>

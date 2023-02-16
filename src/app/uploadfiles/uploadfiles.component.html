@@ -38,20 +38,20 @@
 
 <div class="container row">
   <div class="col-md-3">
-      <!-- <input type="file" (change)="onFileChanged($event)"> -->
-      <input type="file"  name="filePath" (change)="selectFile($event)">
+           <input type="file"  name="filePath" (change)="selectFile($event)">
   </div>
 
   <div class="col-md-3">
-      <!-- <input type="button" (click)="onUpload()" value="upload"> -->
-      <input type="button" (click)="upload()" value="Uploads">
+       <input type="button" (click)="upload()" value="Uploads">
   </div>
 </div>
 
+
+
+
 <div class="container row mt-3">
   <div class="col-md-6">
-      <input type="text" class="form-control" id="name" placeholder="image name" [(ngModel)]="imageName"
-          name="name" />
+      <input type="text" class="form-control" id="name" placeholder="image name" name="name" />
   </div>
   <div class="col-md-6">
       <input type="button" (click)="getImage()" value="Get Image">

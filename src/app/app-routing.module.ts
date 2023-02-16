@@ -3,9 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { AddProjectComponent } from './add-project/add-project.component';
 import { AddSalaryComponent } from './add-salary/add-salary.component';
 import { DetailsPageComponent } from './details-page/details-page.component';
+import { EmployeeFilesComponent } from './employee-files/employee-files.component';
 import { EmployeeListComponent } from './employee-list/employee-list.component';
 import { HomeComponent } from './home/home.component';
-import { ImageUploadComponent } from './image-upload/image-upload.component';
 import { LeaveReportEmployeeComponent } from './leave-report-employee/leave-report-employee.component';
 import { LeaveemployeeListComponent } from './leaveemployee-list/leaveemployee-list.component';
 import { LoginComponent } from './login/login.component';
@@ -41,6 +41,7 @@ const routes: Routes = [
   {path: 'updatesalary/:id', component: UpdateSalaryComponent},
   {path: 'employeelist/detailspage/:id', component: DetailsPageComponent},
   {path: 'imagelist', component: UploadfilesComponent},
+  {path: 'uploadfiles', component: EmployeeFilesComponent},
   {path: '', redirectTo: '', pathMatch: 'full'}
 ];
 

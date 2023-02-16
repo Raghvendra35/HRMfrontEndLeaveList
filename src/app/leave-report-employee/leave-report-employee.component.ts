@@ -15,6 +15,11 @@ export class LeaveReportEmployeeComponent implements OnInit
  
   employeeData:any;
 
+  selectedFile: any;
+  currentFile: any;
+
+  
+
   leaveEmployee: LeaveEmployee=new LeaveEmployee();
 
   constructor(private leaveService: LeaveService,
@@ -37,11 +42,41 @@ export class LeaveReportEmployeeComponent implements OnInit
 
 
 
+  //  formSubmit()
+  //  {
+  //   console.log(this.leaveEmployee);
+    
+  //   this.leaveService.saveLeave(this.leaveEmployee).subscribe((data)=>
+  //   {
+  //      alert("Saved Leave !!!");
+  //      this.router.navigate(['leavelist']);
+  //   }, (error)=>
+  //   {
+  //     alert("Failed !!!");
+  //   })
+  //  }
+
+   
+   selectFile(event)
+   {
+     console.log(event);
+     console.log(event.target);
+     this.selectedFile=event.target.files[0];
+   }
+
+
+   //Store Image and Data
+
    formSubmit()
    {
     console.log(this.leaveEmployee);
     
-    this.leaveService.saveLeave(this.leaveEmployee).subscribe((data)=>
+    const formData=new FormData();
+    formData.append('leaveEmployee', JSON.stringify(this.leaveEmployee));
+    formData.append('file', this.selectedFile);
+   
+   
+    this.leaveService.saveLeaveAndImage(formData).subscribe((data)=>
     {
        alert("Saved Leave !!!");
        this.router.navigate(['leavelist']);
@@ -50,6 +85,5 @@ export class LeaveReportEmployeeComponent implements OnInit
       alert("Failed !!!");
     })
    }
-
    
 }

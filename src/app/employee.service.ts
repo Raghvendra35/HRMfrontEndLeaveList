@@ -54,4 +54,18 @@ export class EmployeeService {
        return this.httpClient.get(`${baseURL}/api/employee/pagination?page=${pageNumber}&size=${pageSize}`);
     }
 
+
+
+
+
+    //Related to Upload files Code 
+
+    uploadFiles(employeeId: any, file: any)
+    {
+       return this.httpClient.post<any>(`${baseURL}/api/uploadmultiple/${employeeId}`, file);
+    }
+
+
+
+
   }

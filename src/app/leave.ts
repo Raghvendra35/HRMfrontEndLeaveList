@@ -9,5 +9,6 @@ export class LeaveEmployee
     employeeId:number;
 
     employee: Employee;
+    leaveImage: any;
  
 }
