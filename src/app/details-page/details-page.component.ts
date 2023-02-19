@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Address, Employee, Qualification } from '../employee';
 import { EmployeeService } from '../employee.service';
+import { HttpClient } from '@angular/common/http';
+import baseURL from '../help';
 
 @Component({
   selector: 'app-details-page',
@@ -22,12 +24,29 @@ export class DetailsPageComponent implements OnInit
    employeeId:number;
    id: number;
    //details:Array<any>=[];
-   employeedetails:any;
+    employeedetails:any;
+ // employeedetails: Employee=new Employee();
    employee: Employee=new Employee();
    address: Address=new Address();
    qualification: Qualification=new Qualification();
 
-  constructor(private employeeService: EmployeeService, private route: ActivatedRoute)
+
+
+   //Related to Image
+     typeof="image";
+     fileType="resume"
+
+    //  retrievedResponse: any;
+    //  base64Data: any;
+    //  retrievedImage: any;
+    //  holdResume:any;
+
+
+   //End  here  Related of image Variable
+
+
+
+  constructor(private employeeService: EmployeeService, private route: ActivatedRoute, private httpClient: HttpClient)
   {
     this.route.params.subscribe(parm=>
       {
@@ -60,18 +79,37 @@ export class DetailsPageComponent implements OnInit
     //this.getEmployeeById();
 
   let res=this.employeeService.getEmployeeById(this.employeeId);
-     
-    res.subscribe(data=>
+   res.subscribe(data=>
     
-    {
-      
+      {
         this.employeedetails=data;
         console.log(this.employeedetails);
         
-      }), (error)=>
+      }, (error)=>
       {
        console.log(error);
-      }
+      })
+     
+      
+     // this.showImage(this.employeeId, this.typeof);
+
+    //  this.downloadResume(this.employeeId, this.fileType);
+      // this.employeeService.getImage(this.employeeId, this.typeof).subscribe(res=>
+      // {
+      //   console.log("Related of image ................................................");
+      //   console.log(res);
+      //   console.log("Related of image ................................................");
+        
+      //   this.retrievedResponse=res;
+      //   this.base64Data=this.retrievedResponse.picByte;
+      //   this.retrievedImage=`api/getfile/${this.employeeId}/${this.typeof}`;
+
+      // },(error)=>
+      // {
+      //   console.log(error);
+        
+      // })
+      
   }
 
 
@@ -89,17 +127,20 @@ export class DetailsPageComponent implements OnInit
    currentFile: File;
 
 
-  selectFile(event,id)
+  selectFile(event,id, typeOfFile:any)
   {
-
-       console.log(event.target.files);
+      console.log("Types ++++++++++++++++++++++++++++++++++++");
+      console.log(typeOfFile);
+      console.log("++++++++++++++++++++++++++++++++++++");
+      
+      console.log(event.target.files);
        this.SelectFile=event.target.files[0];
-       this.uploadFile(id)
+       this.uploadFile(id,typeOfFile)
     }
 
 
 
-  uploadFile(empId: any)
+  uploadFile(empId: any, typeOfFile)
   {
     
    const formData: FormData=new FormData();
@@ -110,7 +151,7 @@ export class DetailsPageComponent implements OnInit
        
    formData.append("files", this.SelectFile);
 
-   this.employeeService.uploadFiles(empId, formData).subscribe((data)=>
+   this.employeeService.uploadFiles(empId,typeOfFile, formData).subscribe((data)=>
    {
     alert("Failed !!!");
    },(error)=>
@@ -118,6 +159,46 @@ export class DetailsPageComponent implements OnInit
      alert("Saved!!!");
    });
 
+  }
+
+
+
+  // Display image
+
+  // showImage(empId:any, typeOfFile: any)
+  // {
+
+  //      console.log("Inside ShowImage first +++++++++++++++++++++++++++++++++++++++++++++++===");
+  //      console.log(empId);
+  //      console.log(typeOfFile);
+       
+  //      this.httpClient.get<any>(`${baseURL}/api/getfile/${empId}/${typeOfFile}`)
+       
+  //      .subscribe(res=>
+  //      {
+  //       console.log("Inside ShowImage Second +++++++++++++++++++++++++++++++++++++++++++++++===");
+        
+  //       console.log(res);
+  //       this.retrievedResponse=res;
+  //       this.base64Data=this.retrievedResponse.picByte;
+      
+  //       this.retrievedImage='data:image/jpeg;base64,'+this.base64Data;
+        
+  //      })
+  // }
+
+
+  //Display Resume
+  downloadResume(empId:any, typeOfFiles:any)
+  {
+    this.httpClient.get<any>(`${baseURL}/api/getfile/${empId}/${typeOfFiles}`).subscribe(blob=>
+      {
+        console.log("Inside DownlaodResume =================================");
+        console.log(blob);
+ 
+        
+      })
+   
   }
 
 }

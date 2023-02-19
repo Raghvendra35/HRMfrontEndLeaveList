@@ -60,12 +60,18 @@ export class EmployeeService {
 
     //Related to Upload files Code 
 
-    uploadFiles(employeeId: any, file: any)
+    //Save Image
+    uploadFiles(employeeId: any,typeOfFile:any, file: any)
     {
-       return this.httpClient.post<any>(`${baseURL}/api/uploadmultiple/${employeeId}`, file);
+       return this.httpClient.post<any>(`${baseURL}/api/uploadmultiple/${employeeId}/${typeOfFile}`, file);
     }
 
+  //Get Image 
 
+    // getImage(empId: any, typoOfFile: any)
+    // {
+    //    return this.httpClient.get<any>(`${baseURL}/api/getfile/${empId}/${typoOfFile}`);
+    // }
 
 
   }

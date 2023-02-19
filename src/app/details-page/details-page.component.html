@@ -35,20 +35,22 @@
   </div>
    <div class="col-2">
     <label>Upload Image </label>
-    <input type="file" (change)="selectFile($event,employeedetails.employeeId)" name="filePath1" >
+    <input type="file" (change)="selectFile($event,employeedetails.employeeId,'image')" name="filePath1" >
   </div>
   <div class="col-2">
     <label>Upload Resume </label>
-    <input type="file" (change)="selectFile($event,employeedetails.employeeId)" name="filePath2" >
+    <input type="file" (change)="selectFile($event,employeedetails.employeeId,'resume')" name="filePath2" >
   </div>
  
 
-</div>
 
 
-
-
-
+  <div class="container-fluid mt-4">
+    
+    <div style="margin-left: 530px;">
+  <img src="http://localhost:8089/api/getfile/{{employeedetails.employeeId}}/{{typeof}}" style="border-radius: 50%;"width="230px" height="170px">
+  </div>
+  </div>
 
 
 
@@ -289,6 +291,20 @@
    </tbody>
         </table>
  </div>
+
+</div>
+
+
+
+<div class="container-fluid">
+  <a href="">Download Resume</a><br/>
+  
+
+</div>
+
+
+
+
 
 
 
