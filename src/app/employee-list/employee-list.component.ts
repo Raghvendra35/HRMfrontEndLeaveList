@@ -126,6 +126,22 @@ export class EmployeeListComponent implements OnInit
      
     }
     
+
+
+
+    // Related Search 
+
+    keywordSearch: any;
+
+    search(keyword: any)
+    {
+     console.log(keyword);
+     this.employeeService.searchData(keyword).subscribe(data=>
+      {
+        console.log(data);
+      })
+    }
+
   }
 
 

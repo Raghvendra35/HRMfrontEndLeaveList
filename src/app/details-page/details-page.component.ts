@@ -163,29 +163,15 @@ export class DetailsPageComponent implements OnInit
 
 
 
-  // Display image
+  downloadFile()
+  {
+    console.log("Download files +++++++++++++++++++++++++++++++++++++++++++");
+    console.log(this.employeeId);
+    console.log(this.fileType);
+    
+    this.downloadResume(this.employeeId,this.fileType);
 
-  // showImage(empId:any, typeOfFile: any)
-  // {
-
-  //      console.log("Inside ShowImage first +++++++++++++++++++++++++++++++++++++++++++++++===");
-  //      console.log(empId);
-  //      console.log(typeOfFile);
-       
-  //      this.httpClient.get<any>(`${baseURL}/api/getfile/${empId}/${typeOfFile}`)
-       
-  //      .subscribe(res=>
-  //      {
-  //       console.log("Inside ShowImage Second +++++++++++++++++++++++++++++++++++++++++++++++===");
-        
-  //       console.log(res);
-  //       this.retrievedResponse=res;
-  //       this.base64Data=this.retrievedResponse.picByte;
-      
-  //       this.retrievedImage='data:image/jpeg;base64,'+this.base64Data;
-        
-  //      })
-  // }
+  }
 
 
   //Display Resume

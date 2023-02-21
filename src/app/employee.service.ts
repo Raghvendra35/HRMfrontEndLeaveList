@@ -66,12 +66,37 @@ export class EmployeeService {
        return this.httpClient.post<any>(`${baseURL}/api/uploadmultiple/${employeeId}/${typeOfFile}`, file);
     }
 
-  //Get Image 
-
-    // getImage(empId: any, typoOfFile: any)
-    // {
-    //    return this.httpClient.get<any>(`${baseURL}/api/getfile/${empId}/${typoOfFile}`);
-    // }
 
 
+   //Download Ressume
+
+   downloadFile(employeeId: any, typeOfFile:any): Observable<Blob>
+   {
+    return this.httpClient.get(`${baseURL}/api/downlaodfile/${employeeId}/${typeOfFile}`,
+       {
+        responseType: 'blob'
+       });
+   }
+
+
+   //Related to Search
+   searchData(keyword:any)
+   {
+     return this.httpClient.get(`${baseURL}/api/employee/search/${keyword}`);
+   }
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
