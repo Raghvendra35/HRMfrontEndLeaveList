@@ -3,7 +3,7 @@
       <h4 style="color: aliceblue;">Employee Page</h4>
 
 
-    <div class="input-group" style="width: 300px; margin-left: 700px;">
+    <div class="input-group" style="width: 300px; margin-left: 600px;">
           <input mdbInput type="search" class="form-control" placeholder="Search....." id="keywordSearch" name="keywordSearch" #keywordSearch/>
               <button type="button" class="btn btn-primary" style="width: 50px;" (click)="search(keywordSearch.value)">
             <!-- <i class="fas fa-search"></i> -->
@@ -12,8 +12,8 @@
 
 
       <div class="d.flex">
-        <button type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn bth-success" >
-        <a routerLink="registration" style="color: black;" class="nav-link">Add Employee</a></button>
+        <button type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn bth-success" style="color:black; background-color: rgb(220, 209, 231);">
+        <a routerLink="registration" class="nav-link">Add Employee</a></button>
     
        </div>  
     </div>
@@ -68,7 +68,7 @@
        --><!-- <td>{{qualification.qualification10.course}}</td> -->
        
        <button class="btn btn-info"   (click) = "updateEmployee(employee.employeeId)">
-            <a routerLink="/updateemployee/{/employee.employeeId}">Edit</a></button>
+            <a routerLink="/updateemployee/{/employee.employeeId}" style="text-decoration: none;">Edit</a></button>
         
             <button class="btn btn-danger" (click)="deleteEmployee(employee.employeeId)" style="color:black">Delete</button>
     </tr>

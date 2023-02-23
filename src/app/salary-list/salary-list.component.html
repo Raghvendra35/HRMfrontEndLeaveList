@@ -3,8 +3,8 @@
       <h4 style="color: aliceblue;">Salary</h4>
       <div class="d.flex">
     
-        <button type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn bth-success" >
-          <a routerLink="addsalary" style="color: black;" class="nav-link">Add Salary</a></button>
+        <button type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn bth-success"style="color:black; background-color: rgb(220, 209, 231);" >
+          <a routerLink="addsalary"  class="nav-link">Add Salary</a></button>
       </div>  
     </div>
 </nav>
@@ -35,7 +35,7 @@
        
 
         <button class="btn btn-info" (click) = "updateSalary(empSalary.salaryId)">
-                              <a routerLink="/updatesalary/{/empSalary.salaryId}">Edit</a></button>
+                              <a routerLink="/updatesalary/{/empSalary.salaryId}" style="text-decoration: none;">Edit</a></button>
           
         <button class="btn btn-danger" (click)="deleteSalary(empSalary.salaryId)" style="color:black">Delete</button>
          

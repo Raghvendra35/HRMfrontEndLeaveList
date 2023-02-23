@@ -25,6 +25,8 @@ import { UpdateLeaveComponent } from './update-leave/update-leave.component';
 
 import { UploadfilesComponent } from './uploadfiles/uploadfiles.component';
 import { EmployeeFilesComponent } from './employee-files/employee-files.component';
+import { TestingComponent } from './testing/testing.component';
+
 
 @NgModule({
   declarations: [
@@ -48,6 +50,8 @@ import { EmployeeFilesComponent } from './employee-files/employee-files.componen
     UpdateLeaveComponent,
     UploadfilesComponent,
     EmployeeFilesComponent,
+    TestingComponent,
+
   
     
   ],

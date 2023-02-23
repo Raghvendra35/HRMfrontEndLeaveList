@@ -139,6 +139,7 @@ export class EmployeeListComponent implements OnInit
      this.employeeService.searchData(keyword).subscribe(data=>
       {
         console.log(data);
+        this.employees=data;
       })
     }
 

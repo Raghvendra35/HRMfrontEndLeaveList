@@ -59,4 +59,11 @@ export class AddprojectService {
   }
   
   
+  //Related to Search
+
+  searchRecord(keyword:any)
+  {
+     return this.httpClient.get(`${baseURL}/api/addproject/search/${keyword}`);
+  }
+  
 }

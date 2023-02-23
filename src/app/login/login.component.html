@@ -1,4 +1,4 @@
-
+ 
 <div class="wrapper" style="margin-top: 150px;">
   <div class="logo">
       <img src="https://www.freepnglogos.com/uploads/twitter-logo-png/twitter-bird-symbols-png-logo-.png" alt="">
@@ -9,15 +9,50 @@
   <form class="p-3 mt-3">
       <div class="form-field d-flex align-items-center">
           <span class="far fa-user"></span>
-          <input type="text" name="userName" id="userName" placeholder="Username">
+          <input type="text" [(ngModel)]="employee.emailId" name="emailId" id="userName" placeholder="Username">
       </div>
       <div class="form-field d-flex align-items-center">
           <span class="fas fa-key"></span>
-          <input type="password" name="password" id="pwd" placeholder="Password">
+          <input type="password" [(ngModel)]="employee.password" name="password" id="pwd" placeholder="Password">
       </div>
-      <button class="btn mt-3">Login</button>
+      <button class="btn mt-3" (click)="submit()">Login</button>
   </form>
   <div class="text-center fs-6">
       <a href="#">Forget password?</a> or <a href="#">Sign up</a>
   </div>
-</div>
+</div> 
+
+<!-- 
+  <div>
+	<body >
+     <div >   
+   <div class="form-box" >
+     <h2>Login Here</h2>
+
+   
+     	<div class="input_group">
+     	<label>Email id</label>
+     	<input type="Email" placeholder="Enter email id">
+        </div>
+ 
+        <div class="input_group">
+       <label>Password</label>
+     	<input type="Password" placeholder="Enter password">
+        </div>
+   
+        <button type="submit">Loign</button>
+     
+        Loign &#10132
+  <p>Login with social media account</p>
+   
+     <div class="social"> -->
+      
+      <!-- <img src="google.png">
+      <img src="facebook.png">
+      <img src="twitter.png">
+     -->
+	<!-- </div>
+    </div>
+    </div>
+</body>
+</div> --> 

@@ -13,12 +13,14 @@ import { ProjectsListComponent } from './projects-list/projects-list.component';
 //import { ProjectsListComponent } from './projects-list/projects-list.component';
 import { RegistrationEmployeeComponent } from './registration-employee/registration-employee.component';
 import { SalaryListComponent } from './salary-list/salary-list.component';
+import { TestingComponent } from './testing/testing.component';
 import { UpdateEmployeeComponent } from './update-employee/update-employee.component';
 import { UpdateLeaveComponent } from './update-leave/update-leave.component';
 import { UpdateProjectsComponent } from './update-projects/update-projects.component';
 import { UpdateSalaryComponent } from './update-salary/update-salary.component';
 import { UploadfileService } from './uploadfile.service';
 import { UploadfilesComponent } from './uploadfiles/uploadfiles.component';
+
 
 
 const routes: Routes = [
@@ -42,6 +44,7 @@ const routes: Routes = [
   {path: 'employeelist/detailspage/:id', component: DetailsPageComponent},
   {path: 'imagelist', component: UploadfilesComponent},
   {path: 'uploadfiles', component: EmployeeFilesComponent},
+  {path: 'check', component: TestingComponent},
   {path: '', redirectTo: '', pathMatch: 'full'}
 ];
 

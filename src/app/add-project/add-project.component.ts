@@ -50,11 +50,19 @@ export class AddProjectComponent implements OnInit
       this.router.navigate(['projectlist']);
     },(error)=>
     {
-      alert("Failed !!!");
+      // alert("Failed !!!");
     })
 
+}
 
 
+validate(){
+  var form = document.getElementsByClassName('needs-validation')[0] as HTMLFormElement;
+  if (form.checkValidity() === false) {
+    event.preventDefault();
+    event.stopPropagation();
   }
+  form.classList.add('was-validated');
+}
 
 }

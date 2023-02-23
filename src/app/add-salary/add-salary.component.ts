@@ -39,10 +39,18 @@ export class AddSalaryComponent implements OnInit
      this.router.navigate(["salarylist"]);
    }, (error)=>
  {
-     alert(" Failed !!!");
+    //  alert(" Failed !!!");
  }
   )
   }
 
+  validate(){
+    var form = document.getElementsByClassName('needs-validation')[0] as HTMLFormElement;
+    if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+    form.classList.add('was-validated');
+  }
 
 }

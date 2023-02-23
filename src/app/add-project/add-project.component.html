@@ -9,38 +9,38 @@
 
 <div class="container; container py-5 h-100;" style="width: 750px;">
     <h2 style="text-align: center;" class="mt-2"> Add Projets Here</h2>
-    <form name="myform" class="form-group">
+    <form name="myform" class="needs-validation">
         <div class="row jumbotron">
   
             <div class="col-md-6 mt-4">
             <label  for="inputname">Project Name</label>
-            <input type="text" [(ngModel)]="addProject.projectName"  name="projectName" class="form-control" placeholder="Project-Name">
+            <input type="text" [(ngModel)]="addProject.projectName"  name="projectName" class="form-control" placeholder="Project-Name" required>
             </div> 
             
             <div class="col-md-6 mt-4">
             <label  for="inputname">Client Name</label>
-            <input type="text" [(ngModel)]="addProject.clientName" name="clientName" class="form-control" placeholder="Client-Name">
+            <input type="text" [(ngModel)]="addProject.clientName" name="clientName" class="form-control" placeholder="Client-Name" required>
             </div> 
   
             <div class="col-md-6 mt-3">
             <label  for="inputname">Developing Technology</label>
-            <input type="text" [(ngModel)]="addProject.developingTechnology"  name="contact" class="form-control" placeholder="Developing-technology">
+            <input type="text" [(ngModel)]="addProject.developingTechnology"  name="contact" class="form-control" placeholder="Developing-technology" required>
             </div>        
   
             <div class="col-md-6 mt-3">
             <label  for="inputname">Database</label>
-            <input type="text" [(ngModel)]="addProject.databaseTechnology" name="databaseTechnology" class="form-control" placeholder="Database">
+            <input type="text" [(ngModel)]="addProject.databaseTechnology" name="databaseTechnology" class="form-control" placeholder="Database" required>
             </div> 
            
            
             <div class="col-md-6 mt-3">
             <label  for="inputname">From Date</label>
-            <input type="date" [(ngModel)]="addProject.fromDate"  name="fromDate"  class="form-control" placeholder="">
+            <input type="date" [(ngModel)]="addProject.fromDate"  name="fromDate"  class="form-control" placeholder="" required>
             </div>     
   
             <div class="col-md-6 mt-3">
             <label  for="inputname">To Date</label>
-            <input type="date" [(ngModel)]="addProject.toDate" name="toDate" class="form-control" placeholder="">
+            <input type="date" [(ngModel)]="addProject.toDate" name="toDate" class="form-control" placeholder="" required>
             </div>
             
             <!-- <div class="col-md-6 mt-3">
@@ -49,8 +49,8 @@
               </div>    -->
               
               <div class="col-md-6 mt-4">
-                <label  for="inputname">Team Leader</label>
-                <select  [(ngModel)]="addProject.teamLeader" name="teamLeader"  class="form-control" placeholder="Team-Leader" required>
+                <label  for="validationDefault04" class="form-label">Team Leader</label>
+                <select  [(ngModel)]="addProject.teamLeader" name="teamLeader"  class="form-select" placeholder="Team-Leader" required>
                 <option>Select One</option>
                 <option  *ngFor="let data of teamLeaders" [value]="data.teamLeader">
                   {{data.teamLeader}} 
@@ -73,7 +73,7 @@
         </div>
            <div class="row">
         <div class="col-md-3 mt-3" style="text-align: center;">
-            <button type="Submit" class="btn btn-primary" (click)="formSubmit()" >Submit</button>
+            <button type="Submit" class="btn btn-primary" (click)="formSubmit()" (click)="validate()">Submit</button>
           </div>
         <div class="col-md-3 mt-3" style="text-align: center;">
             <button type="reset" class="btn btn-danger"  >Cancel</button>

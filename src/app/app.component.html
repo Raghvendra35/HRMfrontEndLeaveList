@@ -1,8 +1,4 @@
-<!--
-<div class="container">
-<app-employee-list></app-employee-list>
-</div>
--->
+
 
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top" style="background-color: #e3f2fd;">
    
@@ -10,7 +6,7 @@
     <ul class="navbar-nav ms-auto">
       
         <li class="nav-item"><a routerLink="/" class="nav-link">Home</a></li>
-        <!-- <li class="nav-item"><a routerLink="/uploadfiles" class="nav-link">Upload Files</a></li> --> -->
+        <li class="nav-item"><a routerLink="/check" class="nav-link">Checking</a></li> 
         <li class="nav-item"><a routerLink="/projectlist" class="nav-link">ProjectsList</a></li>
         <li class="nav-item"><a routerLink="/salarylist" class="nav-link">SalaryList</a></li>
         <li class="nav-item"><a routerLink="/login" class="nav-link">Admin</a></li>
@@ -19,32 +15,5 @@
         <li class="nav-item"><a routerLink="/leavelist" class="nav-link">Leave Employee List</a></li>
     </ul>
 </nav>
-
-
-
-
-
-
-
-
-<!-- <form  #basicForm="ngForm" (ngSubmit)="getData(basicForm)"> -->
- <!-- <div style="width: 500px; margin-left: 280px">
-    <div class="mt-3"  >
-        <div><h3> Login Here</h3></div>
-      <label  class="form-label">Email address</label>
-      <input type="email" [(ngModel)]="registrationReq.emailId" class="form-control" id="email" aria-describedby="emailHelp">
-      
-    </div>
-
-    <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Password</label>
-        <input type="password" [(ngModel)]="registrationReq.password" class="form-control" id="pass" aria-describedby="emailHelp">
-       
-      </div>
-      <button type="button"  class="btn btn-primary" (click)="getSubmit()">Submit</button>
--->
-      <!-- </form> -->
-
-<!--</div>-->
 
 <router-outlet></router-outlet>

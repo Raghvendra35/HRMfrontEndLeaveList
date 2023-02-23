@@ -14,7 +14,9 @@ export class EmployeeService {
   constructor(private httpClient: HttpClient) { }
 
   
-  addEmployee(employee:Employee){
+  addEmployee(employee:Employee)
+  {
+
     return this.httpClient.post(`${baseURL}/api/employee/save`,employee);
   }
 
@@ -79,11 +81,25 @@ export class EmployeeService {
    }
 
 
+   
    //Related to Search
    searchData(keyword:any)
    {
      return this.httpClient.get(`${baseURL}/api/employee/search/${keyword}`);
    }
+
+
+   
+
+   //Related to Login
+   login(employee: Employee)
+   {
+     return this.httpClient.post(`${baseURL}/api/employee/login`, employee);
+   }
+
+
+
+
   }
 
 

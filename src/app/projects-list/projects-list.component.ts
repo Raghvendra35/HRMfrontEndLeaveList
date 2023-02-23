@@ -169,6 +169,16 @@ public deleteProject(id: number)
   })
 }
 
+//Related to Search Code
 
+search(keyword: any)
+{
+  this.addProjectService.searchRecord(keyword).subscribe(data=>
+  {
+    console.log(data);
+    this.addProjects=data;
+    
+  })
+}
 
 }

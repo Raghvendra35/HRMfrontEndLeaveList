@@ -3,7 +3,7 @@
     <h3 style="color: aliceblue;">HR Managements</h3>
       <div class="d.flex">
      
-       <button type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn bth-success" ><a routerLink="/leavereport" class="nav-link">Leave_Report</a> </button>
+       <button type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn bth-success" style="color:black; background-color: rgb(220, 209, 231);"><a routerLink="/leavereport" class="nav-link">Leave_Report</a> </button>
       </div>  
     </div>
 </nav>
@@ -35,9 +35,9 @@
              
 
         <button class="btn btn-info"   (click) = "updateLeave(leave.leaveId)">
-          <a routerLink="/updateleave/{/leave.leaveId}">Edit</a></button>
+          <a routerLink="/updateleave/{/leave.leaveId}" style="text-decoration: none;">Edit</a></button>
 
-        <button class="btn btn-danger" (click)="deleteLeave(leave.leaveId)" style="color:black">Delete</button>
+        <button class="btn btn-danger" (click)="deleteLeave(leave.leaveId)" style="color:black;">Delete</button>
              
 
       </tr>

@@ -54,12 +54,12 @@ export class RegistrationEmployeeComponent implements OnInit {
 
 
 
-    console.log( this.employee);
+    // console.log( this.employee);
     
-    if (this.employee.firstName == '' || this.employee.firstName == null) {
-      alert("Employee name is required");
-      return;
-    }
+    // if (this.employee.firstName == '' || this.employee.firstName == null) {
+    //   alert("Employee name is required");
+    //   return;
+    // }
 
 
     this.employeeService.addEmployee(this.employee).subscribe((data) => 
@@ -74,12 +74,19 @@ export class RegistrationEmployeeComponent implements OnInit {
      this.router.navigate(["employeelist"]);
     }, (error) => {
       console.log(error);
-      alert("Failed");
+       alert("Failed");
     } )
 
   }
  
-  
+  validate(){
+    var form = document.getElementsByClassName('needs-validation')[0] as HTMLFormElement;
+    if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+    form.classList.add('was-validated');
+  }  
 
   
 }

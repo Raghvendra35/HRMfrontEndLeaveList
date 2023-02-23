@@ -93,25 +93,13 @@
                   
 
 
-                  <div class="row">
-                    <div class="col-md-6 mt-3">
-                        <label  for="inputname">Employee</label>
-                        <select    [(ngModel)]="leaveEmployee.employeeId" name="employeeId" class="form-select" id="validationDefault04" required>
-                          <option>Select One</option>
-                            <option  *ngFor="let data of employeeData" [value]="data.employeeId">
-                              {{data.firstName}} ({{data.emailId}})
-                            </option>
-                         </select>
-                     </div>   
-                          
-                   </div>
+                                  
 
 
 
 
                   <div class="row jumbotron">
-            
-                  
+                        
                         <div class="col-md-6 mt-4">
                            <label  for="inputname">From Date</label>
                             <input type="date" [(ngModel)]="leaveEmployee.fromDate"  name="fromDate" class="form-control" placeholder="">
@@ -136,10 +124,25 @@
                      </div>
 
 
-                     <div class="col-md-3">
+                     <div class="row">
+                     <div class="col-md-6 mt-3">
+                      <label  for="inputname">Employee</label>
+                      <select    [(ngModel)]="leaveEmployee.employeeId" name="employeeId" class="form-select" id="validationDefault04" required>
+                        <option>Select One</option>
+                          <option  *ngFor="let data of employeeData" [value]="data.employeeId">
+                            {{data.firstName}} ({{data.emailId}})
+                          </option>
+                       </select>
+                   </div>   
+                        
+                  
+
+
+                     <div class="col-md-6 mt-5">
                       <input type="file"  name="filePath" (change)="selectFile($event)">
                      </div>
 
+                     </div>
                       <div class="row"> 
                             <div class="col-md-4 mt-5" style="text-align: center;">
                              <button type="Submit" class="btn btn-primary" (click)="formSubmit()">Submit</button>
