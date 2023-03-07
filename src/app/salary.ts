@@ -7,6 +7,12 @@ export class AddSalary
          months: string;
 	 amount: number;
          employeeId:number;
+         totalSalary: any;
+         inHandSalary: any;
+         pf: any;
+         esi: any;
+         medicalInsurance: any;
+         workingDaysInMonths: any;
 	
          employee:Employees;
 }

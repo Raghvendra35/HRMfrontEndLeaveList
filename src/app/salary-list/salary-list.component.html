@@ -18,7 +18,7 @@
         <th scope="col">EmployeeName</th>
         <th scope="col">Email_Id</th>
         <th scope="col">Months</th>
-        <th scope="col">Amount</th>
+        <th scope="col">Net_Salary</th>
         <th scope="col">Action</th>
       </tr>
     
@@ -30,7 +30,7 @@
         <td>{{empSalary.employee.firstName}}</td>
         <td>{{empSalary.employee.emailId}}</td>
         <td>{{empSalary.months}}</td>
-        <td>{{empSalary.amount}}</td>
+        <td>{{empSalary.inHandSalary}}</td>
     
        
 
@@ -38,7 +38,7 @@
                               <a routerLink="/updatesalary/{/empSalary.salaryId}" style="text-decoration: none;">Edit</a></button>
           
         <button class="btn btn-danger" (click)="deleteSalary(empSalary.salaryId)" style="color:black">Delete</button>
-         
+        <button class=""style="color:black"><a href="http://localhost:8089/api/addsalary/salaryslippdf/{{empSalary.salaryId}}" target="" style="text-decoration: none;">Salary_Slip</a></button>
 
         
         <!-- <button class="btn btn-info"   (click) = "updateProject(projects.projectId)">

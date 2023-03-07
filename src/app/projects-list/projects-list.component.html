@@ -33,9 +33,9 @@
     
 </thead>
  <tbody>
-    <tr *ngFor="let projects of addProjects ">
+    <tr *ngFor="let projects of addProjects;let i=index">
         
-        <td>{{1}}</td>
+        <td>{{i+1}}</td>
         <td>{{projects.projectName}}</td>
         <td>{{projects.clientName}}</td>
         <td>{{projects.developingTechnology}}</td>

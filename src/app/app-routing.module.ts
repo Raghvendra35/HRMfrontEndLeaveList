@@ -2,6 +2,7 @@ import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AddProjectComponent } from './add-project/add-project.component';
 import { AddSalaryComponent } from './add-salary/add-salary.component';
+import { CreatepdfComponent } from './createpdf/createpdf.component';
 import { DetailsPageComponent } from './details-page/details-page.component';
 import { EmployeeFilesComponent } from './employee-files/employee-files.component';
 import { EmployeeListComponent } from './employee-list/employee-list.component';
@@ -44,6 +45,7 @@ const routes: Routes = [
   {path: 'employeelist/detailspage/:id', component: DetailsPageComponent},
   {path: 'imagelist', component: UploadfilesComponent},
   {path: 'uploadfiles', component: EmployeeFilesComponent},
+  {path: 'pdf', component: CreatepdfComponent},
   {path: 'check', component: TestingComponent},
   {path: '', redirectTo: '', pathMatch: 'full'}
 ];

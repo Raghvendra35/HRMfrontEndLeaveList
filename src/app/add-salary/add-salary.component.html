@@ -166,7 +166,7 @@
 
 
 
-
+<!-- 
 
 
 
@@ -206,10 +206,10 @@
                      <option>November</option>
                      <option>December</option>
                      </select>
-                     <!-- <div class="invalid-feedback" style="margin-left: 50px;">Please Select a month...</div> -->
+                      <div class="invalid-feedback" style="margin-left: 50px;">Please Select a month...</div> -->
                       
                     
-                   </div>
+                   <!-- </div>
                    
                </div>
   
@@ -224,13 +224,13 @@
            
                 <div class="col-md-9 mt-4">
                 <label  for="inputname" style="margin-left: 50px;">Amount</label>
-                <input type="number" [(ngModel)]="addSalary.amount" name="amount" class="form-control" style="margin-left: 50px;" placeholder="Amount"  required>
+                <input type="number" [(ngModel)]="addSalary.amount" name="amount" class="form-control" style="margin-left: 50px;" placeholder="Amount"  required> -->
                 <!-- <div class="valid-feedback">Valid</div>   -->
                 <!-- <div class="invalid-feedback" style="margin-left: 50px;">Please fill this field.</div>               -->
              
-                </div> 
-               </div>
-  
+                <!-- </div>  -->
+               <!-- </div>
+   -->
 
 
 
@@ -240,7 +240,7 @@
 
 
                       
-    <div class="row">
+    <!-- <div class="row">
       <div class="col-md-9 mt-4">
         
         <label for="validationDefault04" class="form-label" style="margin-left: 50px;">Employee Name</label>
@@ -250,16 +250,16 @@
           {{data.firstName}} ({{data.emailId}})
         </option>
         
-       </select>
+       </select> -->
        <!-- <div class="invalid-feedback" style="margin-left: 50px;">Please fill out this field.</div>  -->
-      </div>
+      <!-- </div>
   </div>
-  
+   -->
   
             
   
   
-  <div class="row">
+  <!-- <div class="row">
     <div class="col-md-3 mt-3" style="text-align: center;" style="margin-left: 110px;">
       <button type="Submit" class="btn btn-primary" (click)="formSubmit()" (click)="validate()" >Submit</button>
     </div>
@@ -268,17 +268,126 @@
    </div>
   </div>
   
-               
-              
-              
-              
-              
-              
-              </form>
+                </form>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </section> --> 
+  
+
+
+
+
+
+    
+<section class="vh-100 gradient-custom"  style="background-color:#D5D8DC; margin-top: 56px;">
+  <div class="container py-5 h-100">
+    <div class="row justify-content-center align-items-center h-100">
+      <div class="col-12 col-lg-9 col-xl-7">
+        <div class="card shadow-2-strong card-registration" style="border-radius: 15px; width: 850px; margin-left: -100px;" >
+
+
+
+<div class="container; container py-5 h-100;" style="width: 750px;">
+    <h2 style="text-align: center;" class="mt-2"> Add Salary Here</h2>
+    <form name="myform" class="needs-validation">
+        
+      <div class="row">
+  
+            <div class="col-md-6 mt-4">
+              <label for="validationDefault04" class="form-label"  style="margin-left: 50px;">Joining_Months</label>
+              <select  [(ngModel)]="addSalary.months"  name="months"  class="form-select" id="validationDefault04"  required>
+              <option selected disabled value="-1">Select Months..</option>
+             
+              <option>January </option>
+              <option>February </option>
+              <option>March</option>
+              <option>April</option>
+              <option>May</option>
+              <option>June</option>
+              <option>July</option>
+              <option>August</option>
+              <option>September</option>
+              <option>October</option>
+              <option>November</option>
+              <option>December</option>
+              </select>
+            </div> 
+            
+            <div class="col-md-6 mt-4">
+              <label for="validationDefault04" class="form-label">Employee Name</label>
+              <select   [(ngModel)]="addSalary.employeeId" name="employeeId" class="form-select" id="validationDefault04" required>
+              <option>Select One</option>
+              <option  *ngFor="let data of employeeData" [value]="data.employeeId">
+                {{data.firstName}} ({{data.emailId}})
+              </option>
+             </select>
+          </div>
+         </div>
+
+          <div class="row">
+            <div class="col-md-6 mt-4">
+            <label  for="inputname">Actual_Salary</label>
+            <input type="text" [(ngModel)]="addSalary.totalSalary" name="totalSalary" class="form-control" placeholder="Actual_Salary" required>
+            </div> 
+          
+
+            
+            <div class="col-md-6 mt-3">
+            <label  for="inputname">Provident_Fund </label>
+            <input type="number" [(ngModel)]="addSalary.pf"  name="pf" class="form-control" placeholder="Provident_Fund" required>
+            </div>        
+          </div>
+
+
+            <div class="row">
+            <div class="col-md-6 mt-3">
+            <label  for="inputname">E.S.I</label>
+            <input type="number" [(ngModel)]="addSalary.esi" name="esi" class="form-control" placeholder="ESI">
+            </div> 
+     
+
+           
+        
+            <div class="col-md-6 mt-3">
+            <label  for="inputname">HealthInsurance</label>
+            <input type="number" [(ngModel)]="addSalary.medicalInsurance"  name="fromDate"  class="form-control" placeholder="" required>
+            </div>     
+          </div>
+                  
+          <div class="row">
+            <div class="col-md-6 mt-3">
+            <label  for="inputname">Worked_Days</label>
+            <input type="number" [(ngModel)]="addSalary.workingDaysInMonths" name="workingDaysInMonths" class="form-control" placeholder="Worked_Days" required>
+            </div> 
+          </div>
+          
+           
+        
+        
+        
+        
+        <div class="row">  
+        <div class="col-md-6 mt-3" style="text-align: center;">
+            <button type="Submit" class="btn btn-primary" (click)="formSubmit()" (click)="validate()" style="margin-left: 150px;">Submit</button>
+          </div>
+        <div class="col-md-6 mt-3" style="text-align: center;">
+            <button type="reset" class="btn btn-danger" style="margin-right: 140px;"  >Cancel</button>
+          </div>
+       </div>
+  
+    </form>
+  
+   </div>
+
+
+  </div>
+</div>
+</div>
+</div>
+</section>
+  
+  
   

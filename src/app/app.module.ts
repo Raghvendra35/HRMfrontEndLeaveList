@@ -26,6 +26,7 @@ import { UpdateLeaveComponent } from './update-leave/update-leave.component';
 import { UploadfilesComponent } from './uploadfiles/uploadfiles.component';
 import { EmployeeFilesComponent } from './employee-files/employee-files.component';
 import { TestingComponent } from './testing/testing.component';
+import { CreatepdfComponent } from './createpdf/createpdf.component';
 
 
 @NgModule({
@@ -51,6 +52,7 @@ import { TestingComponent } from './testing/testing.component';
     UploadfilesComponent,
     EmployeeFilesComponent,
     TestingComponent,
+    CreatepdfComponent,
 
   
     

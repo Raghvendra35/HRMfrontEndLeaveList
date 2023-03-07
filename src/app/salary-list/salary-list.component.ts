@@ -128,4 +128,19 @@ export class SalaryListComponent implements OnInit
       })
    
     }
+
+
+    downloadSalarySlip(salaryId: any)
+    {
+      console.log("Salary Pdf");
+      console.log(salaryId);
+      
+      
+      this.salaryService.salarySlip(salaryId).subscribe(data =>
+      {
+        console.log(data);
+        
+
+      });
+    }
 }

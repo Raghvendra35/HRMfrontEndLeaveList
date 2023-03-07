@@ -17,7 +17,8 @@ export class LoginComponent implements OnInit
   employee: Employee=new Employee();
 
 
-  constructor(private employeeService: EmployeeService){}
+  constructor(private employeeService: EmployeeService,
+              private router: Router){}
 
     ngOnInit(): void
      {
@@ -25,6 +26,19 @@ export class LoginComponent implements OnInit
 
      submit()
      {
+      console.log("Login Page =================");
+      console.log(this.employee.emailId);
+      console.log(this.employee.password);
+      this.employeeService.login(this.employee).subscribe(data=>
+        {
+          alert("Saved !!!");
+          this.router.navigate(["check"])
+        },(error)=>
+        {
+          alert("Failed !!!");
+        })
       
+
+           
      }
 }

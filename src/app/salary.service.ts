@@ -63,4 +63,10 @@ export class SalaryService
     return this.httpClient.get(`${baseURL}/api/addsalary/paginations?page=${pageNumber}&size=${pageSize}`);
   }
 
+
+  //Download Salary Slip
+  salarySlip(id:any)
+  {
+        return this.httpClient.get(`${baseURL}/api/addsalary/salaryslippdf/${id}`);
+  }
 }
