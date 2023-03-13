@@ -27,6 +27,8 @@ import { UploadfilesComponent } from './uploadfiles/uploadfiles.component';
 import { EmployeeFilesComponent } from './employee-files/employee-files.component';
 import { TestingComponent } from './testing/testing.component';
 import { CreatepdfComponent } from './createpdf/createpdf.component';
+import { HomeFirstComponent } from './home-first/home-first.component';
+import { LeaveManageComponent } from './leave-manage/leave-manage.component';
 
 
 @NgModule({
@@ -53,6 +55,8 @@ import { CreatepdfComponent } from './createpdf/createpdf.component';
     EmployeeFilesComponent,
     TestingComponent,
     CreatepdfComponent,
+    HomeFirstComponent,
+    LeaveManageComponent,
 
   
     
