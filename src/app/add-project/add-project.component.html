@@ -1,0 +1,95 @@
+
+<section class="vh-100 gradient-custom"  style="background-color:#D5D8DC; margin-top: 56px;">
+  <div class="container py-5 h-100">
+    <div class="row justify-content-center align-items-center h-100">
+      <div class="col-12 col-lg-9 col-xl-7">
+        <div class="card shadow-2-strong card-registration" style="border-radius: 15px; width: 850px; margin-left: -100px;" >
+
+
+
+<div class="container; container py-5 h-100;" style="width: 750px;">
+    <h2 style="text-align: center;" class="mt-2"> Add Projets Here</h2>
+    <form name="myform" class="needs-validation">
+        <div class="row jumbotron">
+  
+            <div class="col-md-6 mt-4">
+            <label  for="inputname">Project 2</label>
+            <input type="text" [(ngModel)]="addProject.projectName"  name="projectName" class="form-control" placeholder="Project-Name" required>
+            </div> 
+            
+            <div class="col-md-6 mt-4">
+            <label  for="inputname">Client Name</label>
+            <input type="text" [(ngModel)]="addProject.clientName" name="clientName" class="form-control" placeholder="Client-Name" required>
+            </div> 
+  
+            <div class="col-md-6 mt-3">
+            <label  for="inputname">Developing Technology</label>
+            <input type="text" [(ngModel)]="addProject.developingTechnology"  name="contact" class="form-control" placeholder="Developing-technology" required>
+            </div>        
+  
+            <div class="col-md-6 mt-3">
+            <label  for="inputname">Database</label>
+            <input type="text" [(ngModel)]="addProject.databaseTechnology" name="databaseTechnology" class="form-control" placeholder="Database" required>
+            </div> 
+           
+           
+            <div class="col-md-6 mt-3">
+            <label  for="inputname">From Date</label>
+            <input type="date" [(ngModel)]="addProject.fromDate"  name="fromDate"  class="form-control" placeholder="" required>
+            </div>     
+  
+            <div class="col-md-6 mt-3">
+            <label  for="inputname">To Date</label>
+            <input type="date" [(ngModel)]="addProject.toDate" name="toDate" class="form-control" placeholder="" required>
+            </div>
+            
+            <!-- <div class="col-md-6 mt-3">
+              <label  for="inputname">Team Leader</label>
+              <input type="text"  [(ngModel)]="addProject.teamLeader" name="teamLeader"  class="form-control" placeholder="Team-Leader">
+              </div>    -->
+              
+              <div class="col-md-6 mt-4">
+                <label  for="validationDefault04" class="form-label">Team Leader</label>
+                <select  [(ngModel)]="addProject.teamLeader" name="teamLeader"  class="form-select" placeholder="Team-Leader" required>
+                <option>Select One</option>
+                <option  *ngFor="let data of teamLeaders" [value]="data.teamLeader">
+                  {{data.teamLeader}} 
+                </select>
+                </div>   
+                
+
+
+            <div class="col-md-6 mt-4">
+              <label for="validationDefault04" class="form-label">Employee Name</label>
+              <select   [(ngModel)]="addProject.employeeId" name="employeeId" class="form-select" id="validationDefault04" required>
+              <option>Select One</option>
+              <option  *ngFor="let data of employeeData" [value]="data.employeeId">
+                {{data.firstName}} ({{data.emailId}})
+              </option>
+             </select>
+          </div>
+            
+        
+        </div>
+           <div class="row">
+        <div class="col-md-3 mt-3" style="text-align: center;">
+            <button type="Submit" class="btn btn-primary" (click)="formSubmit()" (click)="validate()">Submit</button>
+          </div>
+        <div class="col-md-3 mt-3" style="text-align: center;">
+            <button type="reset" class="btn btn-danger"  >Cancel</button>
+          </div>
+       </div>
+  
+    </form>
+  
+   </div>
+
+
+  </div>
+</div>
+</div>
+</div>
+</section>
+  
+  
+  

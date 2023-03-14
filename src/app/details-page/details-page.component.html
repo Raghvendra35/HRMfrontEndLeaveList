@@ -1,0 +1,789 @@
+<nav class="navbar navbar-light bg-primary" style="margin-top: 56px;">
+    <div class="container-fluid">
+      <h3 style="color: aliceblue;">Details Page</h3>
+      <div class="d.flex">
+    <button type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn bth-success" ><a routerLink="addprojec" class="nav-link">Details Page</a> </button>
+      </div>  
+    </div>
+</nav>
+<!--
+<caption>Details</caption>
+<table class="table">
+    
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>First Name</th>
+        <th>Contact</th>
+        <th>Email Id</th>
+        <th>Id</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      
+    </tbody>
+   
+  </table>
+
+-->
+
+
+
+<div class="row">
+  <div class="col-8">
+  </div>
+   <div class="col-2">
+    <label>Upload Image </label>
+    <input type="file" (change)="selectFile($event,employeedetails.employeeId,'image')" name="filePath1" >
+  </div>
+  <div class="col-2">
+    <label>Upload Resume </label>
+    <input type="file" (change)="selectFile($event,employeedetails.employeeId,'resume')" name="filePath2" >
+  </div>
+ 
+
+
+
+  <div class="container-fluid mt-4">
+    
+    <div style="margin-left: 530px;">
+  <img src="http://localhost:8089/api/getfile/{{employeedetails.employeeId}}/{{typeof}}" style="border-radius: 50%;"width="230px" height="170px">
+  </div>
+  </div>
+
+
+
+<div class="container-fluid mt-4">
+ <table class="table mt-5">
+  <thead>Employee Details</thead>
+    <thead style="background-color: #dbd8d8">
+        <tr>
+            <th >employeeId</th>
+            <th >FirstName</th>
+            <th >LastName</th>
+            <th >Date Of Birth</th>
+          </tr>
+    </thead>
+    <tbody>
+     
+      <tr >
+        <td>{{employeedetails.employeeId}}</td>
+        <td>{{employeedetails.firstName}}</td>
+        <td>{{employeedetails.lastName}}</td>
+        <td>{{employeedetails.dateOfBirth}}</td>
+       
+        
+      </tr>
+
+    </tbody>
+  </table>
+</div>
+
+
+<div class="container-fluid" style="margin-top: 45px;">
+  <table class="table mt-4">
+        <thead style="background-color: #dbd8d8">
+         <tr>
+             <th >Contact</th>
+             <th >Email_Id</th>
+             <th >Password</th>
+             <th >Gender</th>
+           </tr>
+     </thead>
+     <tbody>
+      
+       <tr >
+         <td>{{employeedetails.contact}}</td>
+         <td>{{employeedetails.emailId}}</td>
+         <td>{{employeedetails.password}}</td>
+         <td>{{employeedetails.gender}}</td>
+       </tr>
+ 
+     </tbody>
+   </table>
+ </div>
+ 
+
+
+
+ <div class="container-fluid " style="margin-top: 45px;">
+  <table class="table mt-4">
+       <thead style="background-color: #dbd8d8">
+         <tr>
+             <th >Aadhar_Card</th>
+             <th >Pan_Card</th>
+             <th >- - - -</th>
+             <th >- - - -</th>
+          </tr>
+     </thead>
+     <tbody>
+      
+       <tr >
+         <td>{{employeedetails.aadharCard}}</td>
+         <td>{{employeedetails.panCard}}</td>
+         
+       </tr>
+ 
+     </tbody>
+   </table>
+ </div>
+ 
+
+
+
+<div class="container-fluid" style="margin-top: 45px;">
+  <table class="table mt-4">
+        <thead style="background-color: #dbd8d8">
+         <tr>
+             <th >Designation</th>
+             <th >Experience</th>
+             <th >PreviousCompanyName</th>
+           </tr>
+     </thead>
+     <tbody>
+      <tr>
+    
+         <td>{{employeedetails.designation}}</td>
+         <td>{{employeedetails.experience}}</td>
+         <td>{{employeedetails.previousCompanyName}}</td>
+        
+        </tr>
+ 
+     </tbody>
+   </table>
+ </div>
+ 
+    
+
+<div class="container-fluid "  style="margin-top: 45px;">
+  <table class="table mt-4">
+    <thead>Bank Details</thead>
+     <thead style="background-color: #dbd8d8">
+         <tr>
+             <th >BankName</th>
+             <th >CIF Account</th>
+             <th >AccountNumber</th>
+          </tr>
+     </thead>
+     <tbody>
+      <tbody>
+        <tr>
+           <td>{{employeedetails.bankName}}</td>
+           <td>{{employeedetails.cifNumber}}</td>
+           <td>{{employeedetails.accountNumber}}</td>
+         </tr>
+   
+       </tbody>
+    
+   </table>
+ </div>
+
+
+
+ <div class="container-fluid " style="margin-top: 50px;">
+  <table class="table mt-4">
+    <thead>Qualification</thead>
+     <thead style="background-color: #dbd8d8">
+         <tr>
+             <th >qualificationId</th>
+             <th >Course</th>
+             <th >Board/University</th>
+             <th>Percentage</th>
+             <th>Passingyear</th>
+             <th>Status</th>
+         </tr>
+     </thead>
+
+     <tbody>
+         <tr>
+           <td>{{employeedetails.qualification[0].qualificationId}}</td>
+           <td>{{employeedetails.qualification[0].course}}</td>
+           <td>{{employeedetails.qualification[0].board}}</td>
+           <td>{{employeedetails.qualification[0].percentage}}</td>
+           <td>{{employeedetails.qualification[0].passingyear}}</td>
+           <td>{{employeedetails.qualification[0].status}}</td>
+         </tr>
+      </tbody>
+
+      <tbody>
+        <tr>
+          <td>{{employeedetails.qualification[1].qualificationId}}</td>
+          <td>{{employeedetails.qualification[1].course}}</td>
+          <td>{{employeedetails.qualification[1].board}}</td>
+          <td>{{employeedetails.qualification[1].percentage}}</td>
+          <td>{{employeedetails.qualification[1].passingyear}}</td>
+          <td>{{employeedetails.qualification[1].status}}</td>
+        </tr>
+     </tbody>
+
+     <tbody>
+      <tr>
+        <td>{{employeedetails.qualification[2].qualificationId}}</td>
+        <td>{{employeedetails.qualification[2].course}}</td>
+        <td>{{employeedetails.qualification[2].board}}</td>
+        <td>{{employeedetails.qualification[2].percentage}}</td>
+        <td>{{employeedetails.qualification[2].passingyear}}</td>
+        <td>{{employeedetails.qualification[2].status}}</td>
+      </tr>
+   </tbody>
+
+   <tbody>
+    <tr>
+      <td>{{employeedetails.qualification[3].qualificationId}}</td>
+      <td>{{employeedetails.qualification[3].course}}</td>
+      <td>{{employeedetails.qualification[3].board}}</td>
+      <td>{{employeedetails.qualification[3].percentage}}</td>
+      <td>{{employeedetails.qualification[3].passingyear}}</td>
+      <td>{{employeedetails.qualification[3].status}}</td>
+    </tr>
+ </tbody>
+    
+   </table>
+ </div>
+
+
+ <div class="container-fluid " style="margin-top: 45px;">
+  <table class="table mt-4">
+    <thead>Per Address</thead>
+     <thead style="background-color: #dbd8d8">
+         <tr>
+            <th>addressId</th>  
+            <th>HouseNumber</th>
+            <th>City</th>
+            <th>PinCode</th>
+            <th>State</th>
+        </tr>
+     </thead>
+     <tbody>
+          <tr>
+            <td>{{employeedetails.address[0].addressId}}</td>
+            <td>{{employeedetails.address[0].houseNumber}}</td>
+            <td>{{employeedetails.address[0].city}}</td>
+            <td>{{employeedetails.address[0].pinCode}}</td>
+            <td>{{employeedetails.address[0].state}}</td>
+          </tr>
+     </tbody>
+   </table>
+ </div>
+
+ 
+ <div class="container-fluid " style="margin-top: 45px;">
+  <table class="table mt-4">
+    <thead style="color:rgb(252, 15, 15)">Cur Address</thead>
+     <thead style="background-color: rgb(248,245,245)">
+         <tr>
+            <th>addressId</th>  
+            <th>HouseNumber</th>
+            <th>City</th>
+            <th>PinCode</th>
+            <th>State</th>
+        </tr>
+     </thead>
+     <tbody>
+      <tr>
+        <td>{{employeedetails.address[1].addressId}}</td>
+        <td>{{employeedetails.address[1].houseNumber}}</td>
+        <td>{{employeedetails.address[1].city}}</td>
+        <td>{{employeedetails.address[1].pinCode}}</td>
+        <td>{{employeedetails.address[1].state}}</td>
+      </tr>
+   </tbody>
+        </table>
+ </div>
+
+</div>
+
+
+
+<div class="container-fluid">
+  <a href="#" (click)="downloadFile()">Download Resume</a><br/>
+  
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--  
+<section class="vh-100 gradient-custom"  style="background-color:#D5D8DC; margin-top:500px;">
+  <div class="container py-5 h-100">
+    <div class="row justify-content-center align-items-center h-100">
+      <div class="col-12 col-lg-9 col-xl-7">
+        <div class="card shadow-2-strong card-registration" style="border-radius: 15px; width: 1200px; height: 1350px; margin-left: -270px;" >
+
+
+
+
+<div class="container" style="margin-top: 130px;">
+  <h2 style="text-align: center; margin-top: -20px; padding-top: -100px;">Create Employee </h2>
+  <form name="myform" class="form-group" >
+      <div class="row jumbotron">
+
+
+        <div class="container box" >
+          <div class="row" style="height: 30px;">
+            <div class="col-" style="background-color: rgb(138, 153, 153);">
+              <label for="inputname">Employee Information</label>
+            </div>
+           </div>
+        </div>
+
+
+          <div class="col-md-4 mt-4">
+          <label  for="inputname">First Name</label>
+          <input type="" [(ngModel)]="employeedetails.firstName"  name="fisrtName" class="form-control" placeholder="First-name">
+          </div> 
+          
+          <div class="col-md-4 mt-4">
+          <label  for="inputname">Last Name</label>
+          <input type="text" [(ngModel)]="employeedetails.lastName" name="lastName" class="form-control" placeholder="Last-name">
+          </div> 
+
+          <div class="col-md-4 mt-3">
+            <label  for="inputname">Email Id</label>
+            <input type="email"  [(ngModel)]="employeedetails.emailId" name="emailId"  class="form-control" placeholder="Email-id">
+            </div>   
+
+        
+                 
+   </div>
+
+          <div class="row">
+
+
+            <div class="col-md-4 mt-3">
+              <label  for="inputname">Contact</label>
+              <input type="number" [(ngModel)]="employeedetails.contact" name="contact" class="form-control" placeholder="Contact-number">
+              </div> 
+
+          <div class="col-md-4 mt-3">
+          <label  for="inputname">Contact ( optional )</label>
+          <input type="number" class="form-control" placeholder="Contact-number">
+          </div> 
+          
+
+
+         
+        
+          
+          <div class="col-md-4 mt-3">
+          <label  for="inputname">Password</label>
+          <input type="password" [(ngModel)]="employeedetails.password" name="password"  class="form-control" placeholder="Password">
+          </div>     
+         </div>
+
+
+         <div class="row">
+          <div class="col-md-4 mt-3">
+            <label  for="inputname">Aadhar-Card</label>
+            <input type="text" [(ngModel)]="employeedetails.aadharCard" name="addharCard" class="form-control" placeholder="addharCard">
+            </div>
+        
+            <div class="col-md-4 mt-3">
+            <label  for="inputname">Pan-Card</label>
+            <input type="text" [(ngModel)]="employeedetails.panCard" name="panCard" class="form-control" placeholder="Pan-Card">
+            </div>
+          
+
+        
+            <div class="col-md-2 mt-3">
+            <label  for="inputname">DateOfBirth</label>
+            <input type="date" [(ngModel)]="employeedetails.dateOfBirth" name="dateOfBirth" class="form-control" placeholder="Date-Of-Birth">
+            </div>
+  
+            <div class="col-md-2 mt-3">
+            <label  for="inputname">Gender</label>
+            <select  [(ngModel)]="employeedetails.experience"  name="experience" class="form-select" id="validationDefault04" required>
+              <option selected disabled value="">Choose...</option>
+              <option>Female</option>
+              <option>Male</option>
+             </select>
+                
+        </div>
+        </div>
+
+
+       <div class="container box mt-5" >
+          <div class="row" style="height: 30px;">
+            <div class="col-" style="background-color: rgb(138, 153, 153);">
+              <label for="inputname">Bank-Details</label>
+            </div>
+           </div>
+        </div>
+
+         <div class="row">
+            <div class="col-md-4 mt-3">
+              <label  for="inputname">Bank Name</label>
+              <input type="text" [(ngModel)]="employeedetails.bankName" name="bankName" class="form-control" placeholder="Bank-name">
+              </div>
+
+
+
+          <div class="col-md-4 mt-3">
+           <label  for="inputname">Account Number</label>
+              <input type="text" [(ngModel)]="employeedetails.accountNumber" name="accountNumber"  class="form-control" placeholder="Account-number">
+              </div>
+              <div class="col-md-3 mt-3">
+                  <label  for="inputname">CIF Number</label>
+                  <input type="text" [(ngModel)]="employeedetails.cifNumber" name="cisfNumber" class="form-control" placeholder="CIF-number">
+                  </div>
+          </div>
+
+
+
+          <div class="container box mt-5" >
+            <div class="row" style="height: 30px;">
+              <div class="col-" style="background-color: rgb(138, 153, 153);">
+                <label for="inputname">Employee Experience</label>
+              </div>
+             </div>
+          </div>
+          <div class="row">    
+          
+            <div class="col-md-4 mt-3">
+              <label  for="inputname">Previous Company Name</label>
+              <input type="text"  [(ngModel)]="employeedetails.previousCompanyName" name="previousCompanyName"  class="form-control" placeholder="Previous-Company-Name">
+              </div>
+            
+
+          
+           <div class="col-md-3 mt-3">
+           <label  for="inputname">Designation</label>
+           <input type="text" [(ngModel)]="employeedetails.designation" name="designation" class="form-control" placeholder="Designation">
+            </div>
+          
+
+          <div class="col-md-2 mt-3">
+          <label  for="inputname">Experience</label>
+          <!-- <input type="text" [(ngModel)]="employee.experience" name="experience" class="form-control" placeholder="Experience"> -->
+       
+          <!-- <select  [(ngModel)]="employeedetails.experience"  name="experience" class="form-select" id="validationDefault04" required>
+            <option selected disabled value="">Choose State...</option>
+            <option>Fresher</option>
+            <option>0-1 year</option>
+            <option>1-3 year</option>
+            <option>3-5 year</option>
+            <option>5-7 year</option>
+            <option>7-9 year</option>
+            <option>9-11 year</option>
+            <option>11-13 year</option>
+            <option> 13+ year</option>  
+          </select>
+         </div> -->
+
+          
+
+<!--         
+           <div class="container box mt-5" >
+            <div class="row" style="height: 30px;">
+              <div class="col-2" style="background-color: rgb(138, 153, 153);">
+                <label for="inputname">Address Type</label>
+              </div>
+              <div class="col-4" style="background-color: rgb(138, 153, 153);">
+                <label for="inputname">HouseNumber</label>
+              </div>
+              <div class="col-2" style="background-color: rgb(138, 153, 153);">
+              <label for="inputname">City</label>
+              </div>
+              <div class="col-2"  style="background-color: rgb(138, 153, 153);">
+                <label for="inputname"> PinCode</label>
+              </div>
+              <div class="col-2" style="background-color: rgb(138, 153, 153);">
+                <label for="inputname">State</label>
+              </div>
+            </div>
+          </div> -->
+
+
+          <!-- <div class="container mt-3">
+            <div class="row">
+              <div class="col-2">
+               <label for="inputname">Permanent-Address</label> 
+              </div>
+              <div class="col-4">
+                <input type="text"  [(ngModel)]="employeedetails.address[0].houseNumber" name="houseNumber" class="form-control" placeholder="HouseNumber">
+              </div>
+              <div class="col-2">
+                <input type="text"  [(ngModel)]="employeedetails.address[0].city" name="city" class="form-control" placeholder="City">
+              </div>
+              <div class="col-2">
+                <input type="number" [(ngModel)]="employeedetails.address[0].pinCode"  name="pinCode" class="form-control" placeholder="PinCode">
+              </div>
+              <div class="col-2">
+                <select  [(ngModel)]="employeedetails.address[0].state"  class="form-select" id="validationDefault04" required>
+                  <option selected disabled value="">Choose State...</option>
+                  <option>Andhra Pradesh </option>
+                  <option>Arunachal Pradesh </option>
+                  <option>Assam</option>
+                  <option>Bihar</option>
+                  <option>Chhattisgarh</option>
+                  <option>Goa</option>
+                  <option>Gujarat</option>
+                  <option>Haryana</option>
+                  <option>Himachal Pradesh</option>
+                  <option>Jharkhand</option>
+                  <option>Karnataka</option>
+                  <option>Kerala</option>
+                  <option>Madhya Pradesh</option>
+                  <option>Maharashtra</option>
+                  <option>Meghalaya</option>
+                  <option>Mizoram</option>
+                  <option>Nagaland</option>
+                  <option>Odisha</option>
+                  <option>Punjab</option>
+                  <option>Rajasthan</option>
+                  <option>Sikkim</option>
+                  <option>Tamil Nadu</option>
+                  <option>Telangana</option>
+                  <option>Tripura</option>
+                  <option>Uttar Pradesh</option>
+                  <option>Uttarakhand</option>
+                  <option>West Bengal</option>
+              
+                </select>
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="container mt-3">
+            <div class="row">
+              <div class="col-2">
+               <label for="inputname">Current-Address</label> 
+              </div>
+              <div class="col-4">
+                <input type="text"  [(ngModel)]="employeedetails.address[1].houseNumber" name="houseNumber" class="form-control" placeholder="HouseNumber">
+              </div>
+              <div class="col-2">
+                <input type="text"  [(ngModel)]="employeedetails.address[1].city" name="city" class="form-control" placeholder="City">
+              </div>
+              <div class="col-2">
+                <input type="number" [(ngModel)]="employeedetails.address[1].pinCode"  name="pinCode" class="form-control" placeholder="PinCode">
+              </div>
+              <div class="col-2">
+                <select  [(ngModel)]="employeedetails.address[1].state"  class="form-select" id="validationDefault04" required>
+                  <option selected disabled value="">Choose State...</option>
+                  <option>Andhra Pradesh </option>
+                  <option>Arunachal Pradesh </option>
+                  <option>Assam</option>
+                  <option>Bihar</option>
+                  <option>Chhattisgarh</option>
+                  <option>Goa</option>
+                  <option>Gujarat</option>
+                  <option>Haryana</option>
+                  <option>Himachal Pradesh</option>
+                  <option>Jharkhand</option>
+                  <option>Karnataka</option>
+                  <option>Kerala</option>
+                  <option>Madhya Pradesh</option>
+                  <option>Maharashtra</option>
+                  <option>Meghalaya</option>
+                  <option>Mizoram</option>
+                  <option>Nagaland</option>
+                  <option>Odisha</option>
+                  <option>Punjab</option>
+                  <option>Rajasthan</option>
+                  <option>Sikkim</option>
+                  <option>Tamil Nadu</option>
+                  <option>Telangana</option>
+                  <option>Tripura</option>
+                  <option>Uttar Pradesh</option>
+                  <option>Uttarakhand</option>
+                  <option>West Bengal</option>
+              
+                </select>
+              </div>
+            </div>
+          </div>
+          
+
+
+
+          
+
+
+          
+
+
+
+
+
+
+
+
+ <div class="container box mt-5" >
+  <div class="row" style="height: 30px;">
+    <div class="col-2" style="background-color: rgb(138, 153, 153);">
+      <label for="inputname">Course</label>
+    </div>
+    <div class="col-4" style="background-color: rgb(138, 153, 153);">
+      <label for="inputname">Board/University</label>
+    </div>
+    <div class="col-2" style="background-color: rgb(138, 153, 153);">
+    <label for="inputname">Passingyear</label>
+    </div>
+    <div class="col-2"  style="background-color: rgb(138, 153, 153);">
+      <label for="inputname"> Percantage</label>
+    </div>
+    <div class="col-2" style="background-color: rgb(138, 153, 153);">
+      <label for="inputname">Status</label>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+ <div class="container mt-3">
+  <div class="row">
+    <div class="col-2">
+     <label for="inputname">HighSchool</label> 
+    </div>
+    <div class="col-4">
+      <input type="text" [(ngModel)]="employeedetails.qualification[0].board"  name="course" class="form-control" placeholder="">
+    </div>
+    <div class="col-2">
+      <input type="text" [(ngModel)]="employeedetails.qualification[0].passingyear"  name="board" class="form-control" placeholder="Passingyear">
+    </div>
+    <div class="col-2">
+      <input type="text" [(ngModel)]="employeedetails.qualification[0].percentage"  name="percentage" class="form-control" placeholder="percentage">
+    </div>
+    <div class="col-2">
+      <input type="text" [(ngModel)]="employeedetails.qualification[0].status"  name="status" class="form-control" placeholder="status">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-2">
+     <label for="inputname">Intermediate/Diploma</label> 
+    </div>
+    <div class="col-4">
+      <input type="text" [(ngModel)]="employeedetails.qualification[1].board"  name="course" class="form-control" placeholder="">
+    </div>
+    <div class="col-2">
+      <input type="text" [(ngModel)]="employeedetails.qualification[1].passingyear"  name="board" class="form-control" placeholder="Passingyear">
+    </div>
+    <div class="col-2">
+      <input type="text" [(ngModel)]="employeedetails.qualification[1].percentage"  name="percentage" class="form-control" placeholder="percentage">
+    </div>
+    <div class="col-2">
+      <input type="text" [(ngModel)]="employeedetails.qualification[1].status"  name="status" class="form-control" placeholder="status">
+    </div>
+  </div>
+</div>
+
+
+
+
+ -->
+
+
+
+
+
+<!-- <div class="container mt-3">
+  <div class="row">
+    <div class="col-2">
+     <label for="inputname">Bachelor's degree</label> 
+    </div>
+    <div class="col-4">
+      <input type="text" [(ngModel)]="employeedetails.qualification[2].board"  name="course" class="form-control" placeholder="">
+    </div>
+    <div class="col-2">
+      <input type="text" [(ngModel)]="employeedetails.qualification[2].passingyear"  name="board" class="form-control" placeholder="Passingyear">
+    </div>
+    <div class="col-2">
+      <input type="text" [(ngModel)]="employeedetails.qualification[2].percentage"  name="percentage" class="form-control" placeholder="percentage">
+    </div>
+    <div class="col-2">
+      <input type="text" [(ngModel)]="employeedetails.qualification[2].status"  name="status" class="form-control" placeholder="status">
+    </div>
+  </div>
+</div> -->
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-2">
+     <label for="inputname">Master's degree</label> 
+    </div>
+    <div class="col-4">
+      <input type="text" [(ngModel)]="employeedetails.qualification[3].board"  name="course" class="form-control" placeholder="">
+    </div>
+    <div class="col-2">
+      <input type="text" [(ngModel)]="employeedetails.qualification[3].passingyear"  name="board" class="form-control" placeholder="Passingyear">
+    </div>
+    <div class="col-2">
+      <input type="text" [(ngModel)]="employeedetails.qualification[3].percentage"  name="percentage" class="form-control" placeholder="percentage">
+    </div>
+    <div class="col-2">
+      <input type="text" [(ngModel)]="employeedetails.qualification[3].status"  name="status" class="form-control" placeholder="status">
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+
+
+<div class="row mt-5">
+<div class="col-3" >
+  <button type="Submit" class="btn btn-primary">Submit</button>
+  </div>
+  <div class="col-3">
+  <button type="Submit" class="btn btn-danger">Cancel</button>
+</div>
+</div>
+
+
+</form>
+
+</div>
+
+
+
+</div>
+</div>
+</div>
+</div>
+</section> -->
+  
+
+
+ 

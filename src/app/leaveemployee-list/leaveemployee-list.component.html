@@ -1,0 +1,129 @@
+<nav class="navbar navbar-light bg-primary" style="margin-top: 55px;">
+   <div class="container-fluid">
+    <h3 style="color: aliceblue;">HR Managements</h3>
+      <div class="d.flex">
+     
+       <button type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn bth-success" style="color:black; background-color: rgb(220, 209, 231);"><a routerLink="/leavereport" class="nav-link">Leave_Report</a> </button>
+       <button type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn bth-success" style="color:black; background-color: rgb(220, 209, 231);"><a routerLink="/leavemanage" class="nav-link">ShowLeaveManage</a> </button>
+     
+      </div>  
+    </div>
+</nav>
+
+
+<table class="table mt table-bordered">
+<thead>
+    <tr>
+        <th scope="col">index</th>
+        <th scope="col">Employee Name</th>
+        <th scope="col">Email_Id</th>
+        <th scope="col">FromDate</th>
+        <th scope="col">ToDate</th>
+        <th scope="col">Reason To Leave</th>
+        <th scope="col">Action</th>
+        
+    </tr>
+    
+</thead>
+ <tbody>
+
+    <tr *ngFor="let leave of leaveEmployees; let i=index">
+        <td>{{i+1}}</td>
+        <td>{{leave.employee.firstName}}</td> 
+        <td>{{leave.employee.emailId}}</td>
+        <td>{{leave.fromDate}}</td>
+        <td>{{leave.toDate}}</td>
+        <td>{{leave.reasonToLeave}}</td>
+             
+
+        <button class="btn btn-info"   (click) = "updateLeave(leave.leaveId)">
+          <a routerLink="/updateleave/{/leave.leaveId}" style="text-decoration: none;">Edit</a></button>
+
+        <button class="btn btn-danger" (click)="deleteLeave(leave.leaveId)" style="color:black;">Delete</button>
+             
+
+      </tr>
+ </tbody>
+</table>
+
+<button type="button"   (click)= "myFuction('prev',pageObject.page)"    style="background-color: rgb(189, 189, 228); border-radius: 15px; margin-left: 30px; margin-top: 15px;"><</button>
+<button type="button"   (click)= "myFuction('next',pageObject.page)"    style="background-color:rgb(189, 189, 228); border-radius: 15px; margin-left: 10px;">></button> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="modal" tabindex="-1" id="myModel">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Modal body text goes here.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+
+
+
+
