@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { EmployeeService } from '../employee.service';
 import { LeaveService } from '../leave.service';
 import { LeaveEmployee } from '../leave';
 import { Router } from '@angular/router';
+
+
 
 
 @Component({
@@ -18,16 +20,20 @@ export class LeaveReportEmployeeComponent implements OnInit
   selectedFile: any;
   currentFile: any;
 
+
+
   
 
   leaveEmployee: LeaveEmployee=new LeaveEmployee();
 
   constructor(private leaveService: LeaveService,
               private employeeService: EmployeeService,
-              private router: Router) {}
+              private router: Router,
+              ) {}
 
+         
 
- 
+              
   ngOnInit(): void
    {
     let res=this.employeeService.getDropdown();  
@@ -37,7 +43,9 @@ export class LeaveReportEmployeeComponent implements OnInit
      console.log(data);
      this.employeeData=data;
     })
+ 
    }
+
 
 
 
@@ -65,6 +73,7 @@ export class LeaveReportEmployeeComponent implements OnInit
    }
 
 
+
    //Store Image and Data
 
    formSubmit()
@@ -85,5 +94,20 @@ export class LeaveReportEmployeeComponent implements OnInit
       alert("Failed !!!");
     })
    }
-   
+
+
+
+
+
+
+   ////modal
+   displayStyle = "none";
+  
+   openPopup() {
+     this.displayStyle = "block";
+   }
+   closePopup() {
+     this.displayStyle = "none";
+   }
+
 }

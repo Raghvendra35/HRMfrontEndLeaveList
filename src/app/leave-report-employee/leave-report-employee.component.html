@@ -79,14 +79,22 @@
 
 
 
-
-
+   
+ 
      <section class="vh-100 gradient-custom"  style="background-color:rgb(155, 154, 156); margin-top: 56px;">
       <div class="container py-5 h-100">
         <div class="row justify-content-center align-items-center h-100">
           <div class="col-12 col-lg-9 col-xl-7">
             <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
               <div class="card-body p-4 p-md-5">
+                
+                <button
+                style="margin-top: 30px; padding: 10px"
+                type="button"
+               
+                (click)="openPopup()">Show Leave
+                </button>
+
                 <h3 class="mb-4 pb-2 pb-md-0 mb-md-5" style="padding-left: 180px;">Leave Report</h3>
                 <form name="myform" class="form-group">
                   
@@ -97,8 +105,10 @@
 
 
 
-
                   <div class="row jumbotron">
+
+
+
                         
                         <div class="col-md-6 mt-4">
                            <label  for="inputname">From Date</label>
@@ -166,4 +176,91 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> 
+
+
+
+
+
+
+
+
+    <!-- Button trigger modal -->
+<!-- <button type="button" class="btn btn-primary" (click)="openModel()" data-toggle="modal" data-target="#exampleModal" style="margin-top: 50px;">
+  Launch demo modal
+</button>  -->
+
+<!-- Modal -->
+ <!-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div> -->
+<!-- </div>  -->
+
+<!-- <div class="modal-header" style="margin-top: 50px;">
+  <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+  <button
+    type="button"
+    class="btn-close"
+    aria-label="Close"
+  
+  ></button>
+</div>
+<div class="modal-body">...</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-secondary">
+    Close
+  </button>
+  <button type="button" class="btn btn-primary">Save changes</button>
+</div> -->
+
+
+
+
+
+
+
+<div
+class="modal"
+tabindex="-1"
+role="dialog"
+[ngStyle]="{'display':displayStyle}">
+<div class="modal-dialog" role="document">
+	<div class="modal-content">
+	<div class="modal-header">
+		<h4 class="modal-title">Remain Leave</h4>
+	</div>
+	<div class="modal-body">
+		<table>
+      <tr>
+        <th>Name</th>
+        <td>Raghav</td><br>
+        <th>Name</th>
+        <td>Raghav</td>
+      </tr>
+    </table>
+
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-danger"
+				(click)="closePopup()">
+		Close
+		</button>
+	</div>
+	</div>
+</div>
+</div>
