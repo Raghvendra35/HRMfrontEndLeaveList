@@ -63,11 +63,18 @@ export class LeaveService
   }
 
 
-
+//Paginataion
 
   getLeavePagination(pageNumber=0, pageSize=5)
   {
     return this.httpClient.get(`${baseURL}/api/leaveemployee/pagination?page=${pageNumber}&size=${pageSize}`);
   }
   
+
+
+  //Leave Manage
+  getSingleEmployeeLeave(leaveManageId: any)
+  {
+    return this.httpClient.get(`${baseURL}/api/leave/${leaveManageId}`)
+  }
 }

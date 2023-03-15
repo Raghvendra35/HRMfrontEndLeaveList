@@ -78,22 +78,36 @@
    
 
 
+     <nav class="navbar navbar-light bg-success" style="margin-top: 55px;">
+      <div class="container-fluid">
+        <h4 style="color: aliceblue;">HR Managements</h4>
+  
+
+        <div class="d.flex">
+          <button type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn bth-success" style="color:black; background-color: rgb(220, 209, 231);" (click)="openPopup()"> Show Leave</button>
+        </div>  
+      </div>
+  </nav>
+
+
 
    
  
-     <section class="vh-100 gradient-custom"  style="background-color:rgb(155, 154, 156); margin-top: 56px;">
+     <section class="vh-100 gradient-custom"  style="background-color:rgb(155, 154, 156); margin-top: px;">
       <div class="container py-5 h-100">
         <div class="row justify-content-center align-items-center h-100">
           <div class="col-12 col-lg-9 col-xl-7">
             <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
               <div class="card-body p-4 p-md-5">
                 
-                <button
+                <!-- <button
                 style="margin-top: 30px; padding: 10px"
                 type="button"
                
                 (click)="openPopup()">Show Leave
-                </button>
+                </button> -->
+
+
 
                 <h3 class="mb-4 pb-2 pb-md-0 mb-md-5" style="padding-left: 180px;">Leave Report</h3>
                 <form name="myform" class="form-group">
@@ -128,7 +142,7 @@
                                        
                       <div class="row">
                         <div class="col-md-12 mt-3">
-                         <label  for="inputname">Reason fro Leave</label>
+                         <label  for="inputname">Reason for Leave 2</label>
                           <textarea [(ngModel)]="leaveEmployee.reasonToLeave" name="reasonToLeave" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                       </div>    
                      </div>
@@ -151,7 +165,22 @@
                      <div class="col-md-6 mt-5">
                       <input type="file"  name="filePath" (change)="selectFile($event)">
                      </div>
-
+                   </div>
+               <div class="row">      
+            <div class="col-md-6 mt-3">
+              <label  for="inputname">Types_of_leave</label>
+              <select  [(ngModel)]="leaveEmployee.typesOfLeave"  name="typesOfLeave" class="form-select" id="validationDefault04" required>
+                <option selected disabled value="">Choose...</option>
+                <option>Casual_Leave</option>
+                <option>Sick_Leave</option>
+                <option>Marriage_Leave</option>
+                <option>Maternity_Leave</option>
+                <option>Paternity_Leave</option>
+                <option>Bareavement_Leave</option>
+                <option>Earned_Leave</option>
+               </select>
+                  
+                </div>
                      </div>
                       <div class="row"> 
                             <div class="col-md-4 mt-5" style="text-align: center;">
@@ -180,6 +209,76 @@
 
 
 
+
+
+
+
+ <div
+class="modal"
+tabindex="-1"
+role="dialog"
+[ngStyle]="{'display':displayStyle}" style="background-color:rgb(155, 154, 156);">
+<div class="modal-dialog" role="document">
+	<div class="modal-content">
+	<div class="modal-header">
+		<h4 class="modal-title">Leave</h4>
+	</div>
+	<div class="modal-body">
+		<table>
+
+      <tr>
+        <th style="color:brown">Types_Of_Leave</th>
+        <th style="padding-left: 40px; color: brown;">Left_Leave</th>
+        </tr>
+
+
+      <tr>
+        <th>Casual_Leave</th>
+        <td class="left">{{leaveRecords.casualLeave}}</td>
+        </tr>
+
+        <tr>
+        <th>Sick_Leave</th>
+        <td  class="left">{{leaveRecords.sickLeave}}</td>
+      </tr>
+      <tr>
+        <th>Marriage_Leave</th>
+        <td class="left">{{leaveRecords.marriageLeave}}</td>
+      </tr>
+
+      <tr>
+        <th>Maternity_Leave</th>
+        <td class="left">{{leaveRecords.maternityLeave}}</td>
+      </tr>
+
+      <tr>
+        <th>Paternity_Leave</th>
+        <td class="left">{{leaveRecords.paternityLeave}}</td>
+      </tr>
+
+      <tr>
+        <th>Bareavement_Leave</th>
+        <td class="left">{{leaveRecords.bareavementLeave}}</td>
+      </tr>
+
+      <tr>
+        <th>Earned_Leave</th>
+        <td class="left">{{leaveRecords.earnedLeave}}</td>
+      </tr>
+
+
+    </table>
+
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-danger"
+				(click)="closePopup()">
+		Close
+		</button>
+	</div>
+	</div>
+</div>
+</div>
 
 
 
@@ -234,33 +333,3 @@
 
 
 
-<div
-class="modal"
-tabindex="-1"
-role="dialog"
-[ngStyle]="{'display':displayStyle}">
-<div class="modal-dialog" role="document">
-	<div class="modal-content">
-	<div class="modal-header">
-		<h4 class="modal-title">Remain Leave</h4>
-	</div>
-	<div class="modal-body">
-		<table>
-      <tr>
-        <th>Name</th>
-        <td>Raghav</td><br>
-        <th>Name</th>
-        <td>Raghav</td>
-      </tr>
-    </table>
-
-	</div>
-	<div class="modal-footer">
-		<button type="button" class="btn btn-danger"
-				(click)="closePopup()">
-		Close
-		</button>
-	</div>
-	</div>
-</div>
-</div>

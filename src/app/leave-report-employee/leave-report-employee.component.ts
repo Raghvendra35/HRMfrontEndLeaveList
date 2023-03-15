@@ -4,6 +4,7 @@ import { LeaveService } from '../leave.service';
 import { LeaveEmployee } from '../leave';
 import { Router } from '@angular/router';
 
+import { LeaveManage } from '../leave';
 
 
 
@@ -20,7 +21,7 @@ export class LeaveReportEmployeeComponent implements OnInit
   selectedFile: any;
   currentFile: any;
 
-
+   
 
   
 
@@ -40,9 +41,13 @@ export class LeaveReportEmployeeComponent implements OnInit
     
     res.subscribe((data)=>
     {
+     console.log("Only drop dwon +++++++++++");
+      
      console.log(data);
      this.employeeData=data;
-    })
+     console.log("employeeData +++++++++");
+     console.log(this.employeeData);
+   })
  
    }
 
@@ -100,11 +105,21 @@ export class LeaveReportEmployeeComponent implements OnInit
 
 
 
-   ////modal
+   //Modal
+ 
+ leaveRecords: any;
+  leaveManage: LeaveManage=new LeaveManage();
+
    displayStyle = "none";
   
-   openPopup() {
+   openPopup()
+    {
      this.displayStyle = "block";
+     this.leaveService.getSingleEmployeeLeave(2).subscribe(data=>
+      {
+        console.log(data);
+        this.leaveRecords=data;
+      })
    }
    closePopup() {
      this.displayStyle = "none";
