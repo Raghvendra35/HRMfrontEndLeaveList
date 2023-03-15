@@ -1,8 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { EmployeeService } from '../employee.service';
 import { LeaveService } from '../leave.service';
 import { LeaveEmployee } from '../leave';
 import { Router } from '@angular/router';
+
+import { LeaveManage } from '../leave';
+
 
 
 @Component({
@@ -18,26 +21,36 @@ export class LeaveReportEmployeeComponent implements OnInit
   selectedFile: any;
   currentFile: any;
 
+   
+
   
 
   leaveEmployee: LeaveEmployee=new LeaveEmployee();
 
   constructor(private leaveService: LeaveService,
               private employeeService: EmployeeService,
-              private router: Router) {}
+              private router: Router,
+              ) {}
 
+         
 
- 
+              
   ngOnInit(): void
    {
     let res=this.employeeService.getDropdown();  
     
     res.subscribe((data)=>
     {
+     console.log("Only drop dwon +++++++++++");
+      
      console.log(data);
      this.employeeData=data;
-    })
+     console.log("employeeData +++++++++");
+     console.log(this.employeeData);
+   })
+ 
    }
+
 
 
 
@@ -65,6 +78,7 @@ export class LeaveReportEmployeeComponent implements OnInit
    }
 
 
+
    //Store Image and Data
 
    formSubmit()
@@ -85,5 +99,30 @@ export class LeaveReportEmployeeComponent implements OnInit
       alert("Failed !!!");
     })
    }
-   
+
+
+
+
+
+
+   //Modal
+ 
+ leaveRecords: any;
+  leaveManage: LeaveManage=new LeaveManage();
+
+   displayStyle = "none";
+  
+   openPopup()
+    {
+     this.displayStyle = "block";
+     this.leaveService.getSingleEmployeeLeave(2).subscribe(data=>
+      {
+        console.log(data);
+        this.leaveRecords=data;
+      })
+   }
+   closePopup() {
+     this.displayStyle = "none";
+   }
+
 }
