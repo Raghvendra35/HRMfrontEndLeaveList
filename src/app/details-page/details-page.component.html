@@ -1,9 +1,13 @@
 <nav class="navbar navbar-light bg-primary" style="margin-top: 56px;">
     <div class="container-fluid">
-      <h3 style="color: aliceblue;">Details Page</h3>
+      <h4 style="color: aliceblue;">Employee Details</h4>
+
       <div class="d.flex">
+        <button type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn bth-success" style="color:black; background-color: rgb(220, 209, 231); margin-left: 940px;" (click)="openPopup()"> Add Leave</button>
+      </div> 
+      <!-- <div class="d.flex">
     <button type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn bth-success" ><a routerLink="addprojec" class="nav-link">Details Page</a> </button>
-      </div>  
+      </div>   -->
     </div>
 </nav>
 <!--
@@ -54,6 +58,12 @@
 
 
 
+  <diV>
+
+
+
+
+<div>
 <div class="container-fluid mt-4">
  <table class="table mt-5">
   <thead>Employee Details</thead>
@@ -79,6 +89,9 @@
     </tbody>
   </table>
 </div>
+
+</div>
+
 
 
 <div class="container-fluid" style="margin-top: 45px;">
@@ -292,7 +305,10 @@
         </table>
  </div>
 
-</div>
+
+
+
+
 
 
 
@@ -309,6 +325,161 @@
 
 
 
+
+
+
+<!-- Show Leave-->
+
+<div class="container-fluid" style="margin-top: 45px;">
+  <table class="table mt-4">
+        <thead style="background-color: #dbd8d8">
+         <tr>
+             <th >Leave Details</th>
+             <th ></th>
+             <th ></th>
+             <th ></th>
+           </tr>
+     </thead>
+
+
+
+<div class="container-fluid" style="margin-top: 45px;">
+  <table class="table mt-4">
+        <thead style="background-color: #dbd8d8">
+         <tr>
+             <th >Casual_Leave</th>
+             <th >Sick_Leave</th>
+             <th >Marriage_Leave</th>
+             <th >Maternity_Leave</th>
+           </tr>
+     </thead>
+     <tbody>
+      
+       <tr >
+         <td>{{leftLeave.casualLeave}}</td>
+         <td>{{leftLeave.sickLeave}}</td>
+         <td>{{leftLeave.marriageLeave}}</td>
+         <td>{{leftLeave.maternityLeave}}</td>
+       </tr>
+ 
+     </tbody>
+   </table>
+ </div>
+
+
+
+ <div class="container-fluid" style="margin-top: 45px;">
+  <table class="table mt-4">
+        <thead style="background-color: #dbd8d8">
+         <tr>
+             <th >PaternityLeave</th>
+             <th >Bereavement_Leave</th>
+             <th >Earned_Leave</th>
+     
+           </tr>
+     </thead>
+     <tbody>
+      
+       <tr >
+         <td>{{leftLeave.paternityLeave}}</td>
+         <td>{{leftLeave.bareavementLeave}}</td>
+         <td>{{leftLeave.earnedLeave}}</td>
+
+       </tr>
+ 
+     </tbody>
+   </table>
+ </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--  Add Leave Code-->
+
+
+
+<div
+class="modal"
+tabindex="-1"
+role="dialog"
+[ngStyle]="{'display':displayStyle}" style="background-color:rgb(155, 154, 156);">
+<div class="modal-dialog" role="document">
+	<div class="modal-content">
+	<div class="modal-header">
+		<h4 class="modal-title" style="padding-left: 160px;">Add Leave</h4>
+	</div>
+
+
+	<div class="modal-body">
+  
+  <div class="row">
+   <div class="col-md-6 mt-3">
+    <label  for="inputname">Casual_Leave</label>
+    <input type="number" [(ngModel)]="leaveManage.casualLeave" name="casual" class="form-control" >
+    </div> 
+    <div class="col-md-6 mt-3">
+      <label  for="inputname">Sick_Leave</label>
+      <input type="number" [(ngModel)]="leaveManage.sickLeave" name="sick" class="form-control" >
+      </div> 
+   </div>
+
+   <div class="row">
+    <div class="col-md-6 mt-3">
+     <label  for="inputname">Marriage_Leave</label>
+     <input type="number" [(ngModel)]="leaveManage.marriageLeave" name="marriage" class="form-control" >
+     </div> 
+     <div class="col-md-6 mt-3">
+       <label  for="inputname">Maternity_Leave</label>
+       <input type="number" [(ngModel)]="leaveManage.maternityLeave"  name="maternity" class="form-control" >
+       </div> 
+    </div>
+
+
+    <div class="row">
+      <div class="col-md-6 mt-3">
+       <label  for="inputname">Paternity_Leave</label>
+       <input type="number" [(ngModel)]="leaveManage.paternityLeave"  name="paternity" class="form-control" >
+       </div> 
+       <div class="col-md-6 mt-3">
+         <label  for="inputname">Earned_Leave</label>
+         <input type="number" [(ngModel)]="leaveManage.earnedLeave" name="earn" class="form-control" >
+         </div> 
+      </div>
+
+
+      <div class="row">
+        <div class="col-md-6 mt-3">
+         <label  for="inputname">Bereavement_Leave</label>
+         <input type="number" [(ngModel)]="leaveManage.bareavementLeave" name="bareavement" class="form-control" >
+         </div> 
+    
+        </div>
+    
+	</div>
+
+
+  <div class="modal-footer">
+		<button type="button" class="btn btn-primary" (click)="leaveSubmit()">Save</button>
+				
+
+	<div class="modal-footer">
+		<button type="button" class="btn btn-danger" (click)="closePopup()">Close</button>
+			
+	</div>
+	</div>
+</div>
+</div>
 
 
 
@@ -471,7 +642,7 @@
 
           <div class="col-md-2 mt-3">
           <label  for="inputname">Experience</label>
-          <!-- <input type="text" [(ngModel)]="employee.experience" name="experience" class="form-control" placeholder="Experience"> -->
+          <input type="text" [(ngModel)]="employee.experience" name="experience" class="form-control" placeholder="Experience"> -->
        
           <!-- <select  [(ngModel)]="employeedetails.experience"  name="experience" class="form-select" id="validationDefault04" required>
             <option selected disabled value="">Choose State...</option>

@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Address, Employee, Qualification } from '../employee';
 import { EmployeeService } from '../employee.service';
 import { HttpClient } from '@angular/common/http';
 import baseURL from '../help';
+
+import { LeaveManage } from '../leave';
+import { LeaveService } from '../leave.service';
 
 @Component({
   selector: 'app-details-page',
@@ -45,8 +48,15 @@ export class DetailsPageComponent implements OnInit
    //End  here  Related of image Variable
 
 
+   leftLeave: any;
 
-  constructor(private employeeService: EmployeeService, private route: ActivatedRoute, private httpClient: HttpClient)
+
+
+  constructor(private employeeService: EmployeeService,
+              private route: ActivatedRoute, 
+              private httpClient: HttpClient,
+              private leaveService: LeaveService,
+              private router: Router)
   {
     this.route.params.subscribe(parm=>
       {
@@ -110,6 +120,17 @@ export class DetailsPageComponent implements OnInit
         
       // })
       
+    
+
+
+
+      this.leaveService.getSingleEmployeeLeave(this.employeeId).subscribe(data=>
+        {
+          console.log("Left Leave +++++++++++++++++++++++++++++++++++++++++++++=");
+          console.log(data);
+          this.leftLeave=data;
+                    
+        })
   }
 
 
@@ -174,7 +195,7 @@ export class DetailsPageComponent implements OnInit
   }
 
 
-  //Display Resume
+ //Display Resume
   downloadResume(empId:any, typeOfFiles:any)
   {
     this.httpClient.get<any>(`${baseURL}/api/getfile/${empId}/${typeOfFiles}`).subscribe(blob=>
@@ -186,5 +207,47 @@ export class DetailsPageComponent implements OnInit
       })
    
   }
+
+
+
+  
+  //Add Leave
+  
+    leaveManage: LeaveManage=new LeaveManage();
+
+    displayStyle = "none";
+
+   openPopup()
+             {
+              this.displayStyle = "block";
+             
+          }
+
+        closePopup() {
+                    this.displayStyle = "none";
+                    }
+
+
+       leaveSubmit()
+       {
+        console.log("Leave Manage =================");
+        console.log(this.leaveManage);
+        console.log(this.employeedetails.employeeId);
+        
+        this.leaveService.saveLeaveManage(this.leaveManage,this.employeedetails.employeeId).subscribe(data=>
+          {
+            alert("Saved !!!");
+            this.router.navigate(['employeelist']);
+           },(error)=>
+           {
+             alert("Failed !!!");
+           });
+        
+        
+       }     
+       
+       
+
+
 
 }

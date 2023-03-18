@@ -8,7 +8,7 @@
 
 
 <div class="container; container py-5 h-100;" style="width: 750px;">
-    <h2 style="text-align: center;" class="mt-2"> Add Projets Here</h2>
+    <h2 style="text-align: center;" class="mt-2"> Add Projects Here</h2>
     <form name="myform" class="needs-validation">
         <div class="row jumbotron">
   
@@ -48,6 +48,11 @@
               <input type="text"  [(ngModel)]="addProject.teamLeader" name="teamLeader"  class="form-control" placeholder="Team-Leader">
               </div>    -->
               
+              <div class="col-md-6 mt-3">
+                <label for="inputname">Project Manager</label>
+                <input type="text" [(ngModel)]="addProject.projectManager" name="projectManager" class="form-control" placeholder="" required>
+              </div>
+
               <div class="col-md-6 mt-4">
                 <label  for="validationDefault04" class="form-label">Team Leader</label>
                 <select  [(ngModel)]="addProject.teamLeader" name="teamLeader"  class="form-select" placeholder="Team-Leader" required>

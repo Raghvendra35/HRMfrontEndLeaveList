@@ -123,7 +123,7 @@ export class LeaveService
  //update Earn Leave 
  updateEarnLeave(earnLeave: any, employeeId: any, leaveManage:any)
  {
-     return this.httpClient.put(`${baseURL}/api/updateearnleave/${earnLeave}/${employeeId}`,leaveManage);
+     return this.httpClient.put(`${baseURL}/api/updateearnedleave/${earnLeave}/${employeeId}`,leaveManage);
  }   
 
 
@@ -134,5 +134,10 @@ export class LeaveService
  }
 
 
+ //Save Leave Manage
+ saveLeaveManage(leaveManage:any,empId:any)
+ {
+    return this.httpClient.post(`${baseURL}/api/addleavemanage/${empId}`,leaveManage);
+ }
 
 }

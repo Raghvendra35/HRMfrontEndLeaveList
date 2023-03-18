@@ -129,8 +129,6 @@ export class LeaveReportEmployeeComponent implements OnInit
       {
 
       
-      
-
         if(this.typesOfLeave == "CasualLeave")
           {
                  var savedLeave=this.casualLeavevar-days;
@@ -175,7 +173,7 @@ export class LeaveReportEmployeeComponent implements OnInit
            }
         
 
-/*
+
         else if(this.typesOfLeave == "SickLeave")
         {
              var savedLeave=this.sickLeavevar-days;
@@ -218,7 +216,7 @@ export class LeaveReportEmployeeComponent implements OnInit
             }
 
 
-          }
+        
 
 
 
@@ -250,10 +248,12 @@ export class LeaveReportEmployeeComponent implements OnInit
                                  
                               }else{
                                   alert("You have no Marriage leave !!!");
-                                  this.router.navigate(['leavelist']);
-                                   }
+                                    }
                     })
-              }
+              }else{
+                alert("You have no Marriage leave !!!");
+                this.router.navigate(['leavelist']);
+                 }
           }
 
    
@@ -288,10 +288,13 @@ export class LeaveReportEmployeeComponent implements OnInit
                                   
                                 }else{
                                      alert("You have no Maternity leave !!!");
-                                     this.router.navigate(['leavelist']);
+                                     
                                      }
                        })
-                   }
+                   }else{
+                    alert("You have no Maternity leave !!!");
+                    
+                    }
                }   
 
 
@@ -327,9 +330,12 @@ export class LeaveReportEmployeeComponent implements OnInit
                                
                            }else{
                                   alert("You have no Paternity leave !!!");
-                                  this.router.navigate(['leavelist']);
+                               
                                 }
                        })
+                  }else{
+                    alert("You have no Paternity leave !!!");
+                 
                   }
            }
 
@@ -364,10 +370,13 @@ export class LeaveReportEmployeeComponent implements OnInit
                                
                               }else{
                                   alert("You have no Bareavement leave !!!");
-                                  this.router.navigate(['leavelist']);
+                                 
                                    }
                         })
-                    }
+                    }else{
+                      alert("You have no Bareavement leave !!!");
+                  
+                       }
                 }
 
      
@@ -399,12 +408,15 @@ export class LeaveReportEmployeeComponent implements OnInit
                                   
                                  }else{
                                      alert("You have no Earned leave !!!");
-                                     this.router.navigate(['leavelist']);
+                                   
                                      }
                           })
-                     }*/
+                     }else{
+                                     alert("You have no Earned leave !!!");
+                                    
+                                     }
                 
-           
+                                    }
                
         }
        })
