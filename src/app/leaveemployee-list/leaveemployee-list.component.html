@@ -27,7 +27,7 @@
  <tbody>
 
     <tr *ngFor="let leave of leaveEmployees; let i=index">
-        <td>{{i+1}}</td>
+        <td>{{pageObject.size*pageObject.page+(i+1)}}</td>
         <td>{{leave.employee.firstName}}</td> 
         <td>{{leave.employee.emailId}}</td>
         <td>{{leave.fromDate}}</td>

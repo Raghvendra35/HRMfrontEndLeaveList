@@ -18,7 +18,7 @@ export class ProjectsListComponent implements OnInit
    
    pageObject  = {
                  page : 0,
-                 size: 7,
+                 size: 10,
                  totalPage:0,
                  totalElements:1,
                  numberofElement:0

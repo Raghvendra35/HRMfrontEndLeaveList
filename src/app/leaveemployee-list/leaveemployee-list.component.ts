@@ -6,11 +6,14 @@ import { Router } from '@angular/router';
 
 
 
-@Component({
+@Component(
+  {
   selector: 'app-leaveemployee-list',
   templateUrl: './leaveemployee-list.component.html',
   styleUrls: ['./leaveemployee-list.component.css']
 })
+
+
 export class LeaveemployeeListComponent implements OnInit
  {
      
@@ -23,15 +26,17 @@ export class LeaveemployeeListComponent implements OnInit
 
     pageObject  = {
                    page: 0,
-                   size: 5,
+                   size: 10,
                    totalPage:0,
-                   
+                   totalElements:0,
                 }
+
+    //totalElements: any;
 
     employee: Employee=new Employee();
     leaveEmployee: LeaveEmployee=new LeaveEmployee();
 
-  constructor(private leaveService: LeaveService,
+    constructor(private leaveService: LeaveService,
               private router: Router){
                 
               }
@@ -49,9 +54,6 @@ export class LeaveemployeeListComponent implements OnInit
        })*/
 
        this.getPagination();
-
-      
-       
   }
 
     
@@ -60,6 +62,7 @@ export class LeaveemployeeListComponent implements OnInit
      {
          this.leaveService.getLeavePagination(this.pageObject.page, this.pageObject.size).subscribe((data: any)=>
             {
+
               console.log(data);
               this.leaveEmployees=data.content;
               console.log(data.content.totalPages);
@@ -68,9 +71,16 @@ export class LeaveemployeeListComponent implements OnInit
               console.log(this.pageObject.page);
               
               this.pageObject.totalPage=data.totalPages
+              console.log("Data =====================");
+              console.log(data.totalElements);
+              
+              this.pageObject.totalElements=data.totalElements;
+              
                   
             })
-     }    
+      }    
+
+
 
 
      myFuction(event:any,value: any)
@@ -91,20 +101,21 @@ export class LeaveemployeeListComponent implements OnInit
              
                if(event == 'next')
                 {
-                this.pageObject.page = value+1;
+                  this.pageObject.page = value+1;
                  
-                if(event =='next' && this.pageObject.totalPage >this.pageObject.page)
-                {
-          
-                  this.getPagination();
-                  console.log("Next b");
+                    if(event =='next' && this.pageObject.totalPage >this.pageObject.page)
+                      {
+            
+                           this.getPagination();
+                            console.log("Next b");
                   
-                }else
-                {
-                 alert("This is last Page !!!");
-                }
+                       }else
+                         {
+                            alert("This is a last Page !!!");
+         
+                          }
       
-                }
+                   }
               
             }
 

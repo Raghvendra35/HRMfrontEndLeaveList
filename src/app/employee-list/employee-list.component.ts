@@ -20,7 +20,7 @@ export class EmployeeListComponent implements OnInit
   pageObject ={
 
     page: 0,
-    size: 5,
+    size: 10,
     totalPage:0
   }
   

@@ -22,11 +22,12 @@
         <th scope="col">index</th>
         <th scope="col">ProjectName</th>
         <th scope="col">ClientName</th>
-        <th scope="col">Technology</th>
+        <th scope="col">Technologies</th>
         <th scope="col">Database</th>
+        <th scope="col">ProjectManager</th>
         <th scope="col">TeamLeader</th>
-        <th scope="col">FromDate</th>
-        <th scope="col">ToDate</th>
+        <th scope="col">StartingDate</th>
+        <th scope="col">EndingDate</th>
         <th scope="col">Action</th>
         
     </tr>
@@ -35,11 +36,12 @@
  <tbody>
     <tr *ngFor="let projects of addProjects;let i=index">
         
-        <td>{{i+1}}</td>
+        <td>{{(pageObject.size*(pageObject.page))+i+1}}</td>
         <td>{{projects.projectName}}</td>
         <td>{{projects.clientName}}</td>
         <td>{{projects.developingTechnology}}</td>
         <td>{{projects.databaseTechnology}}</td>
+        <td>{{projects.projectManager}}</td>
         <td>{{projects.teamLeader}}</td>
         <td>{{projects.fromDate}}</td>
         <td>{{projects.toDate}}</td>

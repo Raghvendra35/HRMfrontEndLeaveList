@@ -125,12 +125,12 @@
 
                         
                         <div class="col-md-6 mt-4">
-                           <label  for="inputname">From Date</label>
+                           <label  for="inputname">Starting Date</label>
                             <input type="date" [(ngModel)]="leaveEmployee.fromDate"  name="fromDate" class="form-control" placeholder="">
                          </div> 
                       
                           <div class="col-md-6 mt-4">
-                                <label  for="inputname">To Date</label>
+                                <label  for="inputname">Ending Date</label>
                                 <input type="date" [(ngModel)]="leaveEmployee.toDate" name="toDate" class="form-control" placeholder="">
                            </div>             
                
@@ -226,6 +226,11 @@ role="dialog"
 		<h4 class="modal-title" style="padding-left: 190px;">Leave</h4>
 	</div>
 	<div class="modal-body">
+
+    <tr>
+      <th style="color:rgb(153, 238, 55)" class="first">Employee_Name</th>
+      <td style="padding-left: 40px;">{{leaveRecords.firstName}}</td>
+      </tr>
 		<table>
 
       <tr>
