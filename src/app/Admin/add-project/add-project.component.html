@@ -8,12 +8,12 @@
 
 
 <div class="container; container py-5 h-100;" style="width: 750px;">
-    <h2 style="text-align: center;" class="mt-2"> Add Projets Here</h2>
+    <h2 style="text-align: center;" class="mt-2"> Add Projects Here</h2>
     <form name="myform" class="needs-validation">
         <div class="row jumbotron">
   
             <div class="col-md-6 mt-4">
-            <label  for="inputname">Project 2</label>
+            <label  for="inputname">Project Name</label>
             <input type="text" [(ngModel)]="addProject.projectName"  name="projectName" class="form-control" placeholder="Project-Name" required>
             </div> 
             
@@ -23,7 +23,7 @@
             </div> 
   
             <div class="col-md-6 mt-3">
-            <label  for="inputname">Developing Technology</label>
+            <label  for="inputname">Technologies</label>
             <input type="text" [(ngModel)]="addProject.developingTechnology"  name="contact" class="form-control" placeholder="Developing-technology" required>
             </div>        
   
@@ -34,12 +34,12 @@
            
            
             <div class="col-md-6 mt-3">
-            <label  for="inputname">From Date</label>
+            <label  for="inputname">Starting Date</label>
             <input type="date" [(ngModel)]="addProject.fromDate"  name="fromDate"  class="form-control" placeholder="" required>
             </div>     
   
             <div class="col-md-6 mt-3">
-            <label  for="inputname">To Date</label>
+            <label  for="inputname">Ending Date</label>
             <input type="date" [(ngModel)]="addProject.toDate" name="toDate" class="form-control" placeholder="" required>
             </div>
             
@@ -48,6 +48,11 @@
               <input type="text"  [(ngModel)]="addProject.teamLeader" name="teamLeader"  class="form-control" placeholder="Team-Leader">
               </div>    -->
               
+              <div class="col-md-6 mt-3">
+                <label for="inputname">Project Manager</label>
+                <input type="text" [(ngModel)]="addProject.projectManager" name="projectManager" class="form-control" placeholder="" required>
+              </div>
+
               <div class="col-md-6 mt-4">
                 <label  for="validationDefault04" class="form-label">Team Leader</label>
                 <select  [(ngModel)]="addProject.teamLeader" name="teamLeader"  class="form-select" placeholder="Team-Leader" required>

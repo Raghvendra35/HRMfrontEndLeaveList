@@ -10,6 +10,7 @@ export class AddProject
 	 databaseTechnology: string;
      fromDate: string;
      toDate: string;
+	 projectManager: string;
 	 
 	 employeeId:number;
 	 employee: Employees;

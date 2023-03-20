@@ -6,16 +6,21 @@ import { Router } from '@angular/router';
 
 
 
-@Component({
+@Component(
+  {
   selector: 'app-add-project',
   templateUrl: './add-project.component.html',
   styleUrls: ['./add-project.component.css']
 })
+
+
 export class AddProjectComponent implements OnInit 
 {
 
+
     employeeData: any;
     teamLeaders: any;
+    //projectManager: any;
 
     addProject: AddProject=new AddProject();
 
@@ -24,7 +29,8 @@ export class AddProjectComponent implements OnInit
                 private router: Router){}
 
 
-   ngOnInit(): void {
+   ngOnInit(): void 
+   {
     
     let res=this.employeeService.getDropdown();  
     
@@ -41,6 +47,10 @@ export class AddProjectComponent implements OnInit
 
   }
 
+
+
+
+
   formSubmit()
   {
 
@@ -56,7 +66,10 @@ export class AddProjectComponent implements OnInit
 }
 
 
-validate(){
+
+
+validate()
+{
   var form = document.getElementsByClassName('needs-validation')[0] as HTMLFormElement;
   if (form.checkValidity() === false) {
     event.preventDefault();

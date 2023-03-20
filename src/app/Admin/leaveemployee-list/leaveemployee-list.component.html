@@ -4,8 +4,7 @@
       <div class="d.flex">
      
        <button type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn bth-success" style="color:black; background-color: rgb(220, 209, 231);"><a routerLink="/leavereport" class="nav-link">Leave_Report</a> </button>
-       <button type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn bth-success" style="color:black; background-color: rgb(220, 209, 231);"><a routerLink="/leavemanage" class="nav-link">ShowLeaveManage</a> </button>
-     
+       
       </div>  
     </div>
 </nav>
@@ -28,7 +27,7 @@
  <tbody>
 
     <tr *ngFor="let leave of leaveEmployees; let i=index">
-        <td>{{i+1}}</td>
+        <td>{{pageObject.size*pageObject.page+(i+1)}}</td>
         <td>{{leave.employee.firstName}}</td> 
         <td>{{leave.employee.emailId}}</td>
         <td>{{leave.fromDate}}</td>

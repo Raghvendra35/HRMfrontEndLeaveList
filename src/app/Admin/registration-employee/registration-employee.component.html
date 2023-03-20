@@ -205,7 +205,7 @@
               <option>Male</option>
              </select>
                 
-        </div>
+              </div>
         </div>
 
 
@@ -230,8 +230,8 @@
               <input type="text" [(ngModel)]="employee.accountNumber" name="accountNumber"  class="form-control" placeholder="Account-number">
               </div>
               <div class="col-md-3 mt-3">
-                  <label  for="inputname">CIF Number</label>
-                  <input type="text" [(ngModel)]="employee.cifNumber" name="cisfNumber" class="form-control" placeholder="CIF-number">
+                  <label  for="inputname">IFSC Code</label>
+                  <input type="text" [(ngModel)]="employee.cifNumber" name="cisfNumber" class="form-control" placeholder="IFSC Code">
                   </div>
           </div>
 
@@ -620,10 +620,10 @@
                 <input type="text"  [(ngModel)]="curAddress.houseNumber" name="houseNumber" class="form-control" placeholder="HouseNumber">
               </div>
               <div class="col-2">
-                <input type="text"  [(ngModel)]="perAddress.city" name="city" class="form-control" placeholder="City">
+                <input type="text"  [(ngModel)]="curAddress.city" name="city" class="form-control" placeholder="City">
               </div>
               <div class="col-2">
-                <input type="number" [(ngModel)]="perAddress.pinCode"  name="pinCode" class="form-control" placeholder="PinCode">
+                <input type="number" [(ngModel)]="curAddress.pinCode"  name="pinCode" class="form-control" placeholder="PinCode">
               </div>
               <div class="col-2">
                 <select  [(ngModel)]="curAddress.state"  class="form-select" id="validationDefault04" required>
