@@ -1,58 +1,151 @@
- 
-<div class="wrapper" style="margin-top: 150px;">
-  <div class="logo">
-      <img src="https://www.freepnglogos.com/uploads/twitter-logo-png/twitter-bird-symbols-png-logo-.png" alt="">
-  </div>
-  <div class="text-center mt-4 name">
-      Login
-  </div>
-  <form class="p-3 mt-3">
-      <div class="form-field d-flex align-items-center">
-          <span class="far fa-user"></span>
-          <input type="text" [(ngModel)]="employee.emailId" name="emailId" id="userName" placeholder="Username">
-      </div>
-      <div class="form-field d-flex align-items-center">
-          <span class="fas fa-key"></span>
-          <input type="password" [(ngModel)]="employee.password" name="password" id="pwd" placeholder="Password">
-      </div>
-      <button class="btn mt-3" (click)="submit()">Login</button>
-  </form>
-  <div class="text-center fs-6">
-      <a href="#">Forget password?</a> or <a href="#">Sign up</a>
-  </div>
-</div> 
-
-<!-- 
-  <div>
-	<body >
-     <div >   
-   <div class="form-box" >
-     <h2>Login Here</h2>
-
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top" style="background-color: #e3f2fd;">
    
-     	<div class="input_group">
-     	<label>Email id</label>
-     	<input type="Email" placeholder="Enter email id">
-        </div>
- 
-        <div class="input_group">
-       <label>Password</label>
-     	<input type="Password" placeholder="Enter password">
-        </div>
-   
-        <button type="submit">Loign</button>
-     
-        Loign &#10132
-  <p>Login with social media account</p>
-   
-     <div class="social"> -->
+  <a href="#" class="navbar-brand">HR Managements</a>
+    <ul class="navbar-nav ms-auto">
       
-      <!-- <img src="google.png">
-      <img src="facebook.png">
-      <img src="twitter.png">
-     -->
-	<!-- </div>
+        <li class="nav-item"><a routerLink="/" class="nav-link">Home</a></li>
+       
+        <li class="nav-item"><a routerLink="/login" class="nav-link">Admin</a></li>
+      
+    </ul>
+</nav>
+ 
+
+  <!-- <h2 style="margin-top: 80px;">Hello</h2>
+
+<section class="vh-100">
+  <div class="container py-5 h-100">
+    <div class="row d-flex align-items-center justify-content-center h-100">
+      <div class="col-md-8 col-lg-7 col-xl-6">
+        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg"
+          class="img-fluid" alt="Phone image">
+      </div>
+      <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+        <h1> Sign Up</h1>
+        {{credentials | json}}
+        <form name="myform" class="form-group" (ngSubmit)="f.form.valid && formSubmit() " #f="ngForm" novalidate >
+          Email input
+          
+          <div class="form-outline mb-4">
+            <label class="form-check-label" for="form1Example3">Username </label>
+            <input type="email" [(ngModel)]="credentials.username"   name="Username" class="form-control" 
+            placeholder="Username"  #emailId="ngModel" 
+            [ngClass]="{ 'is-invalid': f.submitted && emailId.invalid }"  [ngClass]="{ 'is-invalid': f.submitted && emailId.invalid }" required>
+            <div *ngIf="f.submitted && emailId.invalid" class="invalid-feedback">
+              <div *ngIf="emailId.errors.required">password is required</div>
+          </div>
+          </div> -->
+
+          <!-- Password input -->
+          <!-- <div class="form-outline mb-4">
+            <label class="form-check-label" for="form1Example3">password </label>
+            <input type="password" [(ngModel)]="credentials.password"   name="password" class="form-control" 
+            placeholder="password"  #password="ngModel" 
+            [ngClass]="{ 'is-invalid': f.submitted && emailId.invalid }"  [ngClass]="{ 'is-invalid': f.submitted && password.invalid }" required>
+            <div *ngIf="f.submitted && password.invalid" class="invalid-feedback">
+              <div *ngIf="password.errors.required">password is required</div>
+          </div>
+          </div> -->
+
+          <!-- <div class="d-flex justify-content-around align-items-center mb-4"> -->
+            <!-- Checkbox -->
+            <!-- <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="form1Example3" checked />
+              <label class="form-check-label" for="form1Example3"> Remember me </label>
+            </div>
+            <a href="#!">Forgot password?</a>
+          </div>
+
+          Submit button
+          <button type="submit" class="btn btn-primary btn-lg btn-block">Sign in</button>
+
+          <div class="divider d-flex align-items-center my-4">
+            <p class="text-center fw-bold mx-3 mb-0 text-muted">OR</p>
+          </div>
+
+          <a class="btn btn-primary btn-lg btn-block" style="background-color: #3b5998" href="#!"
+            role="button">
+            <i class="fab fa-facebook-f me-2"></i>Continue with Facebook
+          </a>
+          <a class="btn btn-primary btn-lg btn-block" style="background-color: #55acee" href="#!"
+            role="button">
+            <i class="fab fa-twitter me-2"></i>Continue with Twitter</a>
+
+        </form>
+      </div>
     </div>
+  </div>
+</section> -->
+
+
+<section class="vh-100" style="background-color: #eee;">
+  <div class="container h-100 w-75">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-lg-12 col-xl-11">
+        <div class="card text-black" style="border-radius: 25px;">
+          <div class="card-body p-md-5" >
+            <div class="row justify-content-center">
+              <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+
+                <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</p>
+
+                 <form name="myform" class="form-group" (ngSubmit)="f.form.valid && formSubmit() " #f="ngForm" novalidate >
+
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <label class="form-check-label" for="form1Example3">Username </label>
+                      <input type="email" [(ngModel)]="credentials.username"   name="Username" class="form-control" 
+                      placeholder="Username"  #emailId="ngModel" 
+                      [ngClass]="{ 'is-invalid': f.submitted && emailId.invalid }"  [ngClass]="{ 'is-invalid': f.submitted && emailId.invalid }" required>
+                      <div *ngIf="f.submitted && emailId.invalid" class="invalid-feedback">
+                        <div *ngIf="emailId.errors.required">password is required</div>
+                    </div>
+                      <label class="form-label" for="form3Example1c">Username</label>
+                    </div>
+                  </div>
+<!-- 
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <input type="email" id="form3Example3c" class="form-control" />
+                      <label class="form-label" for="form3Example3c">Your Email</label>
+                    </div>
+                  </div> -->
+
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <input type="password" [(ngModel)]="credentials.password"   name="password" class="form-control" 
+            placeholder="password"  #password="ngModel" 
+            [ngClass]="{ 'is-invalid': f.submitted && emailId.invalid }"  [ngClass]="{ 'is-invalid': f.submitted && password.invalid }" required>
+            <div *ngIf="f.submitted && password.invalid" class="invalid-feedback">
+              <div *ngIf="password.errors.required">password is required</div>
+          </div>
+                      <label class="form-label" for="form3Example4c">Password</label>
+                    </div>
+                  </div>
+
+
+
+                  <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                    <button type="submit" class="btn btn-primary btn-lg">Sign Up</button>
+                  </div>
+
+                </form>
+              
+
+              </div>
+              <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
+                  class="img-fluid" alt="Sample image">
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-</body>
-</div> --> 
+  </div>
+</section>

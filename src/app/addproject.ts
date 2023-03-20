@@ -1,4 +1,4 @@
-import { Employee } from "./employee";
+import { Employee } from "./services/employee";
 
 export class AddProject
 {

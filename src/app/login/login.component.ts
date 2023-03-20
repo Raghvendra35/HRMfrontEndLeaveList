@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Employee } from '../employee';
-import { EmployeeService } from '../employee.service';
 import { Router } from '@angular/router';
+import { LoginService } from '../services/login.service';
 
 
 @Component({
@@ -13,32 +12,42 @@ import { Router } from '@angular/router';
 
 export class LoginComponent implements OnInit
 {
+// emailId: any;
    
-  employee: Employee=new Employee();
+  constructor(private loginService:LoginService,private _router:Router){}
 
+  credentials={
+    username:'',
+    password:'',
+  };
 
-  constructor(private employeeService: EmployeeService,
-              private router: Router){}
+  ngOnInit(){
 
-    ngOnInit(): void
-     {
-     }
+  }
+    
+  formSubmit(){
+    console.log("Login button submitt....!");
+    
+    if((this.credentials.username.trim() != '' && this.credentials.username!=null) 
+    && (this.credentials.password.trim() != '' && this.credentials.password != null)){
+      // this.snack.open("Username is requiered.....!",'',{
+      //     duration:3000,
+      // });
+      this.loginService.generateToken(this.credentials).subscribe((data:any)=>{
+        console.log(data.token);
+        this.loginService.loginUser(data.token);
+        // window.location.href="/employeelist"
+        this._router.navigate(['/admin'])
+        alert("you are successfully ragistered......:)");
+      },(error)=>{
+        this._router.navigate(['/login'])
 
-     submit()
-     {
-      console.log("Login Page =================");
-      console.log(this.employee.emailId);
-      console.log(this.employee.password);
-      this.employeeService.login(this.employee).subscribe(data=>
-        {
-          alert("Saved !!!");
-          this.router.navigate(["check"])
-        },(error)=>
-        {
-          alert("Failed !!!");
-        })
+        console.log(error);
+        console.log("Error...!");
+    });
       
+    }
+   
+  }
 
-           
-     }
 }
