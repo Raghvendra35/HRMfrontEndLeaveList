@@ -15,7 +15,7 @@ export class LoginService {
 
 
 
-  genarateToken(credentials:any){
+ public genarateToken(credentials:any){
     return this.httpClient.post(`${baseURL}/api/security/authenticate`,credentials)
 
   }

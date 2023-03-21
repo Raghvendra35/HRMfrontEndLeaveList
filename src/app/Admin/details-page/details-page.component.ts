@@ -1,19 +1,26 @@
-import { Component, OnInit } from '@angular/core';
-<<<<<<< HEAD:src/app/Admin/details-page/details-page.component.ts
-import { ActivatedRoute } from '@angular/router';
-=======
-import { ActivatedRoute, Router } from '@angular/router';
-import { Address, Employee, Qualification } from '../employee';
-import { EmployeeService } from '../employee.service';
->>>>>>> 709eb5124134903bde4c20f86f53a1c12ce367fb:src/app/details-page/details-page.component.ts
+// import { Component, OnInit } from '@angular/core';
+// //:src/app/Admin/details-page/details-page.component.ts
+// import { ActivatedRoute } from '@angular/router';
+
+// import { ActivatedRoute, Router } from '@angular/router';
+// import { Address, Employee, Qualification } from '../employee';
+// import { EmployeeService } from '../employee.service';
+// //>>>>>>> 709eb5124134903bde4c20f86f53a1c12ce367fb:src/app/details-page/details-page.component.ts
+// import { HttpClient } from '@angular/common/http';
+// import { Address, Employee, Qualification } from 'src/app/services/employee';
+// import { EmployeeService } from 'src/app/services/employee.service';
 import { HttpClient } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Address, Employee, Qualification } from 'src/app/services/employee';
 import { EmployeeService } from 'src/app/services/employee.service';
 import baseURL from 'src/app/services/help';
+import { LeaveManage } from 'src/app/services/leave';
+import { LeaveService } from 'src/app/services/leave.service';
 
 
-import { LeaveManage } from '../leave';
-import { LeaveService } from '../leave.service';
+// import { LeaveManage } from '../leave';
+// import { LeaveService } from '../leave.service';
 
 @Component({
   selector: 'app-details-page',

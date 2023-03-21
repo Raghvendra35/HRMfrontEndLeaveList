@@ -37,8 +37,9 @@ export class LoginComponent implements OnInit
         console.log(data.token);
         this.loginService.loginUser(data.token);
         // window.location.href="/employeelist"
+        // this._router.navigate(['/admin'])
+        //alert("you are successfully ragistered......:)");
         this._router.navigate(['/admin'])
-        alert("you are successfully ragistered......:)");
       },(error)=>{
         this._router.navigate(['/login'])
 
