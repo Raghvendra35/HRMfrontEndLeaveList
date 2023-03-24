@@ -23,6 +23,7 @@ import { UpdateProjectsComponent } from './update-projects/update-projects.compo
 import { UpdateSalaryComponent } from './update-salary/update-salary.component';
 import { UploadfilesComponent } from './uploadfiles/uploadfiles.component';
 
+
 const routes: Routes = [
   {
     path: '',
@@ -37,12 +38,19 @@ const routes: Routes = [
          
 
         },
+      // {
+      //   path: 'employeelist',
+      //   loadChildren: () =>
+      //     import('./employee-list/employee-list.module').then((m)=>m.EmployeeListModule)
+
+      // },
       {
         path: 'employeelist',
         loadChildren: () =>
-          import('./employee-list/employee-list.module').then((m)=>m.EmployeeListModule)
+          import('./employee-list/employee-list.module').then((m) => m.EmpListModule)
+         
 
-      },
+        },
       {
         path: 'projectlist',
         loadChildren: () =>
@@ -87,7 +95,7 @@ const routes: Routes = [
       // }
    ],
   
-     canActivate: [AuthGuard],
+    //  canActivate: [AuthGuard],
     }
 ]
   // {

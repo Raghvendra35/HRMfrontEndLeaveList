@@ -10,7 +10,7 @@ import { LoginService } from './services/login.service';
 })
 export class AppComponent implements OnInit 
 {
-  
+   
   title = 'anular-frontend';
   registrationReq:Employee = new Employee();
 
@@ -25,7 +25,8 @@ export class AppComponent implements OnInit
 
   constructor(private loginServise:LoginService){}
 
-  ngOnInit(): void {
+  ngOnInit(): void 
+  {
       this.loggedIn=this.loginServise.isLoggedIn();
   }
 

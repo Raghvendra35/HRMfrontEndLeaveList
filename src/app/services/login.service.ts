@@ -15,20 +15,26 @@ export class LoginService {
 
 
 
- public genarateToken(credentials:any){
-    return this.httpClient.post(`${baseURL}/api/security/authenticate`,credentials)
+//  public genarateToken(credentials:any){
+//     return this.httpClient.post(`${baseURL}/api/security/authenticate`,credentials)
 
-  }
+//   }
 
+
+
+  // Generate Token and Login
   public generateToken(loginData:any){
     return this.httpClient.post(`${baseURL}/api/security/authenticate`,loginData);
   }
   
   //login user:set token in localStorage
-  public loginUser(token){
+  public loginUser(token,role){
     localStorage.setItem('token',token);
+    localStorage.setItem('role', role);
     return true;
   }
+  
+
   
   //isLoggin user is login or not
   public isLoggedIn(){

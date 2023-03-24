@@ -44,7 +44,8 @@ import { RegistrationEmployeeComponent } from './Admin/registration-employee/reg
     RouterModule,
     CommonModule
   ],
-  providers: [LoginService,AuthGuard,[ { provide: HTTP_INTERCEPTORS, useClass: AuthIntercepter, multi: true }]],
+ providers: [LoginService,
+  [ { provide: HTTP_INTERCEPTORS, useClass: AuthIntercepter, multi: true }]],
   
   bootstrap: [AppComponent],
   schemas: [

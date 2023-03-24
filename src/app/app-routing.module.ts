@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ProjectsListComponent } from './Admin/projects-list/projects-list.component';
 import { LoginComponent } from './login/login.component';
  import { AuthGuard } from './services/auth.guard';
 
 const routes: Routes = [
-  // {path: '', component: LoginComponent},
+              {path:'', component: LoginComponent},
+          
   // {path: 'admin',
   //   component: AdminComponent,
   //   // canActivate: [AuthGuard],
@@ -24,8 +26,10 @@ const routes: Routes = [
   },
   {
     path:'login', component:LoginComponent
-  }
-  
+  },
+  // {path:'projectlist', component: ProjectsListComponent
+
+  // }
 ];
 
 

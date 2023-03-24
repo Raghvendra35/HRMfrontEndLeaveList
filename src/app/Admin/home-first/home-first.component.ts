@@ -7,8 +7,10 @@ import { LoginService } from 'src/app/services/login.service';
   templateUrl: './home-first.component.html',
   styleUrls: ['./home-first.component.css']
 })
-export class HomeFirstComponent {
-  constructor(private loginService:LoginService,private router:Router){}
+
+export class HomeFirstComponent 
+{
+   constructor(private loginService:LoginService,private router:Router){}
   
   public loggedIn=false;
 
