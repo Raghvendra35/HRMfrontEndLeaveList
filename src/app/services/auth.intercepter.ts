@@ -27,23 +27,22 @@ export class AuthIntercepter implements HttpInterceptor{
         console.log("INTERCEPTER",token);
 
         if(token != null){
-<<<<<<< HEAD
+
             // console.log(req);
             //   if (!req.url.includes('/login')) {
-=======
+
             console.log(req);
             // if (!req.url.includes('/login')) {
->>>>>>> 7f6ae240efa4541a11f1060ad459b55a59402f0d
             //     console.log('innns');
                 
         
             //    newReq=newReq.clone({setHeaders:{Authorization:`Bearer ${token}`}});
             // this.router.navigate(['/admin'])
-<<<<<<< HEAD
+
             //  }    
-=======
+
             // }    
->>>>>>> 7f6ae240efa4541a11f1060ad459b55a59402f0d
+
         }
         
         return next.handle(newReq)

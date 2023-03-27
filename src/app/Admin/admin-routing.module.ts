@@ -47,7 +47,7 @@ const routes: Routes = [
       {
         path: 'employeelist',
         loadChildren: () =>
-          import('./employee-list/employee-list.module').then((m) => m.EmpListModule)
+          import('./employee-list/employee-list.module').then((m) => m.EmployeeListModule)
          
 
         },
@@ -75,7 +75,7 @@ const routes: Routes = [
       {
         path:'addproject',
         loadChildren:() =>
-        import('./add-project/add-project.module').then((m) => m.AddProjectModule)
+        import('./add-project/add-project.module').then((m) => m.AddProjectsModule)
       },
       {
         path:'registration',
@@ -95,11 +95,9 @@ const routes: Routes = [
       // }
    ],
   
-<<<<<<< HEAD
+
    //  canActivate: [AuthGuard],
-=======
     //  canActivate: [AuthGuard],
->>>>>>> 7f6ae240efa4541a11f1060ad459b55a59402f0d
     }
 ]
   // {

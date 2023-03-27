@@ -33,15 +33,15 @@ export class LoginComponent implements OnInit
  
       this.loginService.generateToken(this.credentials).subscribe((data:any)=>{
         console.log(data.token);
-        this.loginService.loginUser(data.token, data.role);
+        //this.loginService.loginUser(data.token, data.role);
          
         console.log("Check the token and Role ========");
         console.log(data.token);
-        console.log(data.role);
+        //console.log(data.role);
         console.log("Checking Inside Data");
         console.log(data);
-        console.log(data.navs[0]);
-        console.log(data.navs[0].permission);
+        //console.log(data.navs[0]);
+        //console.log(data.navs[0].permission);
         
 
 

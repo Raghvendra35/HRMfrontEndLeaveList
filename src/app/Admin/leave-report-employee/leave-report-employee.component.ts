@@ -1,11 +1,10 @@
-<<<<<<< HEAD
+
 
 // import { Component, OnInit } from '@angular/core';
 // import { Router } from '@angular/router';
 // import { EmployeeService } from 'src/app/services/employee.service';
 // import { LeaveEmployee } from 'src/app/services/leave';
 // import { LeaveService } from 'src/app/services/leave.service';
-=======
 // <<<<<<< HEAD:src/app/Admin/leave-report-employee/leave-report-employee.component.ts
 // import { Component, OnInit } from '@angular/core';
 // import { Router } from '@angular/router';
@@ -13,23 +12,16 @@
 // import { LeaveEmployee } from 'src/app/services/leave';
 // import { LeaveService } from 'src/app/services/leave.service';
 
-import { Component, OnInit } from "@angular/core";
-import { Router } from "@angular/router";
-import { EmployeeService } from "src/app/services/employee.service";
-import { LeaveEmployee, LeaveManage } from "src/app/services/leave";
-import { LeaveService } from "src/app/services/leave.service";
 
->>>>>>> 7f6ae240efa4541a11f1060ad459b55a59402f0d
 // import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 // import { EmployeeService } from '../employee.service';
 // import { LeaveService } from '../leave.service';
 // import { LeaveEmployee } from '../leave';
 // import { Router } from '@angular/router';
-<<<<<<< HEAD
-=======
+
 
 // import { LeaveManage } from '../leave';
->>>>>>> 7f6ae240efa4541a11f1060ad459b55a59402f0d
+
 
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
@@ -39,10 +31,8 @@ import { LeaveService } from "src/app/services/leave.service";
 
 //import { LeaveManage } from '../leave';
 
-<<<<<<< HEAD
-=======
 //>>>>>>> 709eb5124134903bde4c20f86f53a1c12ce367fb:src/app/leave-report-employee/leave-report-employee.component.ts
->>>>>>> 7f6ae240efa4541a11f1060ad459b55a59402f0d
+
 
 @Component({
   selector: 'app-leave-report-employee',

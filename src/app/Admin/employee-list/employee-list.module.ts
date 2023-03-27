@@ -21,7 +21,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { EmpListRouting } from './employee-list-routing.module';
+import { EmployeeListRouting } from './employee-list-routing.module';
 import { EmployeeListComponent } from './employee-list.component';
 
 
@@ -29,8 +29,8 @@ import { EmployeeListComponent } from './employee-list.component';
   declarations: [EmployeeListComponent],
   imports: [
     CommonModule,
-    EmpListRouting,
+    EmployeeListRouting,
     RouterModule
   ]
 })
-export class EmpListModule { }
+export class EmployeeListModule { }
