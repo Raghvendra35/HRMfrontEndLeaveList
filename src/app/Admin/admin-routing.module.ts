@@ -31,7 +31,7 @@ const routes: Routes = [
     // redirectTo:'',
     children: [
       {
-        path: 'home',
+        path: '',
         loadChildren: () =>
           import('./home-first/home-first.module').then((m) => m.HomeFirstModule)
          
@@ -87,7 +87,7 @@ const routes: Routes = [
       // }
    ],
   
-     canActivate: [AuthGuard],
+   //  canActivate: [AuthGuard],
     }
 ]
   // {

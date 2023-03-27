@@ -13,8 +13,8 @@ import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   imports: [
     AdminRoutingModule,
-    HttpClientModule
+    HttpClientModule,CommonModule
   ],
-  declarations: [HomeFirstComponent,AdminComponent]
+  declarations: [AdminComponent]
 })
 export class AdminModule { }

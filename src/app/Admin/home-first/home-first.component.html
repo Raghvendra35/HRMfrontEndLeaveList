@@ -4,13 +4,13 @@
   <a  class="navbar-brand">HR Managements</a>
     <ul class="navbar-nav ms-auto">
       
-      <li class="nav-item" style="cursor: pointer;"><a *ngIf="loggedIn" [routerLink]="['employeelist']" class="nav-link">Home</a></li>
-      <li class="nav-item" style="cursor: pointer;"><a *ngIf="loggedIn" routerLink="/employeelist" class="nav-link">EmployeeList</a></li>
-      <li class="nav-item" style="cursor: pointer;"><a *ngIf="loggedIn" routerLink="/projectlist" class="nav-link">Project List</a></li>
-      <li class="nav-item" style="cursor: pointer;"><a *ngIf="loggedIn" routerLink="/salarylist" class="nav-link">Salary List</a></li>
-      <li class="nav-item" style="cursor: pointer;"><a *ngIf="loggedIn" routerLink="/leavelist" class="nav-link">Leave List</a></li>
+      <li class="nav-item"  style="cursor: pointer;color: black;"><a *ngIf="loggedIn" [routerLink]="['home']" class="nav-link">Home</a></li>
+      <li class="nav-item" style="cursor: pointer;"><a *ngIf="loggedIn" [routerLink]="['employeelist']" class="nav-link">EmployeeList</a></li>
+      <li class="nav-item" style="cursor: pointer;"><a *ngIf="loggedIn" [routerLink]="['projectlist']" class="nav-link">Project List</a></li>
+      <li class="nav-item" style="cursor: pointer;"><a *ngIf="loggedIn" [routerLink]="['salarylist']" class="nav-link">Salary List</a></li>
+      <li class="nav-item" style="cursor: pointer;"><a *ngIf="loggedIn" [routerLink]="['leavelist']" class="nav-link">Leave List</a></li>
       <li class="nav-item" style="cursor: pointer;"><a *ngIf="!loggedIn" routerLink="/login" class="nav-link">Login</a></li>
-      <li class="nav-item" style="cursor: pointer;"><a *ngIf="loggedIn" (click)="logOutUser()" class="nav-link">Logout</a></li>
+      <li class="nav-item" style="cursor: pointer;"><a *ngIf="loggedIn" (click)="logOutUser()" class="nav-link"><i class="fa fa-lock" aria-hidden="true"></i>Logout</a></li>
       <li class="nav-item" style="cursor: pointer;"><a routerLink="/leavelist" class="nav-link">Leave Employee </a></li>
     </ul>
 </nav>
