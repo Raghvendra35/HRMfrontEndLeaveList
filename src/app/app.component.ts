@@ -8,7 +8,9 @@ import { LoginService } from './services/login.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit 
+{
+   
   title = 'anular-frontend';
   registrationReq:Employee = new Employee();
 
@@ -23,7 +25,8 @@ export class AppComponent implements OnInit {
 
   constructor(private loginServise:LoginService){}
 
-  ngOnInit(): void {
+  ngOnInit(): void 
+  {
       this.loggedIn=this.loginServise.isLoggedIn();
   }
 

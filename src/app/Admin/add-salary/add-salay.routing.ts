@@ -5,7 +5,7 @@ import { AddSalaryComponent } from "./add-salary.component";
 
 const routs:Routes = [
     {
-        path:'',
+        path:'/admin/salarylist',
         component:AddSalaryComponent,
        // canActivate:[AuthGuard]
         

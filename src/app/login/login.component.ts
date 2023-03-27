@@ -30,16 +30,25 @@ export class LoginComponent implements OnInit
     
     if((this.credentials.username.trim() != '' && this.credentials.username!=null) 
     && (this.credentials.password.trim() != '' && this.credentials.password != null)){
-      // this.snack.open("Username is requiered.....!",'',{
-      //     duration:3000,
-      // });
+ 
       this.loginService.generateToken(this.credentials).subscribe((data:any)=>{
         console.log(data.token);
-        this.loginService.loginUser(data.token);
-        // window.location.href="/employeelist"
+        this.loginService.loginUser(data.token, data.role);
+         
+        console.log("Check the token and Role ========");
+        console.log(data.token);
+        console.log(data.role);
+        console.log("Checking Inside Data");
+        console.log(data);
+        console.log(data.navs[0]);
+        console.log(data.navs[0].permission);
+        
+
+
+        alert("Login successfully .....:)");
         this._router.navigate(['/admin'])
-        alert("you are successfully ragistered......:)");
       },(error)=>{
+        alert("Failed Login !!!");
         this._router.navigate(['/login'])
 
         console.log(error);

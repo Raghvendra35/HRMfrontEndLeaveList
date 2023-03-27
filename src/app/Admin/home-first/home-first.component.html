@@ -10,8 +10,13 @@
       <li class="nav-item" style="cursor: pointer;"><a *ngIf="loggedIn" [routerLink]="['salarylist']" class="nav-link">Salary List</a></li>
       <li class="nav-item" style="cursor: pointer;"><a *ngIf="loggedIn" [routerLink]="['leavelist']" class="nav-link">Leave List</a></li>
       <li class="nav-item" style="cursor: pointer;"><a *ngIf="!loggedIn" routerLink="/login" class="nav-link">Login</a></li>
+<<<<<<< HEAD
       <li class="nav-item" style="cursor: pointer;"><a *ngIf="loggedIn" (click)="logOutUser()" class="nav-link"><i class="fa fa-lock" aria-hidden="true"></i>Logout</a></li>
       <li class="nav-item" style="cursor: pointer;"><a routerLink="/leavelist" class="nav-link">Leave Employee </a></li>
+=======
+      <li class="nav-item" style="cursor: pointer;"><a *ngIf="loggedIn" (click)="logOutUser()" class="nav-link">Logout</a></li>
+      <li class="nav-item" style="cursor: pointer;"><a routerLink="/leavelist" class="nav-link">Leave Employee2 </a></li>
+>>>>>>> 7f6ae240efa4541a11f1060ad459b55a59402f0d
     </ul>
 </nav>
 <div  class="offcanvas offcanvas-start" id="demo" style="width: 16%;">
