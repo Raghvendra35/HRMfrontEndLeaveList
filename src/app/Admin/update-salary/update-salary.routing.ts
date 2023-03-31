@@ -7,7 +7,7 @@ const routs:Routes = [
     {
         path:'/updatesalary',
         component:UpdateSalaryComponent,
-        canActivate:[AuthGuard]
+   
         
     }
 ]

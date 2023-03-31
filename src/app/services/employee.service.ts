@@ -98,6 +98,11 @@ export class EmployeeService {
    }
 
 
+   //Send OTP to user
+   sendOTP(email: any)
+   {
+     return this.httpClient.post(`${baseURL}/api/forgot`,email);
+   }
 
 
   }

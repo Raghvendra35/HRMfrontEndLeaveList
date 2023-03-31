@@ -27,6 +27,7 @@ import { EmployeeListComponent } from './employee-list.component';
 
 @NgModule({
   declarations: [EmployeeListComponent],
+  
   imports: [
     CommonModule,
     EmployeeListRouting,

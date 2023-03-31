@@ -7,21 +7,26 @@ import { LoginService } from '../services/login.service';
   templateUrl: './admin.component.html',
   styleUrls: ['./admin.component.css']
 })
-export class AdminComponent {
-  constructor(private loginService:LoginService,private router:Router){}
+export class AdminComponent 
+{
+  constructor(private loginService:LoginService, private router:Router){}
   
-  public loggedIn=false;
+   loggedIn=false;
 
   ngOnInit(){
     console.log("inside admin");
     
     this.loggedIn=this.loginService.isLoggedIn();
+    
+    console.log(this.loggedIn);
+    
 
   }
 
-  logOutUser(){
+  logOutUser()
+  {
     this.loginService.logOut();
-    this.router.navigate[('login')];
+    this.router.navigate[('/login')];
     window.location.reload();
 
   }

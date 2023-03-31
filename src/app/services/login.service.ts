@@ -5,7 +5,8 @@ import baseURL from './help';
 @Injectable({
   providedIn: 'root'
 })
-export class LoginService {
+export class LoginService 
+{
   constructor( private httpClient:HttpClient) { }
 
   // loginUser(employee :Employee):Observable<object>{
@@ -15,50 +16,55 @@ export class LoginService {
 
 
 
-//  public genarateToken(credentials:any){
-//     return this.httpClient.post(`${baseURL}/api/security/authenticate`,credentials)
-
-//   }
-
-
-
   // Generate Token and Login
-  public generateToken(loginData:any){
+  public generateToken(loginData:any)
+  {
     return this.httpClient.post(`${baseURL}/api/security/authenticate`,loginData);
   }
-  
-  //login user:set token in localStorage
-  public loginUser(token,role){
+
+
+  //Set token in local Storage
+  public loginUser(token)
+  {
     localStorage.setItem('token',token);
-    localStorage.setItem('role', role);
+  //  localStorage.setItem('role', role);
     return true;
   }
   
 
   
-  //isLoggin user is login or not
+  //Check user is Loggin or not
   public isLoggedIn(){
-    let tokenStr=localStorage.getItem("token")
-    if(tokenStr == undefined || tokenStr == ''|| tokenStr==null){
+    let tokenStr=localStorage.getItem("login")
+    if(tokenStr == undefined || tokenStr == ''|| tokenStr==null)
+    {
       return false;
+      console.log("Inside is LoggedIn Fun ------------  token is null");
+      
     }
     else{
       return true;
+      console.log("Inside is LoggedIn Fun ------------  token is present");
     }
   }
   
-  //LogOut:remove token from local storage
+
+
+  //LogOut->    remove token from local storage
   public logOut(){
-    localStorage.removeItem("token");
+    localStorage.removeItem("login");
     return true;
   }
   
   //get token
-  public getToken(){
-    return localStorage.getItem("token");
+  public getToken()
+  {
+    console.log("Get token method is calling");
+    return JSON.parse(localStorage.getItem('login'));
   }
 
-  //set userDetail
+
+ //set userDetail
   public setUser(user){
     localStorage.setItem('user',JSON.stringify(user));
   }
@@ -79,4 +85,5 @@ export class LoginService {
   public getUserRole(){
     let user=this.getUser();
   }
+
 }

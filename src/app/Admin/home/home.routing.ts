@@ -7,7 +7,7 @@ const routs:Routes = [
     {
         path:'/home',
         component:HomeComponent,
-        canActivate:[AuthGuard]
+     //   canActivate:[AuthGuard]
         
     }
 ]

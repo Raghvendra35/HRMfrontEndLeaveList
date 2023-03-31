@@ -11,9 +11,11 @@ import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
-  imports: [
+  imports: 
+  [
     AdminRoutingModule,
-    HttpClientModule,CommonModule
+    HttpClientModule,
+    CommonModule
   ],
   declarations: [AdminComponent]
 })

@@ -38,25 +38,53 @@ const routes: Routes = [
          
 
         },
-      // {
-      //   path: 'employeelist',
-      //   loadChildren: () =>
-      //     import('./employee-list/employee-list.module').then((m)=>m.EmployeeListModule)
 
-      // },
+        //Employee Routing
       {
         path: 'employeelist',
         loadChildren: () =>
           import('./employee-list/employee-list.module').then((m) => m.EmployeeListModule)
-         
-
         },
+
+
+        {
+          path:'registration',
+          loadChildren:() =>
+          import('./registration-employee/registration-employee.module').then((m) =>m.RegistrationEmployeeModule)
+        },
+
+      //  {
+      //   path: 'employeelist/:id',
+      //   loadChildren: () =>
+      //   import('./update-employee/updateemployee.module').then((m)=> m.UpdateemployeeModule)
+      //  },
+       
+
+      {
+        path: 'employeelist:/id',
+        loadChildren: () =>
+          import('./update-employee/updateemployee.module').then((m) => m.UpdateemployeeModule)
+        },
+
+
+
+
+
+
+
+
+
       {
         path: 'projectlist',
         loadChildren: () =>
           import('./projects-list/projects-list.module').then((m) => m.ProjectsListModule)
 
       }, 
+
+
+
+
+
       {
         path:'salarylist',
         loadChildren:() =>
@@ -77,13 +105,10 @@ const routes: Routes = [
         loadChildren:() =>
         import('./add-project/add-project.module').then((m) => m.AddProjectsModule)
       },
+     
+      
       {
-        path:'registration',
-        loadChildren:() =>
-        import('./registration-employee/registration-employee.module').then((m) =>m.RegistrationEmployeeModule)
-      },
-      {
-        path:'addleave',
+        path:'leavereport',
         loadChildren:() =>
         import('./leave-report-employee/leave-report-employee.module').then((m) => m.LeaveReportEmployeeModule)
       }

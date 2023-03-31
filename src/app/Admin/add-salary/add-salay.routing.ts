@@ -5,15 +5,15 @@ import { AddSalaryComponent } from "./add-salary.component";
 
 const routs:Routes = [
     {
-        path:'/admin/salarylist',
+        path:'',
         component:AddSalaryComponent,
-       // canActivate:[AuthGuard]
-        
+             
     }
 ]
 @NgModule({
-    declarations:[],
-    imports:[RouterModule]
+
+    imports:[RouterModule.forChild(routs)],
+    exports: [RouterModule]
 
 })
 export class AddSalaryRoutingModule{

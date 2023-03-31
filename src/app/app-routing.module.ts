@@ -1,23 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ProjectsListComponent } from './Admin/projects-list/projects-list.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { LoginComponent } from './login/login.component';
  import { AuthGuard } from './services/auth.guard';
 
 const routes: Routes = [
               {path:'', component: LoginComponent},
           
-  // {path: 'admin',
-  //   component: AdminComponent,
-  //   // canActivate: [AuthGuard],
-  //   // children: [
-  //   //   {
-  //   //     path: '/employeelist', component: EmployeeListComponent,
-  //   //     canActivateChild: [AuthGuard],
-        
-  //   //   }
-  //   // ]
-  // },
+
 {
     path: 'admin',
     loadChildren: () =>
@@ -27,9 +18,9 @@ const routes: Routes = [
   {
     path:'login', component:LoginComponent
   },
-  // {path:'projectlist', component: ProjectsListComponent
+   {path:'forgot', component: ForgotPasswordComponent}
 
-  // }
+ 
 ];
 
 

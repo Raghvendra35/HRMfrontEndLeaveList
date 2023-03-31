@@ -11,6 +11,7 @@ import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [AddSalaryComponent],
+  
   imports: [
     CommonModule,
     AddSalaryRoutingModule,

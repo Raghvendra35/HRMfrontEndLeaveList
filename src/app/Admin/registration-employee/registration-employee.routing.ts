@@ -7,11 +7,11 @@ const routs:Routes = [
     {
         path:'',
         component:RegistrationEmployeeComponent,
-        // canActivate:[AuthGuard]
-        
+               
     }
 ]
 @NgModule({
+    declarations: [],
     imports:[RouterModule.forChild(routs)],
     exports:[RouterModule]
 

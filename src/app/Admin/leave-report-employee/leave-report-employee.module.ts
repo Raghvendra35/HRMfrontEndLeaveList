@@ -14,7 +14,7 @@ import { RouterModule } from '@angular/router';
   imports: [
     CommonModule,
     LeaveReportEmployeeRouting,
-    BrowserModule,
+
     HttpClientModule,
     FormsModule,
     RouterModule

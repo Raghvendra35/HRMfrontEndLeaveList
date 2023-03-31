@@ -5,7 +5,7 @@ import { HomeFirstComponent } from './home-first.component';
 
 const routes: Routes = [
   {
-    path: 'admin',
+    path: '',
     component: AdminComponent
   },
 

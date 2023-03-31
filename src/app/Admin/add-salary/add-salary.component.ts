@@ -45,7 +45,8 @@ export class AddSalaryComponent implements OnInit
   )
   }
 
-  validate(){
+  validate()
+  {
     var form = document.getElementsByClassName('needs-validation')[0] as HTMLFormElement;
     if (form.checkValidity() === false) {
       event.preventDefault();

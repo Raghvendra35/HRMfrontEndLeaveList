@@ -7,7 +7,7 @@ const routs:Routes = [
     {
         path:'/updateleave',
         component:UpdateLeaveComponent,
-        canActivate:[AuthGuard]
+        
         
     }
 ]
