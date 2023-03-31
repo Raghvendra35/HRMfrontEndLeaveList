@@ -14,7 +14,7 @@ import { AddProjectsRoutingModule } from './add-project.routing';
   imports: [
     CommonModule,
     AddProjectsRoutingModule,
-    HttpClientModule,
+    // HttpClientModule,
     FormsModule,
     RouterModule
   ]

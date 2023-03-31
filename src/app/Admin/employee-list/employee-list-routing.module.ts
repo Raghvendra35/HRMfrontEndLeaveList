@@ -35,8 +35,7 @@ const routes: Routes = [
   {
     path: '',
     component: EmployeeListComponent
-  },
-
+  }
 ];
 
 @NgModule({

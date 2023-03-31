@@ -54,6 +54,9 @@ export class EmployeeListComponent implements OnInit
              this.pageObject.totalPage=data.totalPages
         })
       }
+      asd(a){
+        this.router.navigate(['employeelist/'+a])
+      }
   
 
       myFuction(event:any,value: any)

@@ -68,7 +68,7 @@
        --><!-- <td>{{qualification.qualification10.course}}</td> -->
        
        <button class="btn btn-info"   >
-            <a  href="#" routerLink="/employeelist/{{employee.employeeId}}" style="text-decoration: none;">Edit</a></button>
+            <a   [routerLink]="admin/updateemployee" style="text-decoration: none;">Edit</a></button>
         
             <button class="btn btn-danger" (click)="deleteEmployee(employee.employeeId)" style="color:black">Delete</button>
     </tr>

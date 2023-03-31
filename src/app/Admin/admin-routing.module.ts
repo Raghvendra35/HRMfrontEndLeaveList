@@ -61,10 +61,16 @@ const routes: Routes = [
        
 
       {
-        path: 'employeelist:/id',
+        path: 'employeelist/:id',
         loadChildren: () =>
           import('./update-employee/updateemployee.module').then((m) => m.UpdateemployeeModule)
-        },
+        }
+      ,
+        {
+          path:'updateemployee',
+          loadChildren: () =>
+          import('./update-employee/updateemployee.module').then((m) => m.UpdateemployeeModule)         
+      },
 
 
 
