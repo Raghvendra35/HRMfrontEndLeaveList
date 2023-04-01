@@ -5,7 +5,7 @@
     <a  class="navbar-brand" style="color:green;">HR Management</a>
       <ul class="navbar-nav ms-auto">
         
-
+        <li class="nav-item"  style="cursor: pointer;color: black;"><a *ngIf="loggedIn" [routerLink]="['dashboard']" class="nav-link">Dashboard</a></li>
         <li class="nav-item"  style="cursor: pointer;color: black;"><a *ngIf="loggedIn" [routerLink]="['']" class="nav-link">Home</a></li>
         <li class="nav-item" style="cursor: pointer;"><a *ngIf="loggedIn" [routerLink]="['employeelist']" class="nav-link">EmployeeList</a></li>
         <li class="nav-item" style="cursor: pointer;"><a *ngIf="loggedIn" [routerLink]="['projectlist']" class="nav-link">Project List</a></li>
@@ -17,6 +17,7 @@
       </ul>
   </nav>
 
+  
   <div class="mid">
   <!-- <img src="/assets/pic6.jpg" alt=""> -->
   </div>

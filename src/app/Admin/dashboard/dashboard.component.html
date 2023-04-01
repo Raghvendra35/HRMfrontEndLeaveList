@@ -1,4 +1,4 @@
-<div  class="offcanvas offcanvas-start" id="demo" style="width: 16%;">
+<!-- <div  class="offcanvas offcanvas-start" id="demo" style="width: 16%;">
     <div  width=16% class="offcanvas-header">
       <h4 class="offcanvas-title">HR Managment</h4>
       <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
@@ -14,7 +14,7 @@
   </div>
   
   
-  <div id="body" style="background-image: url(/assets/hook9.jpg);">
+  <div class="mt-5" id="body" style="background-image: url(/assets/pic2.jpg);">
   <div class="container-fluid" >
   
     <div class="row">
@@ -30,4 +30,116 @@
     </div>
     
   </div>
+  </div> -->
+
+  <br>
+  <br>
+
+  <div class="sidebar">
+    <a class="active" href="#home" ><i class="fa fa-bars" aria-hidden="true"></i><b> Dashboard</b></a>
+    <a  routerLink="/employeelist" class="nav-link"><i class="fa fa-user" aria-hidden="true"></i><font [size]="4"></font><b> Employee</b></a>
+    <a routerLink="/projectlist" class="nav-link"><i class="fa fa-book" aria-hidden="true"></i><font [size]="3"></font><b> Projects</b></a>
+    <a routerLink="/salarylist" class="nav-link"><i class="fa fa-money" aria-hidden="true"></i><font [size]="3"></font><b> Salary</b></a>
+    <a routerLink="/leavelist" class="nav-link"><i class="fa fa-file-text" aria-hidden="true"></i><font [size]="3"></font><b> Leave</b></a>
+    <a class="nav-link"><i class="fa fa-lock" aria-hidden="true"></i><font [size]="3"><b> Log Out</b></font></a>
+    
+  
   </div>
+  
+
+  <br>
+  <div class="content">
+    <div class="card text-dark bg-info mb-3" style="max-width: 80rem;" >
+       
+        <div class="card-body">
+          <h5 class="card-title"></h5>
+          <div class="card-core" style="height:240px;">
+            <div class="row">
+                <div class="col-3">
+            <div class="card text-dark bg-light mb-3" style="max-width: 15rem;">
+                <div class="card-core" style="height: 40px;font-family: 'Courier New', Courier, monospace;color: gray;
+                text-align:center;"> Total Employees</div>
+                <div class="card-body">
+                   <p class="card-text" style="text-align: center;"> {{empData}}</p>
+                </div>
+              </div>
+              </div>
+              
+                <div class="col-3">
+            
+              <div class="card text-dark bg-light mb-3" style="max-width: 15rem;">
+                <div class="card-core" style="height: 40px;"></div>
+                <div class="card-body">
+                  <h5 class="card-title"></h5>
+
+                </div>
+              </div>
+              </div>
+              <div class="col-3">
+            
+                <div class="card text-dark bg-light mb-3" style="max-width: 15rem;">
+                  <div class="card-core" style="height: 40px;"></div>
+                  <div class="card-body">
+                    <h5 class="card-title"></h5>
+  
+                  </div>
+                </div>
+                </div>
+        </div>
+        
+          
+        </div>
+      </div>
+    
+   
+  </div>
+
+    <google-chart  style="width: 80%;height: 50%;margin-top: -80px;background-color:Dark blanchedalmond"
+    [title]="title"
+    [type]="type1"
+    [data]="pieChartData"
+    [columns]="pieChartColumns"
+  
+  
+  ></google-chart>
+
+  <!-- [options]="options"
+    (select)="onSelect($event)" -->
+  <!-- <html>
+    <head>
+      <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+      <script type="text/javascript">
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+  
+        function drawChart() {
+          var data = google.visualization.arrayToDataTable([
+            ['Year', 'Sales', 'Expenses'],
+            ['2004',  1000,      400],
+            ['2005',  1170,      460],
+            ['2006',  660,       1120],
+            ['2007',  1030,      540]
+          ]);
+  
+          var options = {
+            title: 'Company Performance',
+            curveType: 'function',
+            legend: { position: 'bottom' }
+          };
+  
+          var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+  
+          chart.draw(data, options);
+        }
+      </script>
+    </head>
+    <body>
+      <div id="curve_chart" style="width: 900px; height: 500px"></div>
+    </body>
+  </html>
+   -->
+
+  
+
+
+  

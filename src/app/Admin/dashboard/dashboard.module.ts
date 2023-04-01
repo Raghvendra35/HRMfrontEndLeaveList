@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { DashboardComponent } from './dashboard.component';
 import { DashboardRouting } from './dashboard.routing';
+import { GoogleChartsModule } from 'angular-google-charts';
 
 
 
@@ -11,7 +12,8 @@ import { DashboardRouting } from './dashboard.routing';
   imports: [
     CommonModule,
     RouterModule,
-    DashboardRouting
+    DashboardRouting,
+    GoogleChartsModule
   ]
 })
 export class DashboardModule { }

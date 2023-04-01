@@ -27,6 +27,13 @@ export class EmployeeService {
    
     }
 
+  CountEmployee()
+   {
+     return this.httpClient.get(`${baseURL}/api/employee/empcount`);
+   
+    }
+
+
    deleteEmployee(id:number)
     {
       return this.httpClient.delete(`${baseURL}/api/employee/${id}`);
