@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import baseURL from './help';
-
+const TOKEN_KEY = 'auth-token';
 @Injectable({
   providedIn: 'root'
 })
@@ -38,7 +38,7 @@ export class LoginService {
   
   //isLoggin user is login or not
   public isLoggedIn(){
-    let tokenStr=localStorage.getItem("token")
+    let tokenStr=localStorage.getItem("login")
     if(tokenStr == undefined || tokenStr == ''|| tokenStr==null){
       return false;
     }
@@ -52,10 +52,24 @@ export class LoginService {
     localStorage.removeItem("token");
     return true;
   }
+  // public saveToken(token: string): void {
+  //   window.sessionStorage.removeItem(TOKEN_KEY);
+  //   window.sessionStorage.setItem(TOKEN_KEY, token);
+
+  //   const user = this.getUser();
+  //   if (user.id) {
+  //     this.setUser({ ...user, accessToken: token });
+  //   }
+  // }
+
+  // public getToken(): string | null {
+  //   return window.sessionStorage.getItem(TOKEN_KEY);
+  // }
   
+
   //get token
   public getToken(){
-    return localStorage.getItem("token");
+    return  JSON.parse(localStorage.getItem("login")) ;
   }
 
   //set userDetail

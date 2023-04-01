@@ -51,6 +51,12 @@ const routes: Routes = [
          
 
         },
+        {
+          path:'dashboard',
+          loadChildren:() =>
+          import('./dashboard/dashboard.module').then((m) => m.DashboardModule)
+
+        },
       {
         path: 'projectlist',
         loadChildren: () =>
@@ -85,7 +91,7 @@ const routes: Routes = [
       {
         path:'addleave',
         loadChildren:() =>
-        import('./leave-report-employee/leave-report-employee.module').then((m) => m.LeaveReportEmployeeModule)
+        import('./leave-report-employee/leave-report-employee.module').then((m) => m.AddLeaveModule)
       }
 
       //  {

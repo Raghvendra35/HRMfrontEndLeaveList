@@ -33,10 +33,12 @@ export class LoginComponent implements OnInit
  
       this.loginService.generateToken(this.credentials).subscribe((data:any)=>{
         console.log(data.token);
+        localStorage.setItem('login',JSON.stringify(data))
+
         //this.loginService.loginUser(data.token, data.role);
          
         console.log("Check the token and Role ========");
-        console.log(data.token);
+        console.log("rtyujikkjhgfgh",data.token);
         //console.log(data.role);
         console.log("Checking Inside Data");
         console.log(data);

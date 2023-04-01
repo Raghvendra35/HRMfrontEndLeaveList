@@ -20,6 +20,12 @@ import { UpdateProjectsComponent } from './Admin/update-projects/update-projects
 import { UpdateLeaveComponent } from './Admin/update-leave/update-leave.component';
 import { RouterModule } from '@angular/router';
 import { RegistrationEmployeeComponent } from './Admin/registration-employee/registration-employee.component';
+import { EmployeeListComponent } from './Admin/employee-list/employee-list.component';
+import { EmployeeFilesService } from './services/employee-files.service';
+import { EmployeeService } from './services/employee.service';
+import { LeaveService } from './services/leave.service';
+import { SalaryService } from './services/salary.service';
+import { AddprojectService } from './services/addproject.service';
 
 
 @NgModule({
@@ -44,8 +50,8 @@ import { RegistrationEmployeeComponent } from './Admin/registration-employee/reg
     RouterModule,
     CommonModule
   ],
- providers: [LoginService,
-  [ { provide: HTTP_INTERCEPTORS, useClass: AuthIntercepter, multi: true }]],
+ providers: 
+  [ { provide: HTTP_INTERCEPTORS, useClass: AuthIntercepter, multi: true }],
   
   bootstrap: [AppComponent],
   schemas: [

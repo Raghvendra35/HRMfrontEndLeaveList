@@ -5,7 +5,7 @@ import { LoginComponent } from './login/login.component';
  import { AuthGuard } from './services/auth.guard';
 
 const routes: Routes = [
-              {path:'', component: LoginComponent},
+            //  {path:'', component: LoginComponent},
           
   // {path: 'admin',
   //   component: AdminComponent,
@@ -22,7 +22,7 @@ const routes: Routes = [
     path: 'admin',
     loadChildren: () =>
       import('./Admin/admin.module').then((m) => m.AdminModule),
-      //  canActivate:[AuthGuard]
+      // canActivate:[AuthGuard]
   },
   {
     path:'login', component:LoginComponent

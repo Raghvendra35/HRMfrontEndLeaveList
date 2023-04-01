@@ -7,15 +7,15 @@ const routs:Routes = [
     {
         path:'',
         component:LeaveReportEmployeeComponent,
-        canActivate:[AuthGuard]
+        // canActivate:[AuthGuard]
         
     }
 ]
 @NgModule({
-    declarations:[],
-    imports:[RouterModule]
+    imports:[RouterModule.forChild(routs)],
+    exports:[RouterModule]
 
 })
-export class LeaveReportEmployeeRouting{
+export class AddLeaveRoutingModule{
 
 }

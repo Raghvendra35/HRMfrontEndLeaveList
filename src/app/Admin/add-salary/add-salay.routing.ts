@@ -1,19 +1,19 @@
 import { NgModule } from "@angular/core";
 import { Router, RouterModule, Routes } from "@angular/router";
-//import { AuthGuard } from "src/app/services/auth.guard";
+import { AuthGuard } from "src/app/services/auth.guard";
 import { AddSalaryComponent } from "./add-salary.component";
 
 const routs:Routes = [
     {
-        path:'/admin/salarylist',
+        path:'',
         component:AddSalaryComponent,
-       // canActivate:[AuthGuard]
+        // canActivate:[AuthGuard]
         
     }
 ]
 @NgModule({
-    declarations:[],
-    imports:[RouterModule]
+    imports:[RouterModule.forChild(routs)],
+    exports:[RouterModule]
 
 })
 export class AddSalaryRoutingModule{
