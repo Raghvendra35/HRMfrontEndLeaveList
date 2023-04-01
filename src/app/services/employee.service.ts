@@ -101,9 +101,20 @@ export class EmployeeService {
    //Send OTP to user
    sendOTP(email: any)
    {
-     return this.httpClient.post(`${baseURL}/api/forgot`,email);
+     return this.httpClient.post(`${baseURL}/api/forgot`, email);
    }
 
+
+   otpVerify(otp: any)
+   {
+      return this.httpClient.post(`${baseURL}/api/verify-otp`,otp);
+   }
+
+
+   updatePassword(password: any)
+   {
+     return this.httpClient.put(`${baseURL}/api/changepassword`, password)
+   }
 
   }
 

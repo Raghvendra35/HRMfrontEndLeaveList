@@ -75,10 +75,10 @@ export class AuthIntercepter implements HttpInterceptor
         {
              var newReq=request;
             
-            var  token= this.loginService.getToken().token;
+            var  token= this.loginService.getToken();
             if (token) {
                 // If we have a token, we set it to the header
-                 if(!request.url.startsWith('/login') ){
+                 if(request.url.startsWith('/login') ){
                 request = request.clone({
                    setHeaders: {Authorization: `Bearer ${token}`}
                 });

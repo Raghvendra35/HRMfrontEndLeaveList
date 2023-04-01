@@ -18,7 +18,7 @@ import { BrowserModule } from '@angular/platform-browser';
     HttpClientModule,
     FormsModule,
     RouterModule,
-    BrowserModule 
+   // BrowserModule 
   ]
 })
 export class UpdateemployeeModule { }  
