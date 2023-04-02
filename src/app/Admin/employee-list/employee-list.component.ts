@@ -56,6 +56,11 @@ export class EmployeeListComponent implements OnInit
       }
   
 
+      // asd(a){
+      //   this.router.navigate(['employeelist/'+a])
+      // }
+
+      
       myFuction(event:any,value: any)
       {
           //console.log(event);

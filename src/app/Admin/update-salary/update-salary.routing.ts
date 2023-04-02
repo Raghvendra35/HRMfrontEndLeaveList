@@ -5,15 +5,16 @@ import { UpdateSalaryComponent } from "./update-salary.component";
 
 const routs:Routes = [
     {
-        path:'/updatesalary',
+        path:'',
         component:UpdateSalaryComponent,
    
         
     }
 ]
 @NgModule({
-    declarations:[],
-    imports:[RouterModule]
+    
+    imports:[RouterModule.forChild(routs)],
+    exports:[RouterModule]
 
 })
 export class UpdateSalaryRouting{

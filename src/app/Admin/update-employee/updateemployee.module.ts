@@ -5,7 +5,7 @@ import { UpdateEmployeeRouting } from './update-employee.routing';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { BrowserModule } from '@angular/platform-browser';
+
 
 
 

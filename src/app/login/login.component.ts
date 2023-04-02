@@ -54,7 +54,7 @@ export class LoginComponent implements OnInit
 
 
 
-        alert("Login successfully !!!");
+       // alert("Login successfully !!!");
         this._router.navigate(['/admin'])
       },(error)=>
       {

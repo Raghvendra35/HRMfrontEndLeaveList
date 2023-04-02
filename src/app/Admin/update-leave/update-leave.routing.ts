@@ -5,7 +5,7 @@ import { UpdateLeaveComponent } from "./update-leave.component";
 
 const routs:Routes = [
     {
-        path:'/updateleave',
+        path:'',
         component:UpdateLeaveComponent,
         
         
@@ -13,7 +13,8 @@ const routs:Routes = [
 ]
 @NgModule({
     declarations:[],
-    imports:[RouterModule]
+    imports:[RouterModule.forChild(routs)],
+    exports:[RouterModule]
 
 })
 export class UpdateLeaveRouting{

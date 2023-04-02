@@ -23,6 +23,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { EmployeeListRouting } from './employee-list-routing.module';
 import { EmployeeListComponent } from './employee-list.component';
+import { AdminModule } from '../admin.module';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { EmployeeListComponent } from './employee-list.component';
   imports: [
     CommonModule,
     EmployeeListRouting,
-    RouterModule
+    RouterModule,
+    AdminModule
   ]
 })
 export class EmployeeListModule { }

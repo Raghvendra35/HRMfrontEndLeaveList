@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SalaryListComponent } from './salary-list.component';
-import { SalaryListRoutingModule } from './salary-list.routin.module';
+import { SalaryListRoutingModule } from './salary-list.routing.module';
 import { RouterModule } from '@angular/router';
 
 

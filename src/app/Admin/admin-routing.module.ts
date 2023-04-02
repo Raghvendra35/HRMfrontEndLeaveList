@@ -53,26 +53,25 @@ const routes: Routes = [
           import('./registration-employee/registration-employee.module').then((m) =>m.RegistrationEmployeeModule)
         },
 
-      //  {
-      //   path: 'employeelist/:id',
-      //   loadChildren: () =>
-      //   import('./update-employee/updateemployee.module').then((m)=> m.UpdateemployeeModule)
-      //  },
+       {
+        path: 'employeelist/:id',
+        loadChildren: () =>
+        import('./update-employee/updateemployee.module').then((m)=> m.UpdateemployeeModule)
+       },
        
 
-      {
-        path: 'employeelist:/id',
-        loadChildren: () =>
-          import('./update-employee/updateemployee.module').then((m) => m.UpdateemployeeModule)
-        },
+    //    {
+    //     path:'updateemployee',
+    //     loadChildren: () =>
+    //     import('./update-employee/updateemployee.module').then((m) => m.UpdateemployeeModule)         
+    // },
 
 
 
 
 
-
-
-
+    
+     
 
       {
         path: 'projectlist',
@@ -80,7 +79,11 @@ const routes: Routes = [
           import('./projects-list/projects-list.module').then((m) => m.ProjectsListModule)
 
       }, 
-
+      {
+        path: 'projectlist/:id',
+        loadChildren: () =>
+        import('./update-projects/updateprojects.module').then((m)=> m.UpdateprojectsModule)
+      },
 
 
 
@@ -90,10 +93,23 @@ const routes: Routes = [
         loadChildren:() =>
          import('./salary-list/salary-list.module').then((m) => m.SalaryListModule)
       },
+
+      
+      {
+        path:'salarylist/:id',
+        loadChildren:() =>
+         import('./update-salary/updatesalary.module').then((m) => m.UpdatesalaryModule)
+      },
+
       {
         path:'leavelist',
         loadChildren:() =>
         import('./leaveemployee-list/leaveemployee-list.module').then((m) => m.LeaveemployeeListModule)
+      },
+      {
+        path:'leavelist/:id',
+        loadChildren:() =>
+        import('./update-leave/updateleave.module').then((m) => m.UpdateleaveModule)
       },
       {
         path:'addsalary',

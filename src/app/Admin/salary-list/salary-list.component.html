@@ -35,7 +35,7 @@
        
 
         <button class="btn btn-info" (click) = "updateSalary(empSalary.salaryId)">
-                              <a routerLink="/updatesalary/{/empSalary.salaryId}" style="text-decoration: none;">Edit</a></button>
+        <a [routerLink]="admin/updatesalary" style="text-decoration: none;">Edit</a></button>
           
         <button class="btn btn-danger" (click)="deleteSalary(empSalary.salaryId)" style="color:black">Delete</button>
         <button class=""style="color:black"><a href="http://localhost:8089/api/addsalary/salaryslippdf/{{empSalary.salaryId}}" target="" style="text-decoration: none;">Salary_Slip</a></button>

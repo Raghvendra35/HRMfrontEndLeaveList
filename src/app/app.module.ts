@@ -11,11 +11,10 @@ import { AuthIntercepter } from './services/auth.intercepter';
 import { LoginService } from './services/login.service';
 import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './Admin/admin.component';
-import { UpdateSalaryComponent } from './Admin/update-salary/update-salary.component';
+
 import { EmployeeFilesComponent } from './Admin/employee-files/employee-files.component';
 import { Employee } from './services/employee';
-import { UpdateProjectsComponent } from './Admin/update-projects/update-projects.component';
-import { UpdateLeaveComponent } from './Admin/update-leave/update-leave.component';
+
 import { RouterModule } from '@angular/router';
 import { RegistrationEmployeeComponent } from './Admin/registration-employee/registration-employee.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
@@ -26,10 +25,10 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
    
     AppComponent,
     LoginComponent,
-    UpdateSalaryComponent,
+
     EmployeeFilesComponent,
-    UpdateProjectsComponent,
-    UpdateLeaveComponent,
+   
+   
     ForgotPasswordComponent,
     
   ],

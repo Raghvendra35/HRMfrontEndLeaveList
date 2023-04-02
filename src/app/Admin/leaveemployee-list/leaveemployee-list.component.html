@@ -37,7 +37,7 @@
              
 
         <button class="btn btn-info"   (click) = "updateLeave(leave.leaveId)">
-          <a routerLink="/updateleave/{/leave.leaveId}" style="text-decoration: none;">Edit</a></button>
+          <a [routerLink]="admin/updateleave" style="text-decoration: none;">Edit</a></button>
 
         <button class="btn btn-danger" (click)="deleteLeave(leave.leaveId)" style="color:black;">Delete</button>
              
