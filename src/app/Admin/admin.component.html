@@ -4,14 +4,20 @@
   
     <a  class="navbar-brand" style="color:green;"></a>
       <ul class="navbar-nav ms-auto">
+        <!-- <div *ngFor="let item of resultNavs"> -->
+        <!-- <li class="nav-item" style="cursor: pointer;" *ngIf="loggedIn&&isNavActive"><a   [routerLink]="['home']" class="nav-link">{{item}}</a></li> -->
         
-        <li class="nav-item" style="cursor: pointer;"><a  *ngIf="loggedIn" [routerLink]="['home']" class="nav-link">Home</a></li>
-        <li class="nav-item" style="cursor: pointer;"><a  *ngIf="loggedIn" [routerLink]="['employeelist']" class="nav-link">Employee</a></li>
-        <li class="nav-item" style="cursor: pointer;"><a  *ngIf="loggedIn" [routerLink]="['projectlist']" class="nav-link">Project </a></li>
-        <li class="nav-item" style="cursor: pointer;"><a  *ngIf="loggedIn" [routerLink]="['salarylist']" class="nav-link">Salary </a></li>
-        <li class="nav-item" style="cursor: pointer;"><a  *ngIf="loggedIn" [routerLink]="['leavelist']" class="nav-link">Leave</a></li>
+      <!-- </div> -->
+        <li class="nav-item" style="cursor: pointer;" *ngIf="loggedIn&&isNavActive"><a   [routerLink]="['employeelist']" class="nav-link">Employee</a></li>
+        <li>{{loggedIn}}</li> <li>{{"and"}}</li>  <li>{{isNavActive}}</li>
+        <li class="nav-item" style="cursor: pointer;" *ngIf="loggedIn&&isNavActive"><a   [routerLink]="['projectlist']" class="nav-link">Project </a></li>
+        <li>{{loggedIn}}</li> <li>{{"and"}}</li>  <li>{{isNavActive}}</li>
+        <li class="nav-item" style="cursor: pointer;" *ngIf="loggedIn&&isNavActive"><a   [routerLink]="['salarylist']" class="nav-link">Salary </a></li>
+        <li>{{loggedIn}}</li> <li>{{"and"}}</li>  <li>{{isNavActive}}</li>
+        <li class="nav-item" style="cursor: pointer;" *ngIf="loggedIn&&isNavActive"><a   [routerLink]="['leavelist']" class="nav-link">Leave</a></li>
+        <li>{{loggedIn}}</li> <li>{{"and"}}</li>  <li>{{isNavActive}}</li>
         <li class="nav-item" style="cursor: pointer;"><a  *ngIf="!loggedIn" class="nav-link">Login</a></li>
-        <li class="nav-item" style="cursor: pointer;"><a  *ngIf="loggedIn" (click)="logOutUser()" class="nav-link"><i  aria-hidden="true"></i>Logout</a></li>
+        <li class="nav-item" style="cursor: pointer;"><a  *ngIf="loggedIn&&isNavActive" (click)="logOutUser()" class="nav-link"><i  aria-hidden="true"></i>Logout</a></li>
        
       </ul>
   </nav>

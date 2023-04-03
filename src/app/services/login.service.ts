@@ -9,11 +9,6 @@ export class LoginService
 {
   constructor( private httpClient:HttpClient) { }
 
-  // loginUser(employee :Employee):Observable<object>{
-  //   console.log(employee);
-  //   return this.httpClient.post(`${baseURL}/employee/save`,employee);
-  // }
-
 
 
   // Generate Token and Login
@@ -70,7 +65,8 @@ export class LoginService
   }
 
   //get User
-  public getUser(){
+  public getUser()
+  {
     let userStr=localStorage.getItem('user');
     if(userStr != null){
       return JSON.parse(userStr);
@@ -82,7 +78,8 @@ export class LoginService
   }
 
   //get user role
-  public getUserRole(){
+  public getUserRole()
+  {
     let user=this.getUser();
   }
 

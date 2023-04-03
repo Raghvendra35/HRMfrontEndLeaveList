@@ -16,6 +16,7 @@ export class EmployeeListComponent implements OnInit
 
   employeeList :Array<any>=[];
   employees:any;
+  employeeId: any;
 
   pageObject ={
 
@@ -49,6 +50,7 @@ export class EmployeeListComponent implements OnInit
         {
           console.log(data);
             this.employees=data.content;
+            this.employeeId=this.employees.employeeId;
             this.pageObject.page=data.number;
             console.log(this.pageObject.page);
              this.pageObject.totalPage=data.totalPages
@@ -102,9 +104,15 @@ export class EmployeeListComponent implements OnInit
     {
       console.log('delete id',id);
       
-     let res= this.employeeService.deleteEmployee(id);
+     this.employeeService.deleteEmployee(id).subscribe(data=>
+      {
+        this.router.navigate(['employeeList']);
+      },(error)=>
+      {
+        alert("Failed !!!");
+      })
     
-       res.subscribe((data)=> this.employees=data);  
+         
     }
   
    
@@ -112,7 +120,7 @@ export class EmployeeListComponent implements OnInit
     
     updateEmployee(employeeId:number)
     {
-     this.router.navigate(['updateemployee',employeeId]);
+     this.router.navigate(['admin/employeelist',employeeId]);
      
     }
 

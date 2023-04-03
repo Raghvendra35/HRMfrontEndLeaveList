@@ -30,11 +30,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { EmployeeListComponent } from './employee-list.component';
+import { AuthGuard } from 'src/app/services/auth.guard';
 
 const routes: Routes = [
   {
     path: '',
-    component: EmployeeListComponent
+    component: EmployeeListComponent,
+      canActivate:[AuthGuard]
   },
 
 ];

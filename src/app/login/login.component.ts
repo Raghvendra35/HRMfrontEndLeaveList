@@ -29,7 +29,8 @@ export class LoginComponent implements OnInit
     console.log("Login button submitt....!");
     
     if((this.credentials.username.trim() != '' && this.credentials.username!=null) 
-    && (this.credentials.password.trim() != '' && this.credentials.password != null)){
+       && (this.credentials.password.trim() != '' && this.credentials.password != null))
+    {
  
       this.loginService.generateToken(this.credentials).subscribe((data:any)=>
       {
@@ -38,11 +39,20 @@ export class LoginComponent implements OnInit
         console.log("Check the token and Role ========");
         console.log(data.token);
         localStorage.setItem('login',JSON.stringify(data))
-        //console.log(data.role);
-        // console.log("Checking Inside Data");
-        // console.log(data);
-        //console.log(data.navs[0]);
-        //console.log(data.navs[0].permission);
+     
+        console.log("Checking which thing  is comming with token");
+        console.log(data);
+        console.log("Nav =============");
+        console.log("Printing role ");
+        
+        console.log(data.role);
+        
+        
+        console.log(data.navs[0]);
+        console.log(data.navs[1]);
+        console.log("permission =========");
+        
+        // console.log(data.navs[0].permission);
         
 
       

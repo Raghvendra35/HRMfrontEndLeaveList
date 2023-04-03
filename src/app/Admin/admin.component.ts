@@ -9,19 +9,75 @@ import { LoginService } from '../services/login.service';
 })
 export class AdminComponent 
 {
+
   constructor(private loginService:LoginService, private router:Router){}
   
    loggedIn=false;
+   toke: any;
+   tokenData: Array<any>[];
+   roleType: any;
 
-  ngOnInit(){
-    console.log("inside admin");
-    
+   navigation = ['Home','Employee','Project','Salary','Leave']
+   roles = ['HR', 'ADMIN', '']
+   resultNavs : Array<any>=[];
+   isNavActive = false;
+   permission='yes';
+
+
+
+  ngOnInit()
+  {
     this.loggedIn=this.loginService.isLoggedIn();
-    
-    console.log(this.loggedIn);
-    
 
-  }
+    this.toke=this.loginService.getToken(); 
+    this.roleType=this.toke.role;
+    this.tokenData=this.toke;
+    let navs = this.loginService.getToken().navs;
+
+    this.getFinalNavs(navs);
+  
+    // this.tokenData.forEach(d=>{
+    //   this.navigation.forEach(d1=>{
+        
+    //   })
+    // })
+   }
+
+
+     getFinalNavs(nav)
+     {
+      console.log('method');
+      
+      console.log(nav);
+      
+      this.resultNavs = [];
+      nav.forEach((d:any)=>
+      {
+        this.navigation.forEach(d1=>
+          {
+          if((d.models===d1)&&(d.permission=='Yes'))
+          {
+
+            console.log("Printing Permission In ADMIN +++++++++++++++++++");
+            console.log(d.permission);
+            console.log(d.models);
+            
+            this.permission=d.permission;
+            console.log("Printing isNavActive    ============== ");
+            console.log(this.isNavActive);
+            
+            
+            this.isNavActive = true;
+            console.log(this.isNavActive);
+            console.log('this.isnavactive');
+            
+          }
+        })
+      })
+      
+    }
+
+
 
   logOutUser()
   {
