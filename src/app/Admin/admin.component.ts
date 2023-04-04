@@ -2,11 +2,13 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginService } from '../services/login.service';
 
-@Component({
+@Component(
+  {
   selector: 'app-admin',
   templateUrl: './admin.component.html',
   styleUrls: ['./admin.component.css']
-})
+ })
+
 export class AdminComponent 
 {
 
@@ -18,29 +20,65 @@ export class AdminComponent
    roleType: any;
 
    navigation = ['Home','Employee','Project','Salary','Leave']
-   roles = ['HR', 'ADMIN', '']
+   roles = ['HR', 'ADMIN', 'Employee']
    resultNavs : Array<any>=[];
    isNavActive = false;
    permission='yes';
 
 
+   //Static
+   //var roledss: any;
+
+   roleHR:any;
+   roleADMIN:any;
+   roleEmployee:any;
+
+
 
   ngOnInit()
   {
-    this.loggedIn=this.loginService.isLoggedIn();
 
+    this.loggedIn=this.loginService.isLoggedIn();
     this.toke=this.loginService.getToken(); 
     this.roleType=this.toke.role;
+    console.log("Printing the role types ");
+    console.log(this.roleType);
+    
+    
     this.tokenData=this.toke;
     let navs = this.loginService.getToken().navs;
+    let role=this.loginService.getToken().role;
+
+    console.log("Getting Role===============");
+    console.log(role);
+    if(role=="HR")
+    {
+      this.roleHR=role;
+      console.log("Inside if cond  HR......................................");
+      console.log(this.roleHR);
+      
+    }
+    else if(role=="ADMIN")
+    {
+
+     this.roleADMIN=role;
+     console.log("Inside if cond  ADMIN......................................");
+     console.log(this.roleADMIN);
+    
+    }
+    else{
+       
+      this.roleEmployee=role;
+      console.log("Inside if cond  ADMIN......................................");
+      console.log(this.roleEmployee);
+      
+    }
+
+    
 
     this.getFinalNavs(navs);
   
-    // this.tokenData.forEach(d=>{
-    //   this.navigation.forEach(d1=>{
-        
-    //   })
-    // })
+
    }
 
 
@@ -58,24 +96,40 @@ export class AdminComponent
           if((d.models===d1)&&(d.permission=='Yes'))
           {
 
-            console.log("Printing Permission In ADMIN +++++++++++++++++++");
-            console.log(d.permission);
-            console.log(d.models);
+            // console.log("Printing Permission In ADMIN +++++++++++++++++++");
+            // console.log(d.permission);
+            // console.log(d.models);
             
             this.permission=d.permission;
-            console.log("Printing isNavActive    ============== ");
-            console.log(this.isNavActive);
+            // console.log("Printing isNavActive    ============== ");
+            // console.log(this.isNavActive);
             
             
             this.isNavActive = true;
-            console.log(this.isNavActive);
-            console.log('this.isnavactive');
+            // console.log(this.isNavActive);
+            // console.log('this.isnavactive');
             
           }
         })
       })
       
+     }
+
+
+
+  
+    checkRoleTypes(role:any)
+    {
+      if(role)
+      {
+
+      }else
+      {
+         
+      }
+
     }
+   
 
 
 

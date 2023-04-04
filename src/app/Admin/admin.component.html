@@ -3,12 +3,14 @@
   <h3 style="color: aliceblue;" ><img src="../assets/pratikshat.png" width="80px"></h3>
   
     <a  class="navbar-brand" style="color:green;"></a>
-      <ul class="navbar-nav ms-auto">
+
+<!--     
+      <ul class="navbar-nav ms-auto"> -->
         <!-- <div *ngFor="let item of resultNavs"> -->
         <!-- <li class="nav-item" style="cursor: pointer;" *ngIf="loggedIn&&isNavActive"><a   [routerLink]="['home']" class="nav-link">{{item}}</a></li> -->
         
       <!-- </div> -->
-        <li class="nav-item" style="cursor: pointer;" *ngIf="loggedIn&&isNavActive"><a   [routerLink]="['employeelist']" class="nav-link">Employee</a></li>
+        <!-- <li class="nav-item" style="cursor: pointer;" *ngIf="loggedIn&&isNavActive"><a   [routerLink]="['employeelist']" class="nav-link">Employee</a></li>
         <li>{{loggedIn}}</li> <li>{{"and"}}</li>  <li>{{isNavActive}}</li>
         <li class="nav-item" style="cursor: pointer;" *ngIf="loggedIn&&isNavActive"><a   [routerLink]="['projectlist']" class="nav-link">Project </a></li>
         <li>{{loggedIn}}</li> <li>{{"and"}}</li>  <li>{{isNavActive}}</li>
@@ -19,8 +21,26 @@
         <li class="nav-item" style="cursor: pointer;"><a  *ngIf="!loggedIn" class="nav-link">Login</a></li>
         <li class="nav-item" style="cursor: pointer;"><a  *ngIf="loggedIn&&isNavActive" (click)="logOutUser()" class="nav-link"><i  aria-hidden="true"></i>Logout</a></li>
        
+      </ul> -->
+
+
+
+
+        
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item" style="cursor: pointer;" *ngIf="roleHR||roleADMIN"><a   [routerLink]="['employeelist']" class="nav-link">Employee</a></li>
+        <li class="nav-item" style="cursor: pointer;" *ngIf="roleHR||roleADMIN"><a   [routerLink]="['projectlist']" class="nav-link">Project </a></li>
+        <li class="nav-item" style="cursor: pointer;" *ngIf="roleHR||roleADMIN"><a   [routerLink]="['salarylist']" class="nav-link">Salary </a></li>
+        <li class="nav-item" style="cursor: pointer;" *ngIf="roleHR||roleADMIN||roleEmployee"><a   [routerLink]="['leavelist']" class="nav-link">Leave</a></li>
+        <li class="nav-item" style="cursor: pointer;"><a  *ngIf="!loggedIn" class="nav-link">Login</a></li>
+        <li class="nav-item" style="cursor: pointer;"><a  *ngIf="loggedIn&&isNavActive" (click)="logOutUser()" class="nav-link"><i  aria-hidden="true"></i>Logout</a></li>
       </ul>
-  </nav>
+   </nav>
+
+   <div>
+     
+
+ 
 
   <div class="mid">
   <!-- <img src="/assets/pic6.jpg" alt=""> -->
