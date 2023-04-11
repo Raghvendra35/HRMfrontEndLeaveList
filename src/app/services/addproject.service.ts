@@ -21,6 +21,11 @@ export class AddprojectService {
     return this.httpClient.post(`${baseURL}/api/addproject`, addproject);
   }
 
+  getProjectname( projectName:any):Observable<any>
+  {
+    return this.httpClient.get<any>(`${baseURL}/api/addproject/pro/${projectName}`);
+  }
+
 
 
   getProjects()

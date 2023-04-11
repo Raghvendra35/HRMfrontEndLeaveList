@@ -20,15 +20,15 @@ export class EmployeeService {
     return this.httpClient.post(`${baseURL}/api/employee/save`,employee);
   }
 
-    
-   getEmployee()
-   {
-     return this.httpClient.get(`${baseURL}/api/employee`);
-   
+  
+
+    getDesignation(designation:any):Observable<any>
+    {
+      return this.httpClient.get<any>(`${baseURL}/api/employee/designation/${designation}`);
     }
 
-  CountEmployee()
-   {
+    CountEmployee()
+    {
      return this.httpClient.get(`${baseURL}/api/employee/empcount`);
    
     }

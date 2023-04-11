@@ -56,8 +56,6 @@ export class RegistrationEmployeeComponent implements OnInit {
     this.employee.qualification.push(this.qualificationMaster);
 
 
-
-
     // console.log( this.employee);
     
     // if (this.employee.firstName == '' || this.employee.firstName == null) {

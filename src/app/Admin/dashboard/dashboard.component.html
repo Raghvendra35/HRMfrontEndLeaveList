@@ -49,14 +49,14 @@
 
   <br>
   <div class="content">
-    <div class="card text-dark bg-info mb-3" style="max-width: 80rem;" >
+    <div class="card  mb-3" style="max-width: 80rem;background-color:white" >
        
         <div class="card-body">
           <h5 class="card-title"></h5>
-          <div class="card-core" style="height:240px;">
+          <div class="card-core" style="height:500px;">
             <div class="row">
                 <div class="col-3">
-            <div class="card text-dark bg-light mb-3" style="max-width: 15rem;">
+            <div class="card text-dark  mb-3" style="max-width: 15rem;background-color:#5AB5EA;">
                 <div class="card-core" style="height: 40px;font-family: 'Courier New', Courier, monospace;color: gray;
                 text-align:center;"> Total Employees</div>
                 <div class="card-body">
@@ -67,7 +67,7 @@
               
                 <div class="col-3">
             
-              <div class="card text-dark bg-light mb-3" style="max-width: 15rem;">
+              <div class="card text-dark  mb-3" style="max-width: 15rem;background-color: #FAE041;">
                 <div class="card-core" style="height: 40px;"></div>
                 <div class="card-body">
                   <h5 class="card-title"></h5>
@@ -77,7 +77,7 @@
               </div>
               <div class="col-3">
             
-                <div class="card text-dark bg-light mb-3" style="max-width: 15rem;">
+                <div class="card text-dark  mb-3" style="max-width: 15rem;background-color: #D9534F;">
                   <div class="card-core" style="height: 40px;"></div>
                   <div class="card-body">
                     <h5 class="card-title"></h5>
@@ -85,23 +85,76 @@
                   </div>
                 </div>
                 </div>
+                <div class="col-3">
+            
+                  <div class="card text-dark  mb-3" style="max-width: 15rem;background-color: #5CB85C;">
+                    <div class="card-core" style="height: 40px;"></div>
+                    <div class="card-body">
+                      <h5 class="card-title"></h5>
+    
+                    </div>
+                  </div>
+                  </div>
         </div>
+         <div class="row">
+          <div class="col-6">
+      
+        <google-chart 
+    [type]="myType" 
+    [data]="myData" 
+    [width]="width"
+    [height]="height" *ngIf="ischart">
+      
+</google-chart>
+</div>
+<div class="col-6"> 
+ <google-chart 
+[type]="myType" 
+[data]="myData1" 
+[width]="width"
+[height]="height" *ngIf="ischart">
+  
+</google-chart>
+<button style="size: 0ch;" type="button" (click)="check()">check</button>
+</div>
+        <!-- <div class="row">
+          <div class="col-6">
+      
+          <google-chart  style="width:100%;background-color:wheat;height: 500px;"
+          [title]="title2"
+          [type]="typem"
+          [data]="pieChartData2"
+          [columns]="pieChartColumns2" 
+        >       </google-chart>
+        </div>
+        
+        <div class="col-6">
+      
+          <google-chart  style="width:100%;background-color:wheat;height: 500px;"
+          [title]="title1"
+          [type]="typea"
+          [data]="pieChartData1"
+          [columns]="pieChartColumns1" 
+        >       </google-chart>
+        </div>
+         -->
+      <!-- <button style="size: 0ch;" type="button" (click)="check()">check</button>
+      </div> -->
+      
+      
+      <!-- <button type="button" (click)="check1()">check1</button>
+    </div> -->
+    
         
           
         </div>
+        
       </div>
     
    
-  </div>
+  
 
-    <google-chart  style="width: 80%;height: 50%;margin-top: -80px;background-color:Dark blanchedalmond"
-    [title]="title"
-    [type]="type1"
-    [data]="pieChartData"
-    [columns]="pieChartColumns"
-  
-  
-  ></google-chart>
+   
 
   <!-- [options]="options"
     (select)="onSelect($event)" -->
