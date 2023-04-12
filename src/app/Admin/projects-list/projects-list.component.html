@@ -51,7 +51,7 @@
       
        
         <button class="btn btn-info"   (click) = "updateProject(projects.projectId)">
-          <a [routerLink]="admin/updateproject" style="text-decoration: none;">Edit</a></button>
+          <a routerLink="admin/updateproject/{{projects.projectId}}" style="text-decoration: none;">Edit</a></button>
        
         <button class="btn btn-danger" (click)="deleteProject(projects.projectId)" style="color:black">Delete</button>
         

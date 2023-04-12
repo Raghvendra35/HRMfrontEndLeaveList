@@ -90,6 +90,10 @@ export class DetailsPageComponent implements OnInit
       {
         console.log(parm);
         this.employeeId=parm['id'];
+        console.log("inside Details Page Constructor ========");
+        console.log(this.employeeId);
+        
+        
       })
   }
 

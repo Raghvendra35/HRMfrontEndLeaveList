@@ -24,7 +24,6 @@
     <tr>
         <th scope="col">index</th>
         <th scope="col">FirstName</th>
-     <!--   <th scope="col">LastName</th> -->
         <th scope="col">Contact</th>
         <th scope="col">EmailId</th>
         <th scope="col">Action</th>
@@ -36,14 +35,15 @@
     <tr *ngFor="let employee of employees; let i=index ">
         
         <td>{{(pageObject.size*(pageObject.page))+i+1}}</td>
-        <td ><a style="color:blue;cursor: pointer;" (click) = "getDetails(employee.employeeId)">{{employee.firstName}}</a></td>
+        <!-- <td ><a style="color:blue;cursor: pointer;" (click) = "getDetails(employee.employeeId)">{{employee.firstName}}</a></td> -->
+        <td ><a style="color:blue;cursor: pointer;" routerLink="employeelist/detailspage/{{employee.employeeId}}" style="text-decoration: none;">{{employee.firstName}}</a></td>
         <td>{{employee.contact}}</td>
         <td>{{employee.emailId}}</td>
      
        
        <button class="btn btn-info"   >
              <!-- <a  href="#" routerLink="/employeelist/{{employee.employeeId}}" style="text-decoration: none;">Edit</a> -->
-            <a   [routerLink]="admin/updateemployee/employee.employeeId" style="text-decoration: none;">Edit</a></button>
+            <a  routerLink="updateemployee/{{employee.employeeId}}" style="text-decoration: none;">Edit</a></button>
 
             <button class="btn btn-danger" (click)="deleteEmployee(employee.employeeId)" style="color:black">Delete</button>
     </tr>

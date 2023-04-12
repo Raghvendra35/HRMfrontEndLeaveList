@@ -54,25 +54,18 @@ const routes: Routes = [
         },
 
        {
-        path: 'employeelist/:id',
+        path: 'updateemployee/:id',
         loadChildren: () =>
         import('./update-employee/updateemployee.module').then((m)=> m.UpdateemployeeModule)
        },
-       
+      
+       {
+        path: 'employeelist/detailspage/:id',
+        loadChildren: () =>
+        import('./details-page/details-page.module').then((m)=> m.DetailsPageModule)
+       },
 
-    //    {
-    //     path:'updateemployee',
-    //     loadChildren: () =>
-    //     import('./update-employee/updateemployee.module').then((m) => m.UpdateemployeeModule)         
-    // },
-
-
-
-
-
-    
-     
-
+ //Projects
       {
         path: 'projectlist',
         loadChildren: () =>
@@ -80,13 +73,18 @@ const routes: Routes = [
 
       }, 
       {
-        path: 'projectlist/:id',
+        path: 'admin/updateproject/admin/updateproject/:id',
         loadChildren: () =>
         import('./update-projects/updateprojects.module').then((m)=> m.UpdateprojectsModule)
       },
 
-
-
+      {
+        path:'addproject',
+        loadChildren:() =>
+        import('./add-project/add-project.module').then((m) => m.AddProjectsModule)
+      },
+    
+    //Salary  
 
       {
         path:'salarylist',
@@ -96,7 +94,7 @@ const routes: Routes = [
 
       
       {
-        path:'salarylist/:id',
+        path:'admin/updatesalary/:id',
         loadChildren:() =>
          import('./update-salary/updatesalary.module').then((m) => m.UpdatesalaryModule)
       },
@@ -107,7 +105,7 @@ const routes: Routes = [
         import('./leaveemployee-list/leaveemployee-list.module').then((m) => m.LeaveemployeeListModule)
       },
       {
-        path:'leavelist/:id',
+        path:'admin/updateleave/:id',
         loadChildren:() =>
         import('./update-leave/updateleave.module').then((m) => m.UpdateleaveModule)
       },
@@ -116,23 +114,19 @@ const routes: Routes = [
         loadChildren:() =>
         import('./add-salary/add-salary.module').then((m) => m.AddSalaryModule )
       },
-      {
-        path:'addproject',
-        loadChildren:() =>
-        import('./add-project/add-project.module').then((m) => m.AddProjectsModule)
-      },
+      
      
       
       {
         path:'leavereport',
         loadChildren:() =>
         import('./leave-report-employee/leave-report-employee.module').then((m) => m.LeaveReportEmployeeModule)
-      }
+      },
 
       //  {
       //   path:'',
       //   redirectTo:'',
-      //    pathMatch:"full"
+      //    pathMatch:'full'
       // }
    ],
   

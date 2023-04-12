@@ -1,24 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { UpdateEmployeeComponent } from './update-employee.component';
-import { UpdateEmployeeRouting } from './update-employee.routing';
+import { DetailsPageComponent } from './details-page.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-
+import { DetailsPageRouting } from './details-page.routing';
 
 
 
 @NgModule({
-  declarations: [UpdateEmployeeComponent],
-  
+  declarations: [DetailsPageComponent],
   imports: [
     CommonModule,
-    UpdateEmployeeRouting,
     HttpClientModule,
     FormsModule,
     RouterModule,
-   
+    DetailsPageRouting
+
   ]
 })
-export class UpdateemployeeModule { }  
+export class DetailsPageModule { }

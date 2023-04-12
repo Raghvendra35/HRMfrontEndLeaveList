@@ -4,7 +4,8 @@ import { Router } from '@angular/router';
 import { Employee } from 'src/app/services/employee';
 import { EmployeeService } from 'src/app/services/employee.service';
 
-@Component({
+@Component(
+  {
   selector: 'app-employee-list',
   templateUrl: './employee-list.component.html',
   styleUrls: ['./employee-list.component.css']
@@ -109,6 +110,7 @@ export class EmployeeListComponent implements OnInit
         this.router.navigate(['employeeList']);
       },(error)=>
       {
+        this.router.navigate(['employeeList']);
         alert("Failed !!!");
       })
     
@@ -120,7 +122,10 @@ export class EmployeeListComponent implements OnInit
     
     updateEmployee(employeeId:number)
     {
-     this.router.navigate(['admin/employeelist',employeeId]);
+   
+       console.log("Update employee list page printing the employeee Id"+ employeeId);
+       console.log(employeeId);
+    //   this.router.navigate(['admin/employeelist/admin/updateemployee',employeeId]);
      
     }
 
@@ -135,7 +140,11 @@ export class EmployeeListComponent implements OnInit
 
     getDetails(employeeId:number)
     {
-     this.router.navigate(['employeelist/detailspage/',employeeId]);
+      console.log("Inside Details page ......................");
+   
+      console.log(employeeId);
+     
+    //  this.router.navigate(['employeelist/detailspage/',employeeId]);
      
     }
     

@@ -150,7 +150,7 @@ export class ProjectsListComponent implements OnInit
   
 updateProject(projectId: number)
 {
-  this.router.navigate(['updateproject',projectId]);
+ // this.router.navigate(['admin/updateproject',projectId]);
 }
  
 

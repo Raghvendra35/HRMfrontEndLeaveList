@@ -306,17 +306,17 @@
 
           <div class="col-md-4 mt-4">
           <label  for="inputname">First Name</label>
-          <input type="text" [(ngModel)]="employee.firstName"  name="fisrtName" class="form-control" placeholder="First-name" required>
+          <input type="text" [(ngModel)]="employee.firstName"  name="fisrtName" class="form-control" placeholder="" required>
           </div> 
           
           <div class="col-md-4 mt-4">
           <label  for="inputname">Last Name</label>
-          <input type="text" [(ngModel)]="employee.lastName" name="lastName" class="form-control" placeholder="Last-name" required>
+          <input type="text" [(ngModel)]="employee.lastName" name="lastName" class="form-control" placeholder="" required>
           </div> 
 
           <div class="col-md-4 mt-3">
             <label  for="inputname">Email Id</label>
-            <input type="email"  [(ngModel)]="employee.emailId" name="emailId"  class="form-control" placeholder="Email-id" required>
+            <input type="email"  [(ngModel)]="employee.emailId" name="emailId"  class="form-control" placeholder="" required>
             </div>   
 
         
@@ -328,12 +328,12 @@
 
             <div class="col-md-4 mt-3">
               <label  for="inputname">Contact</label>
-              <input type="number" [(ngModel)]="employee.contact" name="contact" class="form-control" placeholder="Contact-number">
+              <input type="number" [(ngModel)]="employee.contact" name="contact" class="form-control" placeholder>
               </div> 
 
           <div class="col-md-4 mt-3">
           <label  for="inputname">Contact ( optional )</label>
-          <input type="number" class="form-control" placeholder="Contact-number">
+          <input type="number" class="form-control" placeholder="">
           </div> 
           
 
@@ -343,7 +343,7 @@
           
           <div class="col-md-4 mt-3">
           <label  for="inputname">Password</label>
-          <input type="password" [(ngModel)]="employee.password" name="password"  class="form-control" placeholder="Password">
+          <input type="password" [(ngModel)]="employee.password" name="password"  class="form-control" placeholder="">
           </div>     
          </div>
 
@@ -351,19 +351,19 @@
          <div class="row">
           <div class="col-md-4 mt-3">
             <label  for="inputname">Aadhar-Card</label>
-            <input type="text" [(ngModel)]="employee.aadharCard" name="addharCard" class="form-control" placeholder="addharCard">
+            <input type="text" [(ngModel)]="employee.aadharCard" name="addharCard" class="form-control" placeholder="">
             </div>
         
             <div class="col-md-4 mt-3">
             <label  for="inputname">Pan-Card</label>
-            <input type="text" [(ngModel)]="employee.panCard" name="panCard" class="form-control" placeholder="Pan-Card">
+            <input type="text" [(ngModel)]="employee.panCard" name="panCard" class="form-control" placeholder="">
             </div>
           
 
         
             <div class="col-md-2 mt-3">
             <label  for="inputname">DateOfBirth</label>
-            <input type="date" [(ngModel)]="employee.dateOfBirth" name="dateOfBirth" class="form-control" placeholder="Date-Of-Birth">
+            <input type="date" [(ngModel)]="employee.dateOfBirth" name="dateOfBirth" class="form-control" placeholder="">
             </div>
   
             <div class="col-md-2 mt-3">
@@ -389,18 +389,18 @@
          <div class="row">
             <div class="col-md-4 mt-3">
               <label  for="inputname">Bank Name</label>
-              <input type="text" [(ngModel)]="employee.bankName" name="bankName" class="form-control" placeholder="Bank-name">
+              <input type="text" [(ngModel)]="employee.bankName" name="bankName" class="form-control" placeholder>
               </div>
 
 
 
           <div class="col-md-4 mt-3">
            <label  for="inputname">Account Number</label>
-              <input type="text" [(ngModel)]="employee.accountNumber" name="accountNumber"  class="form-control" placeholder="Account-number">
+              <input type="text" [(ngModel)]="employee.accountNumber" name="accountNumber"  class="form-control" >
               </div>
               <div class="col-md-3 mt-3">
                   <label  for="inputname">IFSC Code</label>
-                  <input type="text" [(ngModel)]="employee.cifNumber" name="cisfNumber" class="form-control" placeholder="IFSC Code">
+                  <input type="text" [(ngModel)]="employee.cifNumber" name="cisfNumber" class="form-control">
                   </div>
           </div>
 
@@ -417,14 +417,14 @@
           
             <div class="col-md-4 mt-3">
               <label  for="inputname">Previous Company Name</label>
-              <input type="text"  [(ngModel)]="employee.previousCompanyName" name="previousCompanyName"  class="form-control" placeholder="Previous-Company-Name">
+              <input type="text"  [(ngModel)]="employee.previousCompanyName" name="previousCompanyName"  class="form-control" >
               </div>
             
 
           
            <div class="col-md-3 mt-3">
            <label  for="inputname">Designation</label>
-           <input type="text" [(ngModel)]="employee.designation" name="designation" class="form-control" placeholder="Designation">
+           <input type="text" [(ngModel)]="employee.designation" name="designation" class="form-control" >
             </div>
           
 
@@ -476,13 +476,13 @@
                <label for="inputname">Permanent-Address</label> 
               </div>
               <div class="col-4">
-                <input type="text"  [(ngModel)]="perAddress.houseNumber" name="houseNumber" class="form-control" placeholder="HouseNumber">
+                <input type="text"  [(ngModel)]="perAddress.houseNumber" name="houseNumber" class="form-control" >
               </div>
               <div class="col-2">
-                <input type="text"  [(ngModel)]="perAddress.city" name="city" class="form-control" placeholder="City">
+                <input type="text"  [(ngModel)]="perAddress.city" name="city" class="form-control" >
               </div>
               <div class="col-2">
-                <input type="number" [(ngModel)]="perAddress.pinCode"  name="pinCode" class="form-control" placeholder="PinCode">
+                <input type="number" [(ngModel)]="perAddress.pinCode"  name="pinCode" class="form-control" >
               </div>
               <div class="col-2">
                 <select  [(ngModel)]="perAddress.state"  class="form-select" id="validationDefault04" required>
@@ -528,13 +528,13 @@
                <label for="inputname">Current-Address</label> 
               </div>
               <div class="col-4">
-                <input type="text"  [(ngModel)]="curAddress.houseNumber" name="houseNumber" class="form-control" placeholder="HouseNumber">
+                <input type="text"  [(ngModel)]="curAddress.houseNumber" name="houseNumber" class="form-control" >
               </div>
               <div class="col-2">
-                <input type="text"  [(ngModel)]="curAddress.city" name="city" class="form-control" placeholder="City">
+                <input type="text"  [(ngModel)]="curAddress.city" name="city" class="form-control" >
               </div>
               <div class="col-2">
-                <input type="number" [(ngModel)]="curAddress.pinCode"  name="pinCode" class="form-control" placeholder="PinCode">
+                <input type="number" [(ngModel)]="curAddress.pinCode"  name="pinCode" class="form-control" >
               </div>
               <div class="col-2">
                 <select  [(ngModel)]="curAddress.state"  class="form-select" id="validationDefault04" required>
@@ -618,16 +618,16 @@
      <label for="inputname">HighSchool</label> 
     </div>
     <div class="col-4">
-      <input type="text" [(ngModel)]="qualification10.board"  name="course" class="form-control" placeholder="">
+      <input type="text" [(ngModel)]="qualification10.board"  name="course" class="form-control" >
     </div>
     <div class="col-2">
-      <input type="text" [(ngModel)]="qualification10.passingyear"  name="board" class="form-control" placeholder="Passingyear">
+      <input type="text" [(ngModel)]="qualification10.passingyear"  name="board" class="form-control" >
     </div>
     <div class="col-2">
-      <input type="text" [(ngModel)]="qualification10.percentage"  name="percentage" class="form-control" placeholder="percentage">
+      <input type="text" [(ngModel)]="qualification10.percentage"  name="percentage" class="form-control" >
     </div>
     <div class="col-2">
-      <input type="text" [(ngModel)]="qualification10.status"  name="status" class="form-control" placeholder="status">
+      <input type="text" [(ngModel)]="qualification10.status"  name="status" class="form-control" >
     </div>
   </div>
 </div>
@@ -642,16 +642,16 @@
      <label for="inputname">Intermediate/Diploma</label> 
     </div>
     <div class="col-4">
-      <input type="text" [(ngModel)]="qualification12.board"  name="course" class="form-control" placeholder="">
+      <input type="text" [(ngModel)]="qualification12.board"  name="course" class="form-control" >
     </div>
     <div class="col-2">
-      <input type="text" [(ngModel)]="qualification12.passingyear"  name="board" class="form-control" placeholder="Passingyear">
+      <input type="text" [(ngModel)]="qualification12.passingyear"  name="board" class="form-control" >
     </div>
     <div class="col-2">
-      <input type="text" [(ngModel)]="qualification12.percentage"  name="percentage" class="form-control" placeholder="percentage">
+      <input type="text" [(ngModel)]="qualification12.percentage"  name="percentage" class="form-control" >
     </div>
     <div class="col-2">
-      <input type="text" [(ngModel)]="qualification12.status"  name="status" class="form-control" placeholder="status">
+      <input type="text" [(ngModel)]="qualification12.status"  name="status" class="form-control" >
     </div>
   </div>
 </div>
@@ -671,16 +671,16 @@
      <label for="inputname">Bachelor's degree</label> 
     </div>
     <div class="col-4">
-      <input type="text" [(ngModel)]="qualificationBachelor.board"  name="course" class="form-control" placeholder="">
+      <input type="text" [(ngModel)]="qualificationBachelor.board"  name="course" class="form-control" >
     </div>
     <div class="col-2">
-      <input type="text" [(ngModel)]="qualificationBachelor.passingyear"  name="board" class="form-control" placeholder="Passingyear">
+      <input type="text" [(ngModel)]="qualificationBachelor.passingyear"  name="board" class="form-control" >
     </div>
     <div class="col-2">
-      <input type="text" [(ngModel)]="qualificationBachelor.percentage"  name="percentage" class="form-control" placeholder="percentage">
+      <input type="text" [(ngModel)]="qualificationBachelor.percentage"  name="percentage" class="form-control" >
     </div>
     <div class="col-2">
-      <input type="text" [(ngModel)]="qualificationBachelor.status"  name="status" class="form-control" placeholder="status">
+      <input type="text" [(ngModel)]="qualificationBachelor.status"  name="status" class="form-control" >
     </div>
   </div>
 </div>
@@ -705,13 +705,13 @@
       <input type="text" [(ngModel)]="qualificationMaster.board"  name="course" class="form-control" placeholder="">
     </div>
     <div class="col-2">
-      <input type="text" [(ngModel)]="qualificationMaster.passingyear"  name="board" class="form-control" placeholder="Passingyear">
+      <input type="text" [(ngModel)]="qualificationMaster.passingyear"  name="board" class="form-control" placeholder="">
     </div>
     <div class="col-2">
-      <input type="text" [(ngModel)]="qualificationMaster.percentage"  name="percentage" class="form-control" placeholder="percentage">
+      <input type="text" [(ngModel)]="qualificationMaster.percentage"  name="percentage" class="form-control" placeholder="">
     </div>
     <div class="col-2">
-      <input type="text" [(ngModel)]="qualificationMaster.status"  name="status" class="form-control" placeholder="status">
+      <input type="text" [(ngModel)]="qualificationMaster.status"  name="status" class="form-control" placeholder="">
     </div>
   </div>
 </div>

@@ -43,6 +43,8 @@ export class UpdateEmployeeComponent implements OnInit
                   console.log(parm);
                   this.employeeId=parm['id']
                   
+                  
+                  
                 })
                }
 
